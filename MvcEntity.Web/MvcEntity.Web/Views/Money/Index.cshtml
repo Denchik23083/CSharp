@@ -1,0 +1,16 @@
+﻿@model MvcEntity.Db.Entities.Replenish
+
+@{
+    ViewBag.Title = "Пополнение";
+}
+
+<form asp-action="Replenish" method="post">
+    <div class="form-group">
+        <label asp-for="Money" class="control-label">Money</label>
+        <input type="text" asp-for="Money" class="form-control" />
+        <span asp-validation-for="Money" class="text-danger"></span>
+    </div>
+
+    <button type="submit">Пополнить</button>
+
+</form>

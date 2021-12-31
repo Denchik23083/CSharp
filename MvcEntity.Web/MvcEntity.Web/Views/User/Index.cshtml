@@ -1,0 +1,83 @@
+﻿@model MvcEntity.Db.Entities.User
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .danie {
+        border: 3px solid lightgray;
+        width: 300px;
+        height: auto;
+        padding: 20px;
+    }
+
+    .edit, .del, .filterbutton {
+        width: 250px;
+        height: 50px;
+        text-align: center;
+        margin-top: 20px;
+        border: 0px;
+        font-size: 25px;
+        color: white;
+    }
+
+    .edit {
+        background-color: rgb(184, 92, 7);
+        border-color: rgb(184, 92, 7);
+    }
+
+    .del {
+        background-color: rgb(204, 6, 6);
+        border-color: rgb(204, 6, 6);
+    }
+
+    .a, .a:hover {
+        list-style-type: none;
+        text-decoration: none;
+        color: white;
+    }
+
+    .filterbutton {
+        background-color: #337ab7;
+        border-color: #2e6da4;
+    }
+
+    .buy, .buy:hover {
+        color: white;
+        text-decoration: none;
+        list-style-type: none;
+    }
+</style>
+
+@section MainLink{
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Main">Main</a>
+    </li>
+}
+
+@section Balance{
+    <li class="nav-item">
+        <span class="nav-link text-dark">Your Balance  @Model.Balance&#8372;</span>
+    </li>
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div class="container">
+        <div class="danie">
+            <p>Name: @Model.Name</p>
+            <p>Email: @Model.Email</p>
+
+            <button class="filterbutton"><a asp-action="Index" asp-controller="Money" class="buy">Replenish</a></button>
+            <button class="edit"><a asp-action="Edit" asp-controller="User" class="a">Edit</a></button>
+            <button class="del"><a asp-action="Delete" asp-controller="User" class="a">Delete</a></button>
+        </div>
+    </div>
+</body>
+</html>

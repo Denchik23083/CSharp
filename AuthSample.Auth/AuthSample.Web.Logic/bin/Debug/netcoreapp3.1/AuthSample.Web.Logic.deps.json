@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "AuthSample.Web.Logic/1.0.0": {
+        "dependencies": {
+          "AuthSample.WebDb": "1.0.0"
+        },
+        "runtime": {
+          "AuthSample.Web.Logic.dll": {}
+        }
+      },
+      "AuthSample.WebDb/1.0.0": {
+        "runtime": {
+          "AuthSample.WebDb.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AuthSample.Web.Logic/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AuthSample.WebDb/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

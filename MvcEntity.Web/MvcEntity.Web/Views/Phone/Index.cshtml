@@ -1,0 +1,72 @@
+﻿@model IEnumerable<MvcEntity.Db.Entities.Phone>
+@{
+    ViewBag.Title = "Все пользователи";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section MainLink{
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Main">Main</a>
+    </li>
+}
+
+@section OrderLink{
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Order" asp-action="Index">Order</a>
+    </li>
+}
+
+<style>
+    .con {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .cout {
+        background-color: white;
+        text-align: center;
+        border-radius: 20px;
+        padding-top: 50px;
+        border: 0.1px solid grey;
+        width: 200px;
+        min-height: 200px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+    .filterbutton{
+        color: white;
+        background-color: #337ab7;
+        border-color: #2e6da4;
+    }
+    .sp {
+        margin-bottom: 10px;
+    }
+    .buy, .buy:hover {
+        color: white;
+        text-decoration: none;
+        list-style-type: none;
+    }
+</style>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Магазин телефонов</title>
+</head>
+<body>
+    <h3>Телефоны</h3>
+    <div class="con">
+        @foreach (var phone in Model)
+        {
+            <div class="cout">
+                <span class="sp"><strong>Компания:</strong> @phone.Company</span><br>
+                <span class="sp"><strong>Модель:</strong> @phone.Name</span><br>
+                <span class="sp"><strong>Цена:</strong> @phone.Price&#8372;</span><br><br>
+
+                <button class="filterbutton">
+                    <a asp-action="Push" asp-controller="Phone" asp-route-id="@phone.Id" class="buy">Купить</a>
+                </button>
+            </div>
+        }
+    </div>
+</body>
+</html>

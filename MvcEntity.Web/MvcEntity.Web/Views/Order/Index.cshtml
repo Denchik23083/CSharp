@@ -1,0 +1,84 @@
+﻿@model IEnumerable<MvcEntity.Db.Entities.Phone>
+
+@{
+    var totalPrice = 0;
+
+    foreach (var price in Model)
+    {
+        totalPrice += price.Price;
+    }
+}
+
+@{
+    ViewData["Title"] = "Список Другого";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section MainLink{
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Main">Main</a>
+    </li>
+}
+
+@section PhoneLink{
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Phone" asp-action="Index">Phone</a>
+    </li>
+}
+
+<style>
+    .filterbutton {
+        color: white;
+        background-color: #337ab7;
+        border-color: #2e6da4;
+    }
+    .buy, .buy:hover {
+        color: white;
+        text-decoration: none;
+        list-style-type: none;
+    }
+    .border {
+        border: 3px solid lightgray; 
+    }
+</style>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <h3>Заказ</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr scope="col">
+                <td>Компания</td>
+                <td>Название</td>
+                <td>Цена</td>
+                <td>Удалить из корзины</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Model)
+            {
+                <tr scope="row">
+                    <td>@order.Company</td>
+                    <td>@order.Name</td>
+                    <td>@order.Price&#8372;</td>
+                    <td>
+                        <a asp-action="Remove" asp-controller="Order" asp-route-id="@order.Id">Удалить</a>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+    <br>
+    <div class="border">
+        @totalPrice&#8372;
+        <button class="filterbutton">
+            <a asp-action="Payment" asp-controller="Money" class="buy">Оплатить</a>
+        </button>
+    </div>
+</body>
+</html>

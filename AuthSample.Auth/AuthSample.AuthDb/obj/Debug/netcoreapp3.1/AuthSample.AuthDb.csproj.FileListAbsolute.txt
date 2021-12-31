@@ -1,0 +1,15 @@
+C:\Users\User\source\repos\AuthSample.Auth\AuthSample.AuthDb\obj\Debug\netcoreapp3.1\AuthSample.AuthDb.csprojAssemblyReference.cache
+C:\Users\User\source\repos\AuthSample.Auth\AuthSample.AuthDb\obj\Debug\netcoreapp3.1\AuthSample.AuthDb.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\AuthSample.Auth\AuthSample.AuthDb\obj\Debug\netcoreapp3.1\AuthSample.AuthDb.AssemblyInfo.cs
+C:\Users\User\source\repos\AuthSample.Auth\AuthSample.AuthDb\obj\Debug\netcoreapp3.1\AuthSample.AuthDb.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\AuthSample.Auth\AuthSample.AuthDb\bin\Debug\netcoreapp3.1\AuthSample.AuthDb.deps.json
+C:\Users\User\source\repos\AuthSample.Auth\AuthSample.AuthDb\bin\Debug\netcoreapp3.1\AuthSample.AuthDb.dll
+C:\Users\User\source\repos\AuthSample.Auth\AuthSample.AuthDb\bin\Debug\netcoreapp3.1\AuthSample.AuthDb.pdb
+C:\Users\User\source\repos\AuthSample.Auth\AuthSample.AuthDb\obj\Debug\netcoreapp3.1\AuthSample.AuthDb.csproj.CopyComplete
+C:\Users\User\source\repos\AuthSample.Auth\AuthSample.AuthDb\obj\Debug\netcoreapp3.1\AuthSample.AuthDb.dll
+C:\Users\User\source\repos\AuthSample.Auth\AuthSample.AuthDb\obj\Debug\netcoreapp3.1\AuthSample.AuthDb.pdb
+C:\Users\User\source\repos\AuthSample.Auth\AuthSample.AuthDb\bin\Debug\netcoreapp3.1\AuthSample.Core.dll
+C:\Users\User\source\repos\AuthSample.Auth\AuthSample.AuthDb\bin\Debug\netcoreapp3.1\AuthSample.Core.pdb
+C:\Users\User\source\repos\AuthSample.Auth\AuthSample.AuthDb\bin\Debug\netcoreapp3.1\AuthSample.AuthDb.runtimeconfig.json
+C:\Users\User\source\repos\AuthSample.Auth\AuthSample.AuthDb\bin\Debug\netcoreapp3.1\AuthSample.AuthDb.runtimeconfig.dev.json
+C:\Users\User\source\repos\AuthSample.Auth\AuthSample.AuthDb\obj\Debug\netcoreapp3.1\AuthSample.AuthDb.genruntimeconfig.cache

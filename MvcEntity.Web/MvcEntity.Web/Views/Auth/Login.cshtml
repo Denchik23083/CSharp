@@ -1,0 +1,37 @@
+﻿@model MvcEntity.Web.Models.LoginModel
+
+@{
+    ViewData["Title"] = "Вход";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .reg:hover {
+        text-decoration: none;
+    }
+</style>
+
+<h2>Вход на сайт</h2>
+
+<button><a asp-action="Register" asp-controller="Auth" class="reg">Регистрация</a></button>
+<br />
+<br />
+
+<form asp-action="Login" asp-controller="Auth" asp-anti-forgery="true">
+    <div class="validation" asp-validation-summary="ModelOnly"></div>
+    <div>
+        <div class="form-group">
+            <label asp-for="Email">Введите Email</label><br />
+            <input type="text" asp-for="Email" />
+            <span asp-validation-for="Email" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Password">Введите пароль</label><br />
+            <input asp-for="Password" />
+            <span asp-validation-for="Password" />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Войти" class="btn btn-outline-dark" />
+        </div>
+    </div>
+</form>

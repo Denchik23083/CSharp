@@ -1,0 +1,11 @@
+C:\Users\User\source\repos\NewsDb\NewsDb\bin\Debug\netcoreapp3.1\NewsDb.deps.json
+C:\Users\User\source\repos\NewsDb\NewsDb\bin\Debug\netcoreapp3.1\NewsDb.dll
+C:\Users\User\source\repos\NewsDb\NewsDb\bin\Debug\netcoreapp3.1\NewsDb.pdb
+C:\Users\User\source\repos\NewsDb\NewsDb\obj\Debug\netcoreapp3.1\NewsDb.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\NewsDb\NewsDb\obj\Debug\netcoreapp3.1\NewsDb.AssemblyInfo.cs
+C:\Users\User\source\repos\NewsDb\NewsDb\obj\Debug\netcoreapp3.1\NewsDb.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\NewsDb\NewsDb\obj\Debug\netcoreapp3.1\NewsDb.dll
+C:\Users\User\source\repos\NewsDb\NewsDb\obj\Debug\netcoreapp3.1\NewsDb.pdb
+C:\Users\User\source\repos\NewsDb\NewsDb\bin\Debug\netcoreapp3.1\NewsDb.runtimeconfig.json
+C:\Users\User\source\repos\NewsDb\NewsDb\bin\Debug\netcoreapp3.1\NewsDb.runtimeconfig.dev.json
+C:\Users\User\source\repos\NewsDb\NewsDb\obj\Debug\netcoreapp3.1\NewsDb.genruntimeconfig.cache

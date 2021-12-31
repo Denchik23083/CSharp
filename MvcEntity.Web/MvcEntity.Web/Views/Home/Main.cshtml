@@ -1,0 +1,25 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section OrderLink{
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Order" asp-action="Index">Order</a>
+    </li>
+}
+
+@section PhoneLink{
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Phone" asp-action="Index">Phone</a>
+    </li>
+}
+
+@section GetUser
+{
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Index">Profile</a>
+    </li>
+}
