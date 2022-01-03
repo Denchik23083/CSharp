@@ -112,12 +112,16 @@ namespace MvcEntity.WebDb
         {
             _user.Balance -= totalPrice;
 
+            _context.Users.Update(_user);
+
             await _context.SaveChangesAsync();
         }
 
         public async Task Replenish(Replenish replenish)
         {
             _user.Balance += replenish.Money;
+
+            _context.Users.Update(_user);
 
             await _context.SaveChangesAsync();
         }
