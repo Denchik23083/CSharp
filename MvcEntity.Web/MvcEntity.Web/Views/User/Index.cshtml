@@ -21,6 +21,7 @@
         border: 0px;
         font-size: 25px;
         color: white;
+        padding: 10px;
     }
 
     .edit {
@@ -74,9 +75,9 @@
             <p>Name: @Model.Name</p>
             <p>Email: @Model.Email</p>
 
-            <button class="filterbutton"><a asp-action="Index" asp-controller="Money" class="buy">Replenish</a></button>
-            <button class="edit"><a asp-action="Edit" asp-controller="User" class="a">Edit</a></button>
-            <button class="del"><a asp-action="Delete" asp-controller="User" class="a">Delete</a></button>
+            <span class="filterbutton"><a asp-action="Index" asp-controller="Money" class="buy">Replenish</a></span><br/><br />
+            <span class="edit"><a asp-action="Edit" asp-controller="User" class="a">Edit</a></span><br /><br />
+            <span class="del"><a asp-action="Delete" asp-controller="User" class="a">Delete</a></span><br />
         </div>
     </div>
 </body>

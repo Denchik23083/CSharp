@@ -5,9 +5,9 @@ namespace MvcEntity.Web.Controllers
 {
     public class OrderController : Controller
     {
-        private readonly IService _service;
+        private readonly IOrderService _service;
 
-        public OrderController(IService service)
+        public OrderController(IOrderService service)
         {
             _service = service;
         }

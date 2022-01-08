@@ -8,9 +8,9 @@ namespace MvcEntity.Web.Controllers
 {
     public class PhoneController : Controller
     {
-        private readonly IService _service;
+        private readonly IPhoneService _service;
 
-        public PhoneController(IService service)
+        public PhoneController(IPhoneService service)
         {
             _service = service;
         }
@@ -29,46 +29,6 @@ namespace MvcEntity.Web.Controllers
 
             return NoContent();
         }
-
-        #region AddEditDeletePhone
-        /*
-        public IActionResult Add()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Add(PhoneModel model)
-        {
-            await _service.AddPhone(Map(model));
-            
-            return RedirectToAction(nameof(Index));
-        }
-        
-        [HttpGet("id")]
-        public async Task<IActionResult> Edit(int id)
-        {
-            var getToEditPhone = await _service.GetToEditPhone(id);
-
-            return View(getToEditPhone);
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> EditPhone(PhoneModel model)
-        {
-            await _service.EditPhone(Map(model));
-
-            return RedirectToAction(nameof(Index));
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Delete(int id)
-        {
-            await _service.DeletePhone(id);
-            
-            return RedirectToAction(nameof(Index));
-        }*/
-        #endregion
 
         private static Phone Map(PhoneModel model)
         {

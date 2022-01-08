@@ -5,7 +5,7 @@ namespace MvcEntity.Db
 {
     public class MvcContext : DbContext
     {
-        public MvcContext(DbContextOptions<MvcContext> options) : base(options) { Database.EnsureCreated(); }
+        public MvcContext(DbContextOptions<MvcContext> options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

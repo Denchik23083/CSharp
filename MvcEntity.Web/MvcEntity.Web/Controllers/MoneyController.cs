@@ -8,9 +8,9 @@ namespace MvcEntity.Web.Controllers
 {
     public class MoneyController : Controller
     {
-        private readonly IService _service;
+        private readonly IMoneyService _service;
 
-        public MoneyController(IService service)
+        public MoneyController(IMoneyService service)
         {
             _service = service;
         }

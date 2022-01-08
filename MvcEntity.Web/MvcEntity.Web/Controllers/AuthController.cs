@@ -12,9 +12,9 @@ namespace MvcEntity.Web.Controllers
 {
     public class AuthController : Controller
     {
-        private readonly IService _service;
+        private readonly IAuthService _service;
 
-        public AuthController(IService service)
+        public AuthController(IAuthService service)
         {
             _service = service;
         }

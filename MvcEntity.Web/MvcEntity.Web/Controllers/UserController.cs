@@ -8,9 +8,9 @@ namespace MvcEntity.Web.Controllers
 {
     public class UserController : Controller
     {
-        private readonly IService _service;
+        private readonly IUserService _service;
 
-        public UserController(IService service)
+        public UserController(IUserService service)
         {
             _service = service;
         }

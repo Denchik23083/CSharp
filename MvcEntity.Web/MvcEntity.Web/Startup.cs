@@ -22,11 +22,23 @@ namespace MvcEntity.Web
         
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IService, Service>();
-            services.AddScoped<IRepository, Repository>();
+            services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<IAuthRepository, AuthRepository>();
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IPhoneService, PhoneService>();
+            services.AddScoped<IPhoneRepository, PhoneRepository>();
+            services.AddScoped<IOrderService, OrderService>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
+            services.AddScoped<IMoneyService, MoneyService>();
+            services.AddScoped<IMoneyRepository, MoneyRepository>();
 
-            var connection = Configuration.GetConnectionString("DefaultConnection");
-            services.AddDbContext<MvcContext>(options => options.UseSqlServer(connection));
+            services.AddDbContext<MvcContext>(options =>
+            {
+                var connectionString = Configuration.GetConnectionString("DefaultConnection");
+
+                options.UseSqlServer(connectionString);
+            });
 
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(options =>

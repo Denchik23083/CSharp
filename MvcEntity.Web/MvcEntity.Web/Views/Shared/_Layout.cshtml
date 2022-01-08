@@ -14,13 +14,13 @@
                 <strong>Mvc.Web</strong>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        @RenderSection("LoginLink", false)
-                        @RenderSection("RegisterLink", false)
-                        @RenderSection("MainLink", false)
-                        @RenderSection("OrderLink", false)
-                        @RenderSection("PhoneLink", false)
-                        @RenderSection("Balance", false)
-                        @RenderSection("GetUser", false)
+                        @await RenderSectionAsync("LoginLink", false)
+                        @await RenderSectionAsync("RegisterLink", false)
+                        @await RenderSectionAsync("MainLink", false)
+                        @await RenderSectionAsync("OrderLink", false)
+                        @await RenderSectionAsync("PhoneLink", false)
+                        @await RenderSectionAsync("Balance", false)
+                        @await RenderSectionAsync("GetUser", false)
                     </ul>
                 </div>
             </div>
