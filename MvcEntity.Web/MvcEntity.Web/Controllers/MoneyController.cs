@@ -26,10 +26,10 @@ namespace MvcEntity.Web.Controllers
 
             if (!payment)
             {
-                return RedirectToAction("Index", "Order");
+                return RedirectToAction(nameof(OrderController.Index), "Order");
             }
 
-            return RedirectToAction("Index", "Phone");
+            return RedirectToAction(nameof(PhoneController.Index), "Phone");
         }
 
         [HttpPost]
@@ -37,7 +37,7 @@ namespace MvcEntity.Web.Controllers
         {
             _service.Replenish(Map(model));
 
-            return RedirectToAction("Index", "User");
+            return RedirectToAction(nameof(UserController.Index), "User");
         }
 
         private static Replenish Map(ReplenishModel model)

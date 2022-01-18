@@ -25,7 +25,7 @@ namespace MvcEntity.Web.Controllers
         {
             _service.RemovePhoneFromOrder(id);
 
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Index), "Order");
         }
     }
 }

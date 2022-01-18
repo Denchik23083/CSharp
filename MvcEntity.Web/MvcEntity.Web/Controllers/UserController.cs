@@ -36,7 +36,7 @@ namespace MvcEntity.Web.Controllers
         {
             await _service.EditUser(Map(model));
 
-            return RedirectToAction("Logout", "Auth");
+            return RedirectToAction(nameof(AuthController.Logout), "Auth");
         }
 
         [HttpGet]
@@ -44,7 +44,7 @@ namespace MvcEntity.Web.Controllers
         {
             await _service.DeleteUser();
 
-            return RedirectToAction("Logout", "Auth");
+            return RedirectToAction(nameof(AuthController.Logout), "Auth");
         }
 
         private static User Map(UserModel model)

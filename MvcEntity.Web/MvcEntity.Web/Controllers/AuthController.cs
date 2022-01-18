@@ -33,12 +33,12 @@ namespace MvcEntity.Web.Controllers
 
             if (user is null)
             {
-                return RedirectToAction("Login", "Auth");
+                return RedirectToAction(nameof(Login), "Auth");
             }
 
             await Authenticate(user.Name);
             
-            return RedirectToAction("Main", "Home");
+            return RedirectToAction(nameof(HomeController.Main), "Home");
         }
 
         [HttpGet]
@@ -55,10 +55,10 @@ namespace MvcEntity.Web.Controllers
             {
                 await _service.Register(Map(model));
 
-                return RedirectToAction("Register", "Auth");
+                return RedirectToAction(nameof(Register), "Auth");
             }
 
-            return RedirectToAction("Login", "Auth");
+            return RedirectToAction(nameof(Login), "Auth");
         }
 
         private async Task Authenticate(string userName)
@@ -77,7 +77,7 @@ namespace MvcEntity.Web.Controllers
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction(nameof(HomeController.Index), "Home");
         }
 
         private User Map(RegisterModel model)
