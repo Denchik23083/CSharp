@@ -1,0 +1,59 @@
+﻿<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Genre</th>
+            <th>Release Date</th>
+        </tr>
+        </thead>
+        <tbody>
+            @if (Games is null)
+            {
+                <tr>Loading...</tr>
+            }
+            else if (Games.Count == 0)
+            {
+                <tr>No items in Array</tr>
+            }
+            else
+            {
+                @foreach (var item in Games)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@item.Genre</td>
+                        <td>@item.ReleaseDate.ToString("dd.MM.yyyy")</td>
+                    </tr>
+                }
+            }
+            
+        </tbody>
+    </table>
+</div>
+
+@code
+{
+    private List<Game> Games { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Task.Delay(3000);
+
+        Games = new List<Game>
+        {
+            new Game
+            {
+                Name = "Denis",
+                Genre = "Male",
+                ReleaseDate = new DateTime(2003, 08, 23)
+            },
+            new Game
+            {
+                Name = "GTA 5",
+                Genre = "Action",
+                ReleaseDate = new DateTime(2013, 04, 13)
+            }
+        };
+    }
+}

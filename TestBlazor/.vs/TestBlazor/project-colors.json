@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "695dba9a-1af1-461b-a7a0-ec4375edef20": {
+      "ProjectGuid": "695dba9a-1af1-461b-a7a0-ec4375edef20",
+      "DisplayName": "TestBlazor",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "6554113d-7f34-4940-b564-65eeabf08c4c": {
+      "ProjectGuid": "6554113d-7f34-4940-b564-65eeabf08c4c",
+      "DisplayName": "Blazor.Db",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

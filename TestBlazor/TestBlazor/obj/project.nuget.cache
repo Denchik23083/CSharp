@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "jVZ5I2ijY5liS/PP3BKlJvlV699NeI0YV8622zciE1/6qRJEJEp5MVrDGUlblsMcNkRnwb109otpfhJ88HXpMA==",
+  "dgSpecHash": "mtTj2R5EuvW5ayoGkM2zoHU8kIFipGO2wYUIodd45vptt2ww1lX3X2S2XLJqYo5KPwpu1YtnCkNnQ4ri7/SP6Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\User\\source\\repos\\TestBlazor\\TestBlazor\\TestBlazor.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\User\\source\\repos\\CSharp\\TestBlazor\\TestBlazor\\TestBlazor.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {}
+    "net5.0": {
+      "Blazor.Db/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Blazor.Db.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Blazor.Db.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Blazor.Db/1.0.0": {
+      "type": "project",
+      "path": "../Blazor.Db/Blazor.Db.csproj",
+      "msbuildProject": "../Blazor.Db/Blazor.Db.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0": []
+    "net5.0": [
+      "Blazor.Db >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\User\\.nuget\\packages\\": {}
@@ -13,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\source\\repos\\TestBlazor\\TestBlazor\\TestBlazor.csproj",
+      "projectUniqueName": "C:\\Users\\User\\source\\repos\\CSharp\\TestBlazor\\TestBlazor\\TestBlazor.csproj",
       "projectName": "TestBlazor",
-      "projectPath": "C:\\Users\\User\\source\\repos\\TestBlazor\\TestBlazor\\TestBlazor.csproj",
+      "projectPath": "C:\\Users\\User\\source\\repos\\CSharp\\TestBlazor\\TestBlazor\\TestBlazor.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\source\\repos\\TestBlazor\\TestBlazor\\obj\\",
+      "outputPath": "C:\\Users\\User\\source\\repos\\CSharp\\TestBlazor\\TestBlazor\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -33,7 +52,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\User\\source\\repos\\CSharp\\TestBlazor\\Blazor.Db\\Blazor.Db.csproj": {
+              "projectPath": "C:\\Users\\User\\source\\repos\\CSharp\\TestBlazor\\Blazor.Db\\Blazor.Db.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -55,6 +78,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[5.0.13, 5.0.13]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -63,7 +92,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
