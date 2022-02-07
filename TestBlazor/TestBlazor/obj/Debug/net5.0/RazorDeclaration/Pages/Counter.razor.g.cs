@@ -89,6 +89,20 @@ using Blazor.Db.Entities;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 12 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor\_Imports.razor"
+using Blazor.Logic;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 13 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor\_Imports.razor"
+using Blazor.WebDb;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/counter")]
     public partial class Counter : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -98,13 +112,13 @@ using Blazor.Db.Entities;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 9 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor\Pages\Counter.razor"
+#line 24 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor\Pages\Counter.razor"
        
     private int currentCount = 0;
 
     private void IncrementCount()
     {
-        currentCount += 1;
+        currentCount++;
     }
 
 #line default

@@ -12,4 +12,30 @@
     </div>
 </div>
 
-<GameListTable />
+<GameListTable Games="_games"/>
+
+@*<IndividualGame Game="_games[1]" IsTable="false"/>*@
+
+@code{
+
+    private List<Game> _games;
+
+    protected override void OnInitialized()
+    {
+        _games = new List<Game>
+        {
+            new Game
+            {
+                Name = "Denis",
+                Genre = "Male",
+                ReleaseDate = new DateTime(2003, 08, 23)
+            },
+            new Game
+            {
+                Name = "Info",
+                Genre = "Happy",
+                ReleaseDate = new DateTime(2002, 01, 25)
+            }
+        };
+    }
+}

@@ -89,6 +89,20 @@ using Blazor.Db.Entities;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 12 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor\_Imports.razor"
+using Blazor.Logic;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 13 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor\_Imports.razor"
+using Blazor.WebDb;
+
+#line default
+#line hidden
+#nullable disable
     public partial class GameListTable : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -97,30 +111,12 @@ using Blazor.Db.Entities;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 36 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor\Shared\GameListTable.razor"
+#line 33 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor\Shared\GameListTable.razor"
  
-    private List<Game> Games { get; set; }
+    [Parameter] 
+    public List<Game> Games { get; set; }
 
-    protected override async Task OnInitializedAsync()
-    {
-        await Task.Delay(3000);
-
-        Games = new List<Game>
-        {
-            new Game
-            {
-                Name = "Denis",
-                Genre = "Male",
-                ReleaseDate = new DateTime(2003, 08, 23)
-            },
-            new Game
-            {
-                Name = "GTA 5",
-                Genre = "Action",
-                ReleaseDate = new DateTime(2013, 04, 13)
-            }
-        };
-    }
+    public bool IsDisplay = false;
 
 #line default
 #line hidden

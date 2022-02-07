@@ -1,0 +1,22 @@
+﻿@inject IBookService _bookService
+
+<TableBooks />
+
+<EditForm Model="@_book" OnSubmit="@AddBook">
+    <InputText id="title" @bind-Value="_book.Title" />
+    <InputText id="author" @bind-Value="_book.Author" />
+    <InputNumber id="pagesCount" @bind-Value="_book.PagesCount" />
+    <InputDate id="publishDate" @bind-Value="_book.PublishDate" />
+        
+    <button class="btn btn-primary" type="submit">Submit</button>
+        
+</EditForm>
+
+@code {
+    private Book _book = new();
+
+    void AddBook()
+    {
+        _bookService.Add(_book);
+    }
+}

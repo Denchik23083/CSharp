@@ -15,7 +15,17 @@
       "ProjectGuid": "6554113d-7f34-4940-b564-65eeabf08c4c",
       "DisplayName": "Blazor.Db",
       "ColorIndex": 1
+    },
+    "bcb3ef74-655a-4bee-a1ae-dde5f2a75870": {
+      "ProjectGuid": "bcb3ef74-655a-4bee-a1ae-dde5f2a75870",
+      "DisplayName": "Blazor.Logic",
+      "ColorIndex": 2
+    },
+    "51067d35-801e-42df-a33d-aec2702ff880": {
+      "ProjectGuid": "51067d35-801e-42df-a33d-aec2702ff880",
+      "DisplayName": "Blazor.WebDb",
+      "ColorIndex": 3
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 4
 }

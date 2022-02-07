@@ -89,6 +89,20 @@ using Blazor.Db.Entities;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 12 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor\_Imports.razor"
+using Blazor.Logic;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 13 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor\_Imports.razor"
+using Blazor.WebDb;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/")]
     public partial class Index : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -97,6 +111,34 @@ using Blazor.Db.Entities;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 19 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor\Pages\Index.razor"
+      
+
+    private List<Game> _games;
+
+    protected override void OnInitialized()
+    {
+        _games = new List<Game>
+        {
+            new Game
+            {
+                Name = "Denis",
+                Genre = "Male",
+                ReleaseDate = new DateTime(2003, 08, 23)
+            },
+            new Game
+            {
+                Name = "Info",
+                Genre = "Happy",
+                ReleaseDate = new DateTime(2002, 01, 25)
+            }
+        };
+    }
+
+#line default
+#line hidden
+#nullable disable
     }
 }
 #pragma warning restore 1591

@@ -1,0 +1,128 @@
+﻿@inject IBookService _bookService
+@inject NavigationManager _manager
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>PagesCount</th>
+            <th>PublishDate</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        @if (_books is null)
+        {
+            <tr>Loading...</tr>
+        }
+        else
+        {
+            @foreach (var item in _books)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Title</td>
+                    <td>@item.Author</td>
+                    <td>@item.PagesCount</td>
+                    <td>@item.PublishDate.ToString("dd.MM.yyyy")</td>
+                    <td>
+                        <button class="btn btn-warning text-white" @onclick="() => Edit(item.Id)">Edit</button> | 
+                        <button class="btn btn-danger text-white" @onclick="() => Remove(item.Id)">Delete</button>
+                    </td>
+                </tr>
+            }
+        }
+        </tbody>
+    </table>
+
+    <div>
+        <button class="btn btn-primary" @onclick="Add">Add</button>
+        <input type="checkbox" @bind="IsId">GetById
+    </div>
+    <br/>
+    <div>
+        @if (IsId)
+        {
+            <EditForm Model="_book" OnSubmit="GetBookById">
+                <InputNumber id="getBookById" @bind-Value="BookId"/>
+               
+                <button class="btn btn-primary" type="submit">Submit</button>
+
+            </EditForm>
+
+            @if (_bookById is null)
+            {
+                <p>Loading...</p>
+            }
+            else
+            {
+                <p>@_bookById.Title</p>
+                <p>@_bookById.Author</p>
+                <p>@_bookById.PagesCount</p>
+                <p>@_bookById.PublishDate.ToString("dd.MM.yyyy")</p>
+            }
+        }
+    </div>
+
+    <div>
+        @if (IsEdit)
+        {
+            <TableBooks />
+
+            <EditForm Model="@_book" OnSubmit="EditBook">
+                <InputText id="title"  @bind-Value="_book.Title"/>
+                <InputText id="author" @bind-Value="_book.Author"/>
+                <InputNumber id="pagesCount" @bind-Value="_book.PagesCount"/>
+                <InputDate id="publishDate" @bind-Value="_book.PublishDate"/>
+
+                <button class="btn btn-primary" type="submit">Submit</button>
+
+            </EditForm>
+        }
+    </div>
+</div>
+
+@code {
+    private IEnumerable<Book> _books;
+    public bool IsEdit = false;
+    private Book _book = new();
+    private Book _bookById;
+    public int BookId;
+    public int EditId;
+    public bool IsId = false;
+
+    protected override void OnInitialized()
+    {
+        _books = _bookService.GetAll();
+    }
+
+    private void GetBookById()
+    {
+        _bookById = _bookService.Get(BookId);
+    }
+
+    private void Add()
+    {
+        _manager.NavigateTo("/main/addBook");
+    }
+
+    void Edit(int id)
+    {
+        EditId = id;
+        IsEdit = true;
+    }
+
+    void EditBook()
+    {
+        _bookService.Update(_book, EditId);
+        IsEdit = false;
+    }
+
+    private void Remove(int id)
+    {
+        _bookService.Delete(id);
+    }
+}

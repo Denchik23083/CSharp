@@ -5,6 +5,7 @@
             <th>Name</th>
             <th>Genre</th>
             <th>Release Date</th>
+            <th><input type="checkbox" @bind="IsDisplay" /></th>
         </tr>
         </thead>
         <tbody>
@@ -20,11 +21,7 @@
             {
                 @foreach (var item in Games)
                 {
-                    <tr>
-                        <td>@item.Name</td>
-                        <td>@item.Genre</td>
-                        <td>@item.ReleaseDate.ToString("dd.MM.yyyy")</td>
-                    </tr>
+                    <IndividualGame Game="item" IsTable="true" IsDisplay="IsDisplay"/>
                 }
             }
             
@@ -34,26 +31,8 @@
 
 @code
 {
-    private List<Game> Games { get; set; }
+    [Parameter] 
+    public List<Game> Games { get; set; }
 
-    protected override async Task OnInitializedAsync()
-    {
-        await Task.Delay(3000);
-
-        Games = new List<Game>
-        {
-            new Game
-            {
-                Name = "Denis",
-                Genre = "Male",
-                ReleaseDate = new DateTime(2003, 08, 23)
-            },
-            new Game
-            {
-                Name = "GTA 5",
-                Genre = "Action",
-                ReleaseDate = new DateTime(2013, 04, 13)
-            }
-        };
-    }
+    public bool IsDisplay = false;
 }

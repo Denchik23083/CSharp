@@ -89,6 +89,20 @@ using Blazor.Db.Entities;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 12 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor\_Imports.razor"
+using Blazor.Logic;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 13 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor\_Imports.razor"
+using Blazor.WebDb;
+
+#line default
+#line hidden
+#nullable disable
     public partial class NavMenu : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -97,7 +111,7 @@ using Blazor.Db.Entities;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 23 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor\Shared\NavMenu.razor"
+#line 28 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
 

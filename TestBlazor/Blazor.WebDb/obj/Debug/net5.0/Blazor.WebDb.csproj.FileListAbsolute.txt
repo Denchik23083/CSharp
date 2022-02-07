@@ -1,0 +1,15 @@
+C:\Users\User\source\repos\CSharp\TestBlazor\Blazor.WebDb\bin\Debug\net5.0\Blazor.WebDb.deps.json
+C:\Users\User\source\repos\CSharp\TestBlazor\Blazor.WebDb\bin\Debug\net5.0\Blazor.WebDb.dll
+C:\Users\User\source\repos\CSharp\TestBlazor\Blazor.WebDb\bin\Debug\net5.0\ref\Blazor.WebDb.dll
+C:\Users\User\source\repos\CSharp\TestBlazor\Blazor.WebDb\bin\Debug\net5.0\Blazor.WebDb.pdb
+C:\Users\User\source\repos\CSharp\TestBlazor\Blazor.WebDb\obj\Debug\net5.0\Blazor.WebDb.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\CSharp\TestBlazor\Blazor.WebDb\obj\Debug\net5.0\Blazor.WebDb.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\CSharp\TestBlazor\Blazor.WebDb\obj\Debug\net5.0\Blazor.WebDb.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\CSharp\TestBlazor\Blazor.WebDb\obj\Debug\net5.0\Blazor.WebDb.AssemblyInfo.cs
+C:\Users\User\source\repos\CSharp\TestBlazor\Blazor.WebDb\obj\Debug\net5.0\Blazor.WebDb.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\CSharp\TestBlazor\Blazor.WebDb\obj\Debug\net5.0\Blazor.WebDb.dll
+C:\Users\User\source\repos\CSharp\TestBlazor\Blazor.WebDb\obj\Debug\net5.0\ref\Blazor.WebDb.dll
+C:\Users\User\source\repos\CSharp\TestBlazor\Blazor.WebDb\obj\Debug\net5.0\Blazor.WebDb.pdb
+C:\Users\User\source\repos\CSharp\TestBlazor\Blazor.WebDb\bin\Debug\net5.0\Blazor.Db.dll
+C:\Users\User\source\repos\CSharp\TestBlazor\Blazor.WebDb\bin\Debug\net5.0\Blazor.Db.pdb
+C:\Users\User\source\repos\CSharp\TestBlazor\Blazor.WebDb\obj\Debug\net5.0\Blazor.WebDb.csproj.CopyComplete

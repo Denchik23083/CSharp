@@ -1,5 +1,9 @@
+using Blazor.Db;
+using Blazor.Logic;
+using Blazor.WebDb;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -19,8 +23,28 @@ namespace TestBlazor
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IBookService, BookService>();
+            services.AddScoped<IBookRepository, BookRepository>();
+
             services.AddRazorPages();
             services.AddServerSideBlazor();
+
+            services.AddDbContext<BlazorContext>(options =>
+            {
+                var connectionString = Configuration.GetConnectionString("Blazor");
+
+                options.UseSqlServer(connectionString);
+            });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("devCors", builder =>
+                {
+                    builder.AllowAnyOrigin();
+                    builder.AllowAnyMethod();
+                    builder.AllowAnyHeader();
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
