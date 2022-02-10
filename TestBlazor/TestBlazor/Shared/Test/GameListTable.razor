@@ -1,0 +1,31 @@
+﻿<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Genre</th>
+            <th>Release Date</th>
+            <th><input type="checkbox" @bind="IsDisplay" /></th>
+        </tr>
+        </thead>
+        <tbody>
+            <GenericList ListOfItems="Games">
+                <ItemTemplate Context="game">
+                    <IndividualGame Game="game" IsTable="true" IsDisplay="IsDisplay" DeleteGame="DeleteGame"/>
+                </ItemTemplate>
+            </GenericList>
+        </tbody>
+    </table>
+</div>
+
+@code
+{
+    [Parameter] public List<Game> Games { get; set; }
+
+    public bool IsDisplay = false;
+
+    void DeleteGame(Game game)
+    {
+        Games.Remove(game);
+    }
+}

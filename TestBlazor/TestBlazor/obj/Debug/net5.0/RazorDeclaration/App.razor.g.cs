@@ -103,6 +103,20 @@ using Blazor.WebDb;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 14 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor\_Imports.razor"
+using TestBlazor.Shared.Test;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 15 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor\_Imports.razor"
+using TestBlazor.Shared.Books;
+
+#line default
+#line hidden
+#nullable disable
     public partial class App : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998

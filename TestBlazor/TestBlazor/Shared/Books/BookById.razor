@@ -1,0 +1,32 @@
+﻿@inject IBookService _bookService
+
+<EditForm Model="ModelBook" OnSubmit="GetBookById">
+    <InputNumber id="getBookById" @bind-Value="BookId"/>
+               
+    <button class="btn btn-primary" type="submit">Submit</button>
+
+</EditForm>
+
+@if (Book is null)
+{
+    @Render
+}
+else
+{
+    <p>@Book.Title</p>
+    <p>@Book.Author</p>
+    <p>@Book.PagesCount</p>
+    <p>@Book.PublishDate.ToString("dd.MM.yyyy")</p>
+}
+
+@code {
+    [Parameter] public Book ModelBook { get; set; }
+    [Parameter] public Book Book { get; set; }
+    [Parameter] public int BookId { get; set; }
+    [Parameter] public RenderFragment Render { get; set; }
+
+    private void GetBookById()
+    {
+        Book = _bookService.Get(BookId);
+    }
+}
