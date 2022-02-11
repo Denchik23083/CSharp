@@ -1,4 +1,4 @@
-﻿
+﻿@inject IGameService _service
 
 <div class="row">
     <div class="col text-center">
@@ -21,21 +21,7 @@
     protected override async Task OnInitializedAsync()
     {
         await Task.Delay(2000);
-        
-        _games = new List<Game>
-        {
-            new()
-            {
-                Name = "Denis",
-                Genre = "Male",
-                ReleaseDate = new DateTime(2003, 08, 23)
-            },
-            new()
-            {
-                Name = "Info",
-                Genre = "Happy",
-                ReleaseDate = new DateTime(2002, 01, 25)
-            }
-        };
+
+        _games = _service.GetAllGames();
     }
 }

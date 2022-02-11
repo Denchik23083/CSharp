@@ -127,7 +127,6 @@ using TestBlazor.Web.Shared.Books;
 #nullable restore
 #line 12 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\Shared\SurveyPrompt.razor"
        
-    // Demonstrates how a parent component can supply parameters
     [Parameter]
     public string Title { get; set; }
 

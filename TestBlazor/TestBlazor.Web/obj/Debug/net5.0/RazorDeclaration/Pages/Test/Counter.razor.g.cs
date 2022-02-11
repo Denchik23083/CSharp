@@ -126,18 +126,25 @@ using TestBlazor.Web.Shared.Books;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 24 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\Pages\Test\Counter.razor"
+#line 39 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\Pages\Test\Counter.razor"
        
-    private int currentCount = 0;
+    private int _currentCount = 0;
 
     private void IncrementCount()
     {
-        currentCount++;
+        _currentCount++;
+
+        _singleton.Value = _currentCount;
+        _transient.Value = _currentCount;
+        _scoped.Value = _currentCount;
     }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ScopedService _scoped { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private TransientService _transient { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private SingletonService _singleton { get; set; }
     }
 }
 #pragma warning restore 1591

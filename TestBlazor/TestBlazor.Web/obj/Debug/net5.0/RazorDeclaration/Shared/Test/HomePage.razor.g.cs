@@ -125,7 +125,7 @@ using TestBlazor.Web.Shared.Books;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 18 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\Shared\Test\HomePage.razor"
+#line 17 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\Shared\Test\HomePage.razor"
       
 
     private List<Game> _games;
@@ -133,28 +133,14 @@ using TestBlazor.Web.Shared.Books;
     protected override async Task OnInitializedAsync()
     {
         await Task.Delay(2000);
-        
-        _games = new List<Game>
-        {
-            new()
-            {
-                Name = "Denis",
-                Genre = "Male",
-                ReleaseDate = new DateTime(2003, 08, 23)
-            },
-            new()
-            {
-                Name = "Info",
-                Genre = "Happy",
-                ReleaseDate = new DateTime(2002, 01, 25)
-            }
-        };
+
+        _games = _service.GetAllGames();
     }
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient _client { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IGameService _service { get; set; }
     }
 }
 #pragma warning restore 1591
