@@ -9,11 +9,20 @@
         </tr>
         </thead>
         <tbody>
-            <GenericList ListOfItems="Games">
-                <ItemTemplate Context="game">
-                    <IndividualGame Game="game" IsTable="true" IsDisplay="IsDisplay" DeleteGame="DeleteGame"/>
-                </ItemTemplate>
-            </GenericList>
+        <GenericList ListOfItems="Games">
+            <ItemTemplate Context="game">
+                <IndividualGame Game="game" IsTable="true" IsDisplay="IsDisplay" DeleteGame="DeleteGame"/>
+            </ItemTemplate>
+        </GenericList>
+        
+        <Confirmation @ref="_confirmation"
+                      OnConfirm="OnConfirm"
+                      OnCancel="OnCancel"
+                      Title="Are you sure to delete this game?">
+            
+            <div class="text-danger">Name: @_gameToDelete.Name</div>
+        </Confirmation>
+
         </tbody>
     </table>
 </div>
@@ -26,6 +35,24 @@
 
     void DeleteGame(Game game)
     {
-        Games.Remove(game);
+        _gameToDelete = game;
+        _confirmation.Show();
+    }
+
+    Confirmation _confirmation;
+    Game _gameToDelete;
+
+    void OnConfirm()
+    {
+        Games.Remove(_gameToDelete);
+
+        _confirmation.Hide();
+        _gameToDelete = null;
+    }
+
+    void OnCancel()
+    {
+        _confirmation.Hide();
+        _gameToDelete = null;
     }
 }

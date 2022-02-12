@@ -160,7 +160,7 @@ using Blazor.Logic.TestService;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 17 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\Shared\Test\Home.razor"
+#line 23 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\Shared\Test\Home.razor"
       
 
     private List<Game> _games;
@@ -170,6 +170,11 @@ using Blazor.Logic.TestService;
         await Task.Delay(2000);
 
         _games = _service.GetAllGames();
+    }
+
+    void AddNewGame()
+    {
+        _games.Add(new() { Name = "Game for test", Genre = "Test", ReleaseDate = DateTime.Today });
     }
 
 #line default

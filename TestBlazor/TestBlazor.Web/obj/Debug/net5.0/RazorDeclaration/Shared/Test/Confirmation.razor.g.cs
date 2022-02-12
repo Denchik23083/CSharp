@@ -152,7 +152,7 @@ using Blazor.Logic.TestService;
 #line default
 #line hidden
 #nullable disable
-    public partial class GameListTable : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class Confirmation : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -160,34 +160,17 @@ using Blazor.Logic.TestService;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 31 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\Shared\Test\GameListTable.razor"
- 
-    [Parameter] public List<Game> Games { get; set; }
+#line 33 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\Shared\Test\Confirmation.razor"
+       
+    private bool _displayConfirmation = false;
+    
+    [Parameter] public string Title { get; set; } = "Confirm";
+    [Parameter] public RenderFragment ChildContent { get; set; }
+    [Parameter] public EventCallback OnConfirm { get; set; }
+    [Parameter] public EventCallback OnCancel { get; set; }
 
-    public bool IsDisplay = false;
-
-    void DeleteGame(Game game)
-    {
-        _gameToDelete = game;
-        _confirmation.Show();
-    }
-
-    Confirmation _confirmation;
-    Game _gameToDelete;
-
-    void OnConfirm()
-    {
-        Games.Remove(_gameToDelete);
-
-        _confirmation.Hide();
-        _gameToDelete = null;
-    }
-
-    void OnCancel()
-    {
-        _confirmation.Hide();
-        _gameToDelete = null;
-    }
+    public void Show() => _displayConfirmation = true;
+    public void Hide() => _displayConfirmation = false;
 
 #line default
 #line hidden

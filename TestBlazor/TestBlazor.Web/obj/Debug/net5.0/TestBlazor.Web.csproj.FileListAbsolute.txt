@@ -114,3 +114,5 @@ C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\Raz
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\Razor\Pages\Books\AddBookPage.razor.g.cs
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\Razor\Pages\Books\BooksPage.razor.g.cs
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\Razor\Shared\Books\AddBook.razor.g.cs
+C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\RazorDeclaration\Shared\Test\Confirmation.razor.g.cs
+C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\Razor\Shared\Test\Confirmation.razor.g.cs
