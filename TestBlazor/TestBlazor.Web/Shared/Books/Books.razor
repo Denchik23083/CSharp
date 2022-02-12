@@ -1,7 +1,4 @@
-﻿@inject IBookService _bookService
-@inject NavigationManager _manager
-
-<div class="table-responsive">
+﻿<div class="table-responsive">
     <table class="table table-striped">
         <thead>
         <tr>
@@ -57,34 +54,3 @@
         }
     </div>
 </div>
-
-@code {
-    private IEnumerable<Book> _books;
-    public bool IsEdit = false;
-    private Book _book = new();
-    private Book _bookById;
-    public int BookId;
-    public int EditId;
-    public bool IsId = false;
-
-    protected override void OnInitialized()
-    {
-        _books = _bookService.GetAll();
-    }
-
-    private void Add()
-    {
-        _manager.NavigateTo("/books/addBook");
-    }
-
-    void Edit(int id)
-    {
-        EditId = id;
-        IsEdit = true;
-    }
-
-    private void Remove(int id)
-    {
-        _bookService.Delete(id);
-    }
-}

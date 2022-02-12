@@ -1,7 +1,11 @@
 using Blazor.Db;
-using Blazor.Db.Entities;
+using Blazor.Db.Entities.Test;
 using Blazor.Logic;
+using Blazor.Logic.BooksService;
+using Blazor.Logic.TestService;
 using Blazor.WebDb;
+using Blazor.WebDb.BooksRepository;
+using Blazor.WebDb.TestRepository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;

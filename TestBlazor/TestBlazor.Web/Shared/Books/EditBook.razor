@@ -1,7 +1,4 @@
-﻿@inject IBookService _bookService
-@inject NavigationManager _manager
-
-<TableBooks />
+﻿<TableBooks />
 
 <EditForm Model="@Book" OnSubmit="EditBooks">
     <InputText id="title"  @bind-Value="Book.Title"/>
@@ -12,17 +9,3 @@
     <button class="btn btn-primary" type="submit">Submit</button>
 
 </EditForm>
-
-@code
-{
-    [Parameter] public Book Book { get; set; }
-    [Parameter] public int EditId { get; set; }
-    [Parameter] public bool IsEdit { get; set; }
-
-    void EditBooks()
-    {
-        _bookService.Update(Book, EditId);
-        IsEdit = false;
-        _manager.NavigateTo("/books", true);
-    }
-}

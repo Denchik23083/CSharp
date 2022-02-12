@@ -25,7 +25,12 @@
       "ProjectGuid": "51067d35-801e-42df-a33d-aec2702ff880",
       "DisplayName": "Blazor.WebDb",
       "ColorIndex": 3
+    },
+    "0d883a44-41ff-4b3f-aeb8-6a5690e14b4b": {
+      "ProjectGuid": "0d883a44-41ff-4b3f-aeb8-6a5690e14b4b",
+      "DisplayName": "TestBlazor.Web",
+      "ColorIndex": 4
     }
   },
-  "NextColorIndex": 4
+  "NextColorIndex": 5
 }

@@ -1,4 +1,4 @@
-﻿using Blazor.Db.Entities;
+﻿using Blazor.Db.Entities.Books;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

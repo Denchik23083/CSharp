@@ -117,6 +117,41 @@ using TestBlazor.Web.Shared.Books;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 16 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\_Imports.razor"
+using Blazor.Db.Entities.Books;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 17 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\_Imports.razor"
+using Blazor.Logic.BooksService;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 18 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\_Imports.razor"
+using TestBlazor.Web.Pages.Test;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 19 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\_Imports.razor"
+using Blazor.Db.Entities.Test;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 20 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\_Imports.razor"
+using Blazor.Logic.TestService;
+
+#line default
+#line hidden
+#nullable disable
     public partial class BookById : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -124,23 +159,6 @@ using TestBlazor.Web.Shared.Books;
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 22 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\Shared\Books\BookById.razor"
-       
-    [Parameter] public Book ModelBook { get; set; }
-    [Parameter] public Book Book { get; set; }
-    [Parameter] public int BookId { get; set; }
-    [Parameter] public RenderFragment Render { get; set; }
-
-    private void GetBookById()
-    {
-        Book = _bookService.Get(BookId);
-    }
-
-#line default
-#line hidden
-#nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IBookService _bookService { get; set; }
     }
 }
 #pragma warning restore 1591
