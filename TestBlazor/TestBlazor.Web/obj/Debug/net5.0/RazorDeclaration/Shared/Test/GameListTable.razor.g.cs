@@ -160,20 +160,22 @@ using Blazor.Logic.TestService;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 31 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\Shared\Test\GameListTable.razor"
+#line 43 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\Shared\Test\GameListTable.razor"
  
     [Parameter] public List<Game> Games { get; set; }
+    [CascadingParameter] public AppStyle AppStyle { get; set; }
+
+    Confirmation _confirmation;
+    Game _gameToDelete;
 
     public bool IsDisplay = false;
+    private string _currentTableStyle = "table-striped";
 
     void DeleteGame(Game game)
     {
         _gameToDelete = game;
         _confirmation.Show();
     }
-
-    Confirmation _confirmation;
-    Game _gameToDelete;
 
     void OnConfirm()
     {
@@ -187,6 +189,11 @@ using Blazor.Logic.TestService;
     {
         _confirmation.Hide();
         _gameToDelete = null;
+    }
+
+    void ChangeTableStyle(ChangeEventArgs currentItem)
+    {
+        _currentTableStyle = currentItem.Value?.ToString();
     }
 
 #line default

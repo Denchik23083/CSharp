@@ -5,12 +5,13 @@ namespace TestBlazor.Web.Shared.Test
 {
     public partial class Counter
     {
-
         [Inject] private SingletonService Singleton { get; set; }
 
         [Inject] private TransientService Transient { get; set; }
 
         [Inject] private ScopedService Scoped { get; set; }
+
+        [CascadingParameter] public AppStyle Styles { get; set; }
 
         private int _currentCount;
 
