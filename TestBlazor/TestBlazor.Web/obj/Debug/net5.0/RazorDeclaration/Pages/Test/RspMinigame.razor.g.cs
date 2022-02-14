@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace TestBlazor.Web.Shared.Test
+namespace TestBlazor.Web.Pages.Test
 {
     #line hidden
     using System;
@@ -166,7 +166,8 @@ using TestBlazor.Web.Utils;
 #line default
 #line hidden
 #nullable disable
-    public partial class IndividualGame : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/rsp")]
+    public partial class RspMinigame : Microsoft.AspNetCore.Components.ComponentBase, IDisposable
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -174,14 +175,96 @@ using TestBlazor.Web.Utils;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 30 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\Shared\Test\IndividualGame.razor"
-       
-    [Parameter] public Game Game { get; set; }
-    
-    [Parameter] public bool IsTable { get; set; }
-    [Parameter] public bool IsDisplay { get; set; } = false;
+#line 39 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\Pages\Test\RspMinigame.razor"
+ 
+    readonly List<GameHandler> _games = new List<GameHandler>()
+    {
+        new()
+        {
+            Choose = RspOptions.Paper, 
+            LooseCondition = RspOptions.Scissors, 
+            WinCondition = RspOptions.Rock,
+            Image = "./img/paper.png"
+        },
+        new()
+        {
+            Choose = RspOptions.Rock, 
+            LooseCondition = RspOptions.Paper, 
+            WinCondition = RspOptions.Scissors,
+            Image = "./img/rock.png"
+        },
+        new()
+        {
+            Choose = RspOptions.Scissors, 
+            LooseCondition = RspOptions.Rock, 
+            WinCondition = RspOptions.Paper,
+            Image = "./img/scissors.png"
+        },
+    };
 
-    [Parameter] public EventCallback<Game> DeleteGame { get; set; }
+    Timer _timer;
+    GameHandler _opponent;
+    Random _rnd;
+    int _imageIndex = 0;
+    string _gameResultMessage = string.Empty;
+    string _resultStyle = string.Empty; 
+
+    protected override void OnInitialized()
+    {
+        _opponent = _games[0];
+        _rnd = new Random(DateTime.Now.Millisecond);
+
+        _timer = new Timer();
+        _timer.Interval = 100;
+        _timer.Elapsed += ElapsedTimer;
+        _timer.Start();
+    }
+
+    async void ElapsedTimer(object sender, ElapsedEventArgs args)
+    {
+        _imageIndex = _rnd.Next(0, _games.Count);
+        _opponent = _games[_imageIndex];
+        await InvokeAsync(StateHasChanged);
+    }
+
+    void SelectingHandler(GameHandler game)
+    {
+        _timer.Stop();
+        
+
+        var gameResult = game.GameResult(_opponent);
+
+        switch (gameResult)
+        {
+            case GameState.Victory:
+                _gameResultMessage = "YOU WIN!";
+                _resultStyle = "success";
+                break;
+            case GameState.Loss:
+                _gameResultMessage = "YOU LOSE!";
+                _resultStyle = "danger";
+                break;
+            case GameState.Draw:
+                _gameResultMessage = "DRAW!";
+                _resultStyle = "primary";
+                break;
+        }
+    }
+
+    void ResetGame()
+    {
+        _timer.Start();
+        _gameResultMessage = string.Empty;
+        _resultStyle = string.Empty; 
+    }
+
+    public void Dispose()
+    {
+        if (_timer != null)
+        {
+            _timer?.Dispose();
+        }
+    }
 
 #line default
 #line hidden

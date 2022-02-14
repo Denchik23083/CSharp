@@ -152,6 +152,20 @@ using Blazor.Logic.TestService;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 21 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\_Imports.razor"
+using System.Timers;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 22 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\_Imports.razor"
+using TestBlazor.Web.Utils;
+
+#line default
+#line hidden
+#nullable disable
     public partial class NavMenu : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -160,7 +174,7 @@ using Blazor.Logic.TestService;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 28 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\Shared\NavMenu.razor"
+#line 33 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
 

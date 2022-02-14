@@ -149,6 +149,20 @@ using Blazor.Logic.TestService;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 21 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\_Imports.razor"
+using System.Timers;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 22 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\_Imports.razor"
+using TestBlazor.Web.Utils;
+
+#line default
+#line hidden
+#nullable disable
     public partial class MainLayout : LayoutComponentBase
     {
         #pragma warning disable 1998

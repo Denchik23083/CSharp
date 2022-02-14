@@ -10,4 +10,8 @@
     <ProjectReference Include="..\BlazorService\Blazor.Logic.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\img\" />
+  </ItemGroup>
+
 </Project>
