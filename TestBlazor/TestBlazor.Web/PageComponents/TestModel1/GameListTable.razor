@@ -1,0 +1,78 @@
+﻿@using Blazor.Db.Entities.TestModel1
+<div class="row mb-3">
+    <div class="col">
+        <select class="btn btn-toolbar border dropdown-toggle" @onchange="ChangeTableStyle">
+            <option selected value="">Choose Table Style</option>
+            @foreach (var item in AppStyle.TableListStyles)
+            {
+                <option value="@item.Value">@item.Text</option>
+            }
+        </select>
+    </div>
+</div>
+
+<div class="table-responsive">
+    <table class="table @_currentTableStyle">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Genre</th>
+            <th>Release Date</th>
+            <th><input type="checkbox" @bind="IsDisplay" /></th>
+        </tr>
+        </thead>
+        <tbody>
+        <GenericList ListOfItems="Games">
+            <ItemTemplate Context="game">
+                <IndividualGame Game="game" IsTable="true" IsDisplay="IsDisplay" DeleteGame="DeleteGame"/>
+            </ItemTemplate>
+        </GenericList>
+        
+        <Confirmation @ref="_confirmation"
+                      OnConfirm="OnConfirm"
+                      OnCancel="OnCancel"
+                      Title="Are you sure to delete this game?">
+            
+            <div class="text-danger">Name: @_gameToDelete.Name</div>
+        </Confirmation>
+
+        </tbody>
+    </table>
+</div>
+
+@code
+{
+    [Parameter] public List<Game> Games { get; set; }
+    [CascadingParameter] public AppStyle AppStyle { get; set; }
+
+    Confirmation _confirmation;
+    Game _gameToDelete;
+
+    public bool IsDisplay = false;
+    private string _currentTableStyle = "table-striped";
+
+    void DeleteGame(Game game)
+    {
+        _gameToDelete = game;
+        _confirmation.Show();
+    }
+
+    void OnConfirm()
+    {
+        Games.Remove(_gameToDelete);
+
+        _confirmation.Hide();
+        _gameToDelete = null;
+    }
+
+    void OnCancel()
+    {
+        _confirmation.Hide();
+        _gameToDelete = null;
+    }
+
+    void ChangeTableStyle(ChangeEventArgs currentItem)
+    {
+        _currentTableStyle = currentItem.Value?.ToString();
+    }
+}

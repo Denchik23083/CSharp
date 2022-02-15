@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Blazor.Db.Entities.Test;
+using Blazor.Db.Entities.TestModel1;
 
 namespace Blazor.WebDb.TestRepository
 {

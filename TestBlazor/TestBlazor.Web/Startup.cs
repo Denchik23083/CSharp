@@ -1,9 +1,7 @@
 using Blazor.Db;
-using Blazor.Db.Entities.Test;
-using Blazor.Logic;
+using Blazor.Db.Entities.TestModel1;
 using Blazor.Logic.BooksService;
 using Blazor.Logic.TestService;
-using Blazor.WebDb;
 using Blazor.WebDb.BooksRepository;
 using Blazor.WebDb.TestRepository;
 using Microsoft.AspNetCore.Builder;
@@ -30,6 +28,8 @@ namespace TestBlazor.Web
             services.AddScoped<IBookRepository, BookRepository>();
             services.AddScoped<IGameService, GameService>();
             services.AddScoped<IGameRepository, GameRepository>();
+            services.AddScoped<IGameImageService, GameImageService>();
+            services.AddScoped<IGameImageRepository, GameImageRepository>();
 
             services.AddSingleton<SingletonService>();
             services.AddTransient<TransientService>();

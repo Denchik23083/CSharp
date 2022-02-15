@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Blazor.Db.Entities.Test;
+using Blazor.Db.Entities.TestModel1;
 using Blazor.WebDb.TestRepository;
 
 namespace Blazor.Logic.TestService
