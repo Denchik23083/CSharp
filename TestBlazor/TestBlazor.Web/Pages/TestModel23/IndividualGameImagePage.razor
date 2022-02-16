@@ -1,0 +1,13 @@
+﻿@page "/games"
+@inject IGameImageService _service
+
+<ListGameImage ListOfItems="_listOfItems"/>
+
+@code {
+    List<GameImage> _listOfItems = new();
+
+    protected override void OnInitialized()
+    {
+        _listOfItems = _service.GetAllGames();
+    }
+}

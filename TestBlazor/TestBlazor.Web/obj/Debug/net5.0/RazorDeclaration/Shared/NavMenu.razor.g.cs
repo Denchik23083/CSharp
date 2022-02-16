@@ -161,14 +161,14 @@ using TestBlazor.Web.PageComponents.TestModel1;
 #nullable disable
 #nullable restore
 #line 22 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\_Imports.razor"
-using TestBlazor.Web.PageComponents.TestModel2;
+using TestBlazor.Web.PageComponents.TestModel23;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 23 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\_Imports.razor"
-using Blazor.Db.Entities.TestModel2;
+using Blazor.Db.Entities.TestModel23;
 
 #line default
 #line hidden
@@ -188,7 +188,7 @@ using Blazor.Db.Entities.TestModel1;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 38 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\Shared\NavMenu.razor"
+#line 43 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
 

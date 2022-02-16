@@ -1,0 +1,76 @@
+﻿@page "/genres/edit/{GenreId:int}"
+@inject IGenreImageService _service
+
+<div class="row">
+    <div class="col">
+        <h1 class="text-info">Edit Genre</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        @if (_genre is not null)
+        {
+            <FormForGenreImage Genre="_genre" OnInvalidSubmit="Edit"/>
+        }
+        else
+        {
+            <div class="alert alert-info">
+                Try again!
+            </div>
+        }
+    </div>
+    <div class="col-6">
+        @if (_message is not null)
+        {
+            <div class="@_cssClass text-center py-2">@_message</div>
+            @foreach (var item in _allGenres)
+            {
+                <div class="row justify-content-lg-between m-1 text-white">
+                    <div class="col-6 bg-primary">
+                        Id: @item.Id
+                    </div>
+                    <div class="col-6 bg-info">
+                        Name: @item.Name
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>
+
+@code {
+    [Parameter] public int GenreId { get; set; }
+
+    GenreImage _genre;
+    string _message = string.Empty;
+    string _cssClass = string.Empty;
+    List<GenreImage> _allGenres = new();
+
+    protected override void OnInitialized()
+    {
+        _genre = _service.GetGenre(GenreId);
+    }
+
+    void Edit()
+    {
+        var result = _service.EditGenre(_genre);
+
+        if (result)
+        {
+            _cssClass = "alert alert-success";
+            _message = "Editing Success!";
+            UpdateGenreList();
+        }
+        else
+        {
+            _cssClass = "alert alert-danger";
+            _message = "Editing Failed!";
+        }
+    }
+
+    void UpdateGenreList()
+    {
+        _allGenres = new();
+        _allGenres = _service.GetAllGenres();
+    }
+}

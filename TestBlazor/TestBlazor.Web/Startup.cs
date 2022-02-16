@@ -30,6 +30,8 @@ namespace TestBlazor.Web
             services.AddScoped<IGameRepository, GameRepository>();
             services.AddScoped<IGameImageService, GameImageService>();
             services.AddScoped<IGameImageRepository, GameImageRepository>();
+            services.AddScoped<IGenreImageService, GenreImageService>();
+            services.AddScoped<IGenreImageRepository, GenreImageRepository>();
 
             services.AddSingleton<SingletonService>();
             services.AddTransient<TransientService>();

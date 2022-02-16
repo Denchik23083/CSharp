@@ -1,0 +1,21 @@
+﻿@page "/genres/create"
+
+<div class="row">
+    <div class="col">
+        <h1 class="text-info">Create Genre</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <FormForGenreImage Genre="_genre" OnInvalidSubmit="Create"/>
+    </div>
+</div>
+
+@code {
+    GenreImage _genre = new();
+
+    void Create()
+    {
+        Console.WriteLine(_genre.Name);
+    }
+}
