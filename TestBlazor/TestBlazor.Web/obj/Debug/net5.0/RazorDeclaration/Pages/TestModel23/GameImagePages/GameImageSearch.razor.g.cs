@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace TestBlazor.Web.Pages.TestModel23.GenreImagePages
+namespace TestBlazor.Web.Pages.TestModel23.GameImagePages
 {
     #line hidden
     using System;
@@ -180,8 +180,8 @@ using Blazor.Db.Entities.TestModel1;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/genres/edit/{GenreId:int}")]
-    public partial class EditGenreImage : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/games/search")]
+    public partial class GameImageSearch : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -189,47 +189,62 @@ using Blazor.Db.Entities.TestModel1;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 41 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\Pages\TestModel23\GenreImagePages\EditGenreImage.razor"
+#line 78 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\Pages\TestModel23\GameImagePages\GameImageSearch.razor"
        
-    [Parameter] public int GenreId { get; set; }
+    string _gameName = string.Empty;
+    string _selectedGameGenre = "-1";
+    List<GenreImage> _genre = new();
+    List<GameImage> _games = new();
+    bool _futureRelease;
+    bool _canBuy;
 
-    GenreImage _genre;
-    string _message = string.Empty;
-    string _cssClass = string.Empty;
-    List<GenreImage> _allGenres = new();
+    void GameNameKeyPressed(KeyboardEventArgs args)
+    {
+        
+    }
 
     protected override void OnInitialized()
     {
-        _genre = _service.GetGenre(GenreId);
+        _genre = _genreService.GetAllGenres();
     }
 
-    void Edit()
+    void SearchTheGame()
     {
-        var result = _service.EditGenre(_genre);
+        _games = _gameService.GetAllGames();
 
-        if (result)
+        if (!string.IsNullOrWhiteSpace(_gameName))
         {
-            _cssClass = "alert alert-success";
-            _message = "Editing Success!";
-            UpdateGenreList();
+            _games = _games.Where(b => b.Name.ToLower().Contains(_gameName.ToLower())).ToList();
         }
-        else
+        if (_selectedGameGenre != "-1")
         {
-            _cssClass = "alert alert-danger";
-            _message = "Editing Failed!";
+            _games = _games.Where(b => b.GenreId.ToString().Equals(_selectedGameGenre)).ToList();
+        }
+        if (_futureRelease)
+        {
+            _games = _games.Where(b => b.ReleaseDate > DateTime.Now).ToList();
+        }
+        if (_canBuy)
+        {
+            _games = _games.Where(b => b.ReleaseDate <= DateTime.Now).ToList();
         }
     }
 
-    void UpdateGenreList()
+    void ResetTheGame()
     {
-        _allGenres = new();
-        _allGenres = _service.GetAllGenres();
+        _gameName = string.Empty;
+        _selectedGameGenre = "-1";
+        _futureRelease = false;
+        _canBuy = false;
+
+        _games = new();
     }
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IGenreImageService _service { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IGameImageService _gameService { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IGenreImageService _genreService { get; set; }
     }
 }
 #pragma warning restore 1591

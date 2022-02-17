@@ -8,7 +8,7 @@ namespace Blazor.Db.Entities.TestModel23
 
         public string Name { get; set; }
 
-        public string Genre { get; set; }
+        public int GenreId { get; set; }
 
         public DateTime ReleaseDate { get; set; }
 

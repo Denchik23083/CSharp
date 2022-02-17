@@ -6,11 +6,11 @@ namespace Blazor.WebDb.TestRepository
 {
     public class GenreImageRepository : IGenreImageRepository
     {
-        readonly List<GenreImage> _genreImage;
+        public List<GenreImage> GenreImage;
 
         public GenreImageRepository()
         {
-            _genreImage = new List<GenreImage>
+            GenreImage = new List<GenreImage>
             {
                 new()
                 {
@@ -27,17 +27,17 @@ namespace Blazor.WebDb.TestRepository
 
         public List<GenreImage> GetAllGenres()
         {
-            return _genreImage;
+            return GenreImage;
         }
 
         public GenreImage GetGenre(int id)
         {
-            return _genreImage.FirstOrDefault(g => g.Id == id);
+            return GenreImage.FirstOrDefault(g => g.Id == id);
         }
 
         public bool EditGenre(GenreImage editedGenre)
         {
-            var oldGenre = _genreImage.FirstOrDefault(g => g.Id == editedGenre.Id);
+            var oldGenre = GenreImage.FirstOrDefault(g => g.Id == editedGenre.Id);
 
             if (oldGenre is not null)
             {
