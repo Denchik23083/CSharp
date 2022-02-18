@@ -238,6 +238,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Tewr.Blazor.FileReader": {
+              "target": "Package",
+              "version": "[3.3.1.21360, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

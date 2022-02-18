@@ -180,6 +180,20 @@ using Blazor.Db.Entities.TestModel1;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 25 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\_Imports.razor"
+using Tewr.Blazor.FileReader;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 26 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\_Imports.razor"
+using System.IO;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/games/search")]
     public partial class GameImageSearch : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -189,7 +203,7 @@ using Blazor.Db.Entities.TestModel1;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 78 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\Pages\TestModel23\GameImagePages\GameImageSearch.razor"
+#line 77 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\Pages\TestModel23\GameImagePages\GameImageSearch.razor"
        
     string _gameName = string.Empty;
     string _selectedGameGenre = "-1";
@@ -197,11 +211,6 @@ using Blazor.Db.Entities.TestModel1;
     List<GameImage> _games = new();
     bool _futureRelease;
     bool _canBuy;
-
-    void GameNameKeyPressed(KeyboardEventArgs args)
-    {
-        
-    }
 
     protected override void OnInitialized()
     {

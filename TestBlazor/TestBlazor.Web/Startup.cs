@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Tewr.Blazor.FileReader;
 
 namespace TestBlazor.Web
 {
@@ -36,6 +37,8 @@ namespace TestBlazor.Web
             services.AddSingleton<SingletonService>();
             services.AddTransient<TransientService>();
             services.AddScoped<ScopedService>();
+
+            services.AddFileReaderService(options => options.InitializeOnFirstCall = true);
 
             services.AddRazorPages();
             services.AddServerSideBlazor();

@@ -1,3 +1,4 @@
 ﻿<StaticWebAssets Version="1.0">
   <ContentRoot BasePath="/" Path="C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\scopedcss\bundle\" />
+  <ContentRoot BasePath="_content/Tewr.Blazor.FileReader" Path="C:\Users\User\.nuget\packages\tewr.blazor.filereader\3.3.1.21360\build\..\staticwebassets\" />
 </StaticWebAssets>

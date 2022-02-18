@@ -180,6 +180,20 @@ using Blazor.Db.Entities.TestModel1;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 25 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\_Imports.razor"
+using Tewr.Blazor.FileReader;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 26 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\_Imports.razor"
+using System.IO;
+
+#line default
+#line hidden
+#nullable disable
     public partial class App : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998

@@ -142,3 +142,15 @@ C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\Raz
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\Razor\PageComponents\TestModel23\FormForGenreImage.razor.g.cs
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\RazorDeclaration\Pages\TestModel23\GameImagePages\GameImageSearch.razor.g.cs
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\Razor\Pages\TestModel23\GameImagePages\GameImageSearch.razor.g.cs
+C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\RazorDeclaration\PageComponents\TestModel23\DeveloperPageForm.razor.g.cs
+C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\RazorDeclaration\Pages\TestModel23\DeveloperPages\CreateStudio.razor.g.cs
+C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\RazorDeclaration\Pages\TestModel23\DeveloperPages\EditStudio.razor.g.cs
+C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\RazorDeclaration\Pages\TestModel23\DeveloperPages\IndexStudio.razor.g.cs
+C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\Razor\PageComponents\TestModel23\DeveloperPageForm.razor.g.cs
+C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\Razor\Pages\TestModel23\DeveloperPages\CreateStudio.razor.g.cs
+C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\Razor\Pages\TestModel23\DeveloperPages\EditStudio.razor.g.cs
+C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\Razor\Pages\TestModel23\DeveloperPages\IndexStudio.razor.g.cs
+C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\bin\Debug\net5.0\Tewr.Blazor.FileReader.dll
+C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\RazorDeclaration\Shared\InputImage.razor.g.cs
+C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\Razor\Shared\InputImage.razor.g.cs

@@ -171,6 +171,20 @@ using Blazor.Db.Entities.TestModel23;
 #line hidden
 #nullable disable
 #nullable restore
+#line 25 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\_Imports.razor"
+using Tewr.Blazor.FileReader;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 26 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\_Imports.razor"
+using System.IO;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 1 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\PageComponents\TestModel1\IndividualGame.razor"
 using Blazor.Db.Entities.TestModel1;
 

@@ -14,8 +14,7 @@
             class="form-control mb-2" 
             placeholder="Enter Game Name" 
             @bind-value="_gameName"
-            @bind-value:event="oninput"
-            @onkeypress="GameNameKeyPressed"/>
+            @bind-value:event="oninput"/>
     
         <select class="form-control mb-2" @bind="_selectedGameGenre"> 
             <option value="-1">-- Select Game Genre --</option>
@@ -62,7 +61,7 @@
         </button>
     </div>
 
-    <div class="col-sm-12 col-md-6">
+    <div class="col-sm-12 col-md-6 mb-2">
         <div class="border border-primary rounded p-4">
             <p>Game Name: @_gameName</p>
             <p>Genre Choose: @_selectedGameGenre</p>
@@ -71,7 +70,7 @@
         </div>
     </div>
 </div>
-<div class="border border-success rounded p-3 my-3 mx-1">
+<div class="border border-success rounded p-3 mb-2">
     <ListGameImage ListOfItems="_games"/>
 </div>
 
@@ -82,11 +81,6 @@
     List<GameImage> _games = new();
     bool _futureRelease;
     bool _canBuy;
-
-    void GameNameKeyPressed(KeyboardEventArgs args)
-    {
-        
-    }
 
     protected override void OnInitialized()
     {
