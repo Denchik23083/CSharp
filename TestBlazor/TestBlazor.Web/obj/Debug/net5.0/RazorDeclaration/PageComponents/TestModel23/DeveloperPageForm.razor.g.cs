@@ -194,6 +194,20 @@ using System.IO;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 27 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\_Imports.razor"
+using System.Linq.Expressions;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 28 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\_Imports.razor"
+using Markdig;
+
+#line default
+#line hidden
+#nullable disable
     public partial class DeveloperPageForm : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -202,7 +216,7 @@ using System.IO;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 15 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\PageComponents\TestModel23\DeveloperPageForm.razor"
+#line 22 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\PageComponents\TestModel23\DeveloperPageForm.razor"
        
     [Parameter] public GameDeveloper Developer { get; set; }
     [Parameter] public EventCallback OnValidSubmitHandler { get; set; }

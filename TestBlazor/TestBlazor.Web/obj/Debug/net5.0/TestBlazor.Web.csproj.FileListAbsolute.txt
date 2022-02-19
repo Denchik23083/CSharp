@@ -154,3 +154,8 @@ C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\bin\Debug\net5.0\Mic
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\bin\Debug\net5.0\Tewr.Blazor.FileReader.dll
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\RazorDeclaration\Shared\InputImage.razor.g.cs
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\Razor\Shared\InputImage.razor.g.cs
+C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\RazorDeclaration\PageComponents\TestModel23\MarkdownInput.razor.g.cs
+C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\Razor\PageComponents\TestModel23\MarkdownInput.razor.g.cs
+C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\bin\Debug\net5.0\Markdig.dll
+C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\RazorDeclaration\PageComponents\TestModel23\MarkdownRenderer.razor.g.cs
+C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\Razor\PageComponents\TestModel23\MarkdownRenderer.razor.g.cs

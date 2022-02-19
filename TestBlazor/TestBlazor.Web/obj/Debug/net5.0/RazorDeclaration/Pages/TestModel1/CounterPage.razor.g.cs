@@ -194,6 +194,20 @@ using System.IO;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 27 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\_Imports.razor"
+using System.Linq.Expressions;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 28 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\_Imports.razor"
+using Markdig;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/counter")]
     public partial class CounterPage : Microsoft.AspNetCore.Components.ComponentBase
     {

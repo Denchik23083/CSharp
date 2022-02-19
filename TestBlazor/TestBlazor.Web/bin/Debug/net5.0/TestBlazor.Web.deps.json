@@ -36,6 +36,7 @@
           "Blazor.Db": "1.0.0",
           "Blazor.Logic": "1.0.0",
           "Blazor.WebDb": "1.0.0",
+          "Markdig": "0.27.0",
           "Tewr.Blazor.FileReader": "3.3.1.21360",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "5.0.0.0",
@@ -324,6 +325,17 @@
         },
         "compile": {
           "TestBlazor.Web.dll": {}
+        }
+      },
+      "Markdig/0.27.0": {
+        "runtime": {
+          "lib/netcoreapp3.1/Markdig.dll": {
+            "assemblyVersion": "0.27.0.0",
+            "fileVersion": "0.27.0.0"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Markdig.dll": {}
         }
       },
       "Microsoft.AspNetCore.Authorization/5.0.0": {
@@ -3073,6 +3085,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Markdig/0.27.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0nX9KT/sxKpuYc6tjnCP8FQhrFCUe438c4CcXPgwJkri1SEi9iHfvMkYmI44l1Djp+ThhC2KNfmRBpXN72Z/Mw==",
+      "path": "markdig/0.27.0",
+      "hashPath": "markdig.0.27.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authorization/5.0.0": {
       "type": "package",
