@@ -1,5 +1,8 @@
 ﻿@page "/games/create"
+
 @inject NavigationManager _manager
+@inject IGameImageService _gameService
+@inject IGenreImageService _genreService
 
 <div class="row">
     <div class="col">
@@ -8,15 +11,27 @@
 </div>
 
 <div class="row">
-    <div class="col text-center">
-        <button @onclick="AddNewGame" class="btn btn-primary">Add New Game</button>
+    <div class="col">
+        <GameForm Game="_game" OnValidSubmit="AddNewGame" NotSelectedGenres="_notSelectedGenres"/>
     </div>
 </div>
 
 @code {
+    GameImage _game = new();
+    List<GenreImage> _notSelectedGenres = new();
+
+    protected override void OnInitialized()
+    {
+        _notSelectedGenres = _genreService.GetAllGenres();
+    }
 
     void AddNewGame()
     {
-        _manager.NavigateTo("games");
+        var result = _gameService.CreateNewGame(_game);
+
+        if (result)
+        {
+            _manager.NavigateTo("/games");
+        }
     }
 }

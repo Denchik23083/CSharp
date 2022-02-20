@@ -104,3 +104,15 @@ a, .btn-link {
     height: 400px;
     margin: 0;
 }
+
+.selectable-list {
+    padding: 20px;
+    border: 1px groove #6c757d;
+    border-radius: 3px;
+    min-width: 150px;
+}
+
+.list-group-item:hover {
+    cursor: pointer;
+    border: 1px dashed #000000;
+}

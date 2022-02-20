@@ -202,6 +202,13 @@ using Markdig;
 #line hidden
 #nullable disable
 #nullable restore
+#line 29 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\_Imports.razor"
+using System.Text.RegularExpressions;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 1 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\PageComponents\TestModel1\GameListTable.razor"
 using Blazor.Db.Entities.TestModel1;
 

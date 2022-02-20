@@ -1,0 +1,62 @@
+﻿<div class="row">
+    <ul class="list-group mr-4 selectable-list">
+        @foreach (var item in OnNotSelected)
+        {
+            <li class="list-group-item mb-2" @onclick="() => Select(item)">@item.Value</li>
+        }
+    </ul>
+    
+    <div>
+        @if (_allSelected)
+        {
+            <button class="btn btn-danger" @onclick="SelectDeselectAll">Deselect All</button>
+        }
+        else
+        {
+            <button class="btn btn-primary" @onclick="SelectDeselectAll">Select All</button>
+        }
+    </div>
+    
+    <ul class="list-group ml-4 selectable-list">
+        @foreach (var item in OnSelected)
+        {
+            <li class="list-group-item mb-2 list-group-item-info" @onclick="() => DeSelect(item)">@item.Value</li>
+        }
+    </ul>
+</div>
+
+@code {
+
+    [Parameter] public List<MultipleSelectorHelper> OnSelected { get; set; }
+    [Parameter] public List<MultipleSelectorHelper> OnNotSelected { get; set; }
+
+    bool _allSelected;
+
+    void Select(MultipleSelectorHelper selectedItem)
+    {
+        OnSelected.Add(selectedItem);
+        OnNotSelected.Remove(selectedItem);
+    }
+
+    void DeSelect(MultipleSelectorHelper deselectedItem)
+    {
+        OnNotSelected.Add(deselectedItem);
+        OnSelected.Remove(deselectedItem);
+    }
+
+    void SelectDeselectAll()
+    {
+        if (_allSelected)
+        {
+            OnNotSelected.AddRange(OnSelected);
+            OnSelected.Clear();
+            _allSelected = false;
+        }
+        else
+        {
+            OnSelected.AddRange(OnNotSelected);
+            OnNotSelected.Clear();
+            _allSelected = true;
+        }
+    }
+}

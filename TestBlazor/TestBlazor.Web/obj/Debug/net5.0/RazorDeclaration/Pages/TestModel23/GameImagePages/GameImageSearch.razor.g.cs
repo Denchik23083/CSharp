@@ -208,6 +208,13 @@ using Markdig;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 29 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\_Imports.razor"
+using System.Text.RegularExpressions;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/games/search")]
     public partial class GameImageSearch : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -239,10 +246,10 @@ using Markdig;
         {
             _games = _games.Where(b => b.Name.ToLower().Contains(_gameName.ToLower())).ToList();
         }
-        if (_selectedGameGenre != "-1")
+        /*if (_selectedGameGenre != "-1")
         {
-            _games = _games.Where(b => b.GenreId.ToString().Equals(_selectedGameGenre)).ToList();
-        }
+            _games = _games.Where(b => b..ToString().Equals(_selectedGameGenre)).ToList();
+        }*/
         if (_futureRelease)
         {
             _games = _games.Where(b => b.ReleaseDate > DateTime.Now).ToList();

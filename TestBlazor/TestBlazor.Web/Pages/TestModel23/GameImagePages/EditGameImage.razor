@@ -1,7 +1,37 @@
-﻿@page "/games/edit"
+﻿@page "/games/edit/{GameId:int}"
 
-<h3>EditGameImage</h3>
+@inject NavigationManager _manager
+@inject IGameImageService _service
+
+<div class="row">
+    <div class="col">
+        <h1 class="text-info text-center text-uppercase">Edit Game</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <GameForm Game="_game" OnValidSubmit="EditTheGame"/>
+    </div>
+</div>
 
 @code {
+    [Parameter] public int GameId { get; set; }
 
+    GameImage _game;
+
+    protected override void OnInitialized()
+    {
+        _game = _service.GetGameById(GameId);
+    }
+
+    void EditTheGame()
+    {
+        var result = _service.UpdateGame(_game);
+
+        if (result)
+        {
+            _manager.NavigateTo("/games");
+        }
+    }
 }

@@ -208,6 +208,13 @@ using Markdig;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 29 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\_Imports.razor"
+using System.Text.RegularExpressions;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/games/create")]
     public partial class CreateGameImage : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -217,17 +224,31 @@ using Markdig;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 16 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\Pages\TestModel23\GameImagePages\CreateGameImage.razor"
+#line 19 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\Pages\TestModel23\GameImagePages\CreateGameImage.razor"
        
+    GameImage _game = new();
+    List<GenreImage> _notSelectedGenres = new();
+
+    protected override void OnInitialized()
+    {
+        _notSelectedGenres = _genreService.GetAllGenres();
+    }
 
     void AddNewGame()
     {
-        _manager.NavigateTo("games");
+        var result = _gameService.CreateNewGame(_game);
+
+        if (result)
+        {
+            _manager.NavigateTo("/games");
+        }
     }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IGenreImageService _genreService { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IGameImageService _gameService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager _manager { get; set; }
     }
 }

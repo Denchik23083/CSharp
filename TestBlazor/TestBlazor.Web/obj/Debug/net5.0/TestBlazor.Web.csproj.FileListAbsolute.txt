@@ -159,3 +159,7 @@ C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\Raz
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\bin\Debug\net5.0\Markdig.dll
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\RazorDeclaration\PageComponents\TestModel23\MarkdownRenderer.razor.g.cs
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\Razor\PageComponents\TestModel23\MarkdownRenderer.razor.g.cs
+C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\RazorDeclaration\PageComponents\TestModel23\GameForm.razor.g.cs
+C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\Razor\PageComponents\TestModel23\GameForm.razor.g.cs
+C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\RazorDeclaration\PageComponents\TestModel23\MultipleSelector.razor.g.cs
+C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\Razor\PageComponents\TestModel23\MultipleSelector.razor.g.cs

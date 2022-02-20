@@ -208,7 +208,14 @@ using Markdig;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/games/edit")]
+#nullable restore
+#line 29 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\_Imports.razor"
+using System.Text.RegularExpressions;
+
+#line default
+#line hidden
+#nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/games/edit/{GameId:int}")]
     public partial class EditGameImage : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -216,6 +223,33 @@ using Markdig;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 18 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\Pages\TestModel23\GameImagePages\EditGameImage.razor"
+       
+    [Parameter] public int GameId { get; set; }
+
+    GameImage _game;
+
+    protected override void OnInitialized()
+    {
+        _game = _service.GetGameById(GameId);
+    }
+
+    void EditTheGame()
+    {
+        var result = _service.UpdateGame(_game);
+
+        if (result)
+        {
+            _manager.NavigateTo("/games");
+        }
+    }
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IGameImageService _service { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager _manager { get; set; }
     }
 }
 #pragma warning restore 1591

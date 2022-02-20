@@ -1,6 +1,14 @@
 ﻿@page "/games"
 @inject IGameImageService _service
 
+<div class="row">
+    <div class="col">
+        <a href="/games/create" class="btn btn-primary">Add New Game</a>
+        <a href="/games/search" class="btn btn-info">Game Search</a>
+    </div>
+</div>
+
+
 <ListGameImage ListOfItems="_listOfItems"/>
 
 @code {

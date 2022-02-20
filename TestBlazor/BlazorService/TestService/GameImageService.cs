@@ -17,5 +17,25 @@ namespace Blazor.Logic.TestService
         {
             return _repository.GetAllGames();
         }
+
+        public GameImage GetGameById(int id)
+        {
+            return _repository.GetGameById(id);
+        }
+
+        public bool CreateNewGame(GameImage game)
+        {
+            return _repository.CreateNewGame(game);
+        }
+
+        public bool UpdateGame(GameImage game)
+        {
+            return _repository.UpdateGame(game);
+        }
+
+        public bool Remove(GameImage gameToDelete)
+        {
+            return _repository.Remove(gameToDelete);
+        }
     }
 }

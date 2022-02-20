@@ -208,6 +208,13 @@ using Markdig;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 29 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\_Imports.razor"
+using System.Text.RegularExpressions;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/games")]
     public partial class IndividualGameImagePage : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -217,7 +224,7 @@ using Markdig;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 6 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\Pages\TestModel23\IndividualGameImagePage.razor"
+#line 14 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\Pages\TestModel23\IndividualGameImagePage.razor"
        
     List<GameImage> _listOfItems = new();
 

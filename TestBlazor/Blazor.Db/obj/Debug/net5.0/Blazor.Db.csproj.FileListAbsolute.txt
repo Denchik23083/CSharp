@@ -12,4 +12,3 @@ C:\Users\User\source\repos\CSharp\TestBlazor\Blazor.Db\obj\Debug\net5.0\Blazor.D
 C:\Users\User\source\repos\CSharp\TestBlazor\Blazor.Db\bin\Debug\net5.0\Blazor.Db.runtimeconfig.json
 C:\Users\User\source\repos\CSharp\TestBlazor\Blazor.Db\bin\Debug\net5.0\Blazor.Db.runtimeconfig.dev.json
 C:\Users\User\source\repos\CSharp\TestBlazor\Blazor.Db\obj\Debug\net5.0\Blazor.Db.genruntimeconfig.cache
-C:\Users\User\source\repos\CSharp\TestBlazor\Blazor.Db\obj\Debug\net5.0\Blazor.Db.csproj.AssemblyReference.cache

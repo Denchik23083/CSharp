@@ -208,6 +208,13 @@ using Markdig;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 29 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\_Imports.razor"
+using System.Text.RegularExpressions;
+
+#line default
+#line hidden
+#nullable disable
     public partial class MarkdownInput<TValue> : InputTextArea
     {
         #pragma warning disable 1998
@@ -216,7 +223,7 @@ using Markdig;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 22 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\PageComponents\TestModel23\MarkdownInput.razor"
+#line 21 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\PageComponents\TestModel23\MarkdownInput.razor"
        
     [Parameter] public string Label { get; set; }
     [Parameter] public Expression<Func<TValue>> OnFor { get; set; }

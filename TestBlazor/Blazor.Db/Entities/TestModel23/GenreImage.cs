@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Blazor.Db.Entities.TestModel23
 {
@@ -9,5 +10,7 @@ namespace Blazor.Db.Entities.TestModel23
         [Required]
         [MaxLength(50)]
         public string Name { get; set; }
+
+        public List<GameGenreImage> GameGenre { get; set; } = new();
     }
 }

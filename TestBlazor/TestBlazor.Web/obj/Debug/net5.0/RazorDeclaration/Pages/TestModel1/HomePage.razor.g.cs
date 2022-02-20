@@ -208,6 +208,13 @@ using Markdig;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 29 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\_Imports.razor"
+using System.Text.RegularExpressions;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/")]
     public partial class HomePage : Microsoft.AspNetCore.Components.ComponentBase
     {

@@ -208,6 +208,13 @@ using Markdig;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 29 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\_Imports.razor"
+using System.Text.RegularExpressions;
+
+#line default
+#line hidden
+#nullable disable
     public partial class IndividualGameImage : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -216,20 +223,40 @@ using Markdig;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 23 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\PageComponents\TestModel23\IndividualGameImage.razor"
+#line 33 "C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\PageComponents\TestModel23\IndividualGameImage.razor"
        
     [Parameter] public GameImage Game { get; set; }
 
     string _url = string.Empty;
+    string _urlEdit = string.Empty;
 
     protected override void OnInitialized()
     {
         _url = $"games/{Game.Id}/{Game.Name.Replace(" ", "-" )}";
+        _urlEdit = $"games/edit/{Game.Id}";
+    }
+
+    void Remove()
+    {
+        var result = _service.Remove(Game);
+
+        if (result)
+        {
+            _manager.NavigateTo("/games");
+        }
+    }
+
+    bool IsBase64(string value)
+    {
+        value = value.Trim();
+        return ((value.Length % 4 == 0) && Regex.IsMatch(value, @"^[a-zA-Z0-9\+/]*={0,3}$", RegexOptions.None));
     }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager _manager { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IGameImageService _service { get; set; }
     }
 }
 #pragma warning restore 1591
