@@ -1,0 +1,50 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "FileQuiz.Logic/1.0.0": {
+        "dependencies": {
+          "FileQuiz.Db": "1.0.0",
+          "FileQuiz.WebDb": "1.0.0"
+        },
+        "runtime": {
+          "FileQuiz.Logic.dll": {}
+        }
+      },
+      "FileQuiz.Db/1.0.0": {
+        "runtime": {
+          "FileQuiz.Db.dll": {}
+        }
+      },
+      "FileQuiz.WebDb/1.0.0": {
+        "dependencies": {
+          "FileQuiz.Db": "1.0.0"
+        },
+        "runtime": {
+          "FileQuiz.WebDb.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FileQuiz.Logic/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FileQuiz.Db/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FileQuiz.WebDb/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

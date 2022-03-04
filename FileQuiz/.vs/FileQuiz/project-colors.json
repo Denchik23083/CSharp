@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "4357a359-8b1b-44cf-a890-65f27712e822": {
+      "ProjectGuid": "4357a359-8b1b-44cf-a890-65f27712e822",
+      "DisplayName": "FileQuiz.App",
+      "ColorIndex": 0
+    },
+    "c60f8941-9ce3-49ec-b940-77db0dfb0d7d": {
+      "ProjectGuid": "c60f8941-9ce3-49ec-b940-77db0dfb0d7d",
+      "DisplayName": "FileQuiz.Db",
+      "ColorIndex": 1
+    },
+    "2ec65972-c707-43b1-8511-47e264a4509c": {
+      "ProjectGuid": "2ec65972-c707-43b1-8511-47e264a4509c",
+      "DisplayName": "FileQuiz.Logic",
+      "ColorIndex": 2
+    },
+    "cdd6f912-0861-4e69-b94a-9d393b5add1a": {
+      "ProjectGuid": "cdd6f912-0861-4e69-b94a-9d393b5add1a",
+      "DisplayName": "FileQuiz.WebDb",
+      "ColorIndex": 3
+    }
+  },
+  "NextColorIndex": 4
+}

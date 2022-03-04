@@ -1,0 +1,133 @@
+{
+  "version": 3,
+  "targets": {
+    "net5.0": {
+      "FileQuiz.Db/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/FileQuiz.Db.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FileQuiz.Db.dll": {}
+        }
+      },
+      "FileQuiz.Logic/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "FileQuiz.Db": "1.0.0",
+          "FileQuiz.WebDb": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/FileQuiz.Logic.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FileQuiz.Logic.dll": {}
+        }
+      },
+      "FileQuiz.WebDb/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "FileQuiz.Db": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/FileQuiz.WebDb.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FileQuiz.WebDb.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FileQuiz.Db/1.0.0": {
+      "type": "project",
+      "path": "../FileQuiz.Db/FileQuiz.Db.csproj",
+      "msbuildProject": "../FileQuiz.Db/FileQuiz.Db.csproj"
+    },
+    "FileQuiz.Logic/1.0.0": {
+      "type": "project",
+      "path": "../FileQuiz.Logic/FileQuiz.Logic.csproj",
+      "msbuildProject": "../FileQuiz.Logic/FileQuiz.Logic.csproj"
+    },
+    "FileQuiz.WebDb/1.0.0": {
+      "type": "project",
+      "path": "../FileQuiz.WebDb/FileQuiz.WebDb.csproj",
+      "msbuildProject": "../FileQuiz.WebDb/FileQuiz.WebDb.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net5.0": [
+      "FileQuiz.Logic >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\User\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\User\\source\\repos\\CSharp\\FileQuiz\\FileQuiz.App\\FileQuiz.App.csproj",
+      "projectName": "FileQuiz.App",
+      "projectPath": "C:\\Users\\User\\source\\repos\\CSharp\\FileQuiz\\FileQuiz.App\\FileQuiz.App.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\User\\source\\repos\\CSharp\\FileQuiz\\FileQuiz.App\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net5.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "projectReferences": {
+            "C:\\Users\\User\\source\\repos\\CSharp\\FileQuiz\\FileQuiz.Logic\\FileQuiz.Logic.csproj": {
+              "projectPath": "C:\\Users\\User\\source\\repos\\CSharp\\FileQuiz\\FileQuiz.Logic\\FileQuiz.Logic.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net5.0": {
+        "targetAlias": "net5.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[5.0.13, 5.0.13]"
+          }
+        ],
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

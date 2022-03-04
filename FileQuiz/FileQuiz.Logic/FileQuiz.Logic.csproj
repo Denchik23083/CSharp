@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FileQuiz.Db\FileQuiz.Db.csproj" />
+    <ProjectReference Include="..\FileQuiz.WebDb\FileQuiz.WebDb.csproj" />
+  </ItemGroup>
+
+</Project>

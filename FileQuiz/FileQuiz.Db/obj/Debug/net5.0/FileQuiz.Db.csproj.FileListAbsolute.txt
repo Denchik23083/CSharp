@@ -1,0 +1,12 @@
+C:\Users\User\source\repos\CSharp\FileQuiz\FileQuiz.Db\bin\Debug\net5.0\FileQuiz.Db.deps.json
+C:\Users\User\source\repos\CSharp\FileQuiz\FileQuiz.Db\bin\Debug\net5.0\FileQuiz.Db.dll
+C:\Users\User\source\repos\CSharp\FileQuiz\FileQuiz.Db\bin\Debug\net5.0\ref\FileQuiz.Db.dll
+C:\Users\User\source\repos\CSharp\FileQuiz\FileQuiz.Db\bin\Debug\net5.0\FileQuiz.Db.pdb
+C:\Users\User\source\repos\CSharp\FileQuiz\FileQuiz.Db\obj\Debug\net5.0\FileQuiz.Db.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\CSharp\FileQuiz\FileQuiz.Db\obj\Debug\net5.0\FileQuiz.Db.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\CSharp\FileQuiz\FileQuiz.Db\obj\Debug\net5.0\FileQuiz.Db.AssemblyInfo.cs
+C:\Users\User\source\repos\CSharp\FileQuiz\FileQuiz.Db\obj\Debug\net5.0\FileQuiz.Db.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\CSharp\FileQuiz\FileQuiz.Db\obj\Debug\net5.0\FileQuiz.Db.dll
+C:\Users\User\source\repos\CSharp\FileQuiz\FileQuiz.Db\obj\Debug\net5.0\ref\FileQuiz.Db.dll
+C:\Users\User\source\repos\CSharp\FileQuiz\FileQuiz.Db\obj\Debug\net5.0\FileQuiz.Db.pdb
+C:\Users\User\source\repos\CSharp\FileQuiz\FileQuiz.Db\obj\Debug\net5.0\FileQuiz.Db.csproj.AssemblyReference.cache
