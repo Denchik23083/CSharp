@@ -76,6 +76,11 @@ namespace FileQuiz.Logic
             return true;
         }
 
+        public void Section(string sectionFile)
+        {
+            _repository.Section(sectionFile);
+        }
+        
         private static User Map(Register model)
         {
             return new User

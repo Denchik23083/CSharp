@@ -7,5 +7,7 @@ namespace FileQuiz.WebDb
         public bool Register(User user);
 
         public bool Login(User user);
+
+        public void Section(string sectionFile);
     }
 }

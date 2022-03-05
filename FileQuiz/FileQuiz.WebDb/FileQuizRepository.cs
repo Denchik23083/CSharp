@@ -9,11 +9,11 @@ namespace FileQuiz.WebDb
         private StreamWriter _textWriter;
         private FileStream _fileStream;
         private StreamReader _textReader;
-        private string file = "test.txt";
+        private string authFile = "test.txt";
 
         public bool Register(User user)
         {
-            _textWriter = new StreamWriter(file);
+            _textWriter = new StreamWriter(authFile);
             _textWriter.Write(user.Email + "\n" + user.Password + "\n" + user.Name);
             _textWriter.Close();
 
@@ -27,7 +27,7 @@ namespace FileQuiz.WebDb
             var emailFromFile = string.Empty;
             var passwordFromFile = string.Empty;
 
-            _fileStream = new FileStream(file, FileMode.OpenOrCreate);
+            _fileStream = new FileStream(authFile, FileMode.OpenOrCreate);
             _textReader = new StreamReader(_fileStream);
 
             while (!_textReader.EndOfStream)
@@ -46,6 +46,30 @@ namespace FileQuiz.WebDb
             }
 
             return false;
+        }
+
+        public void Section(string sectionFile)
+        {
+            var numQuest = 0;
+            var res = 0;
+
+            do
+            {
+                _fileStream = new FileStream(sectionFile, FileMode.OpenOrCreate);
+                _textReader = new StreamReader(_fileStream);
+                while (!_textReader.EndOfStream)
+                {
+                    string question = _textReader.ReadLine();
+                    Console.WriteLine(question);
+
+                    var answer = int.Parse(Console.ReadLine());
+                    if (answer == 3) { res++; }
+
+                    if (numQuest <= 1) { numQuest++; }
+                }
+                _fileStream.Close();
+            } while (numQuest != 1);
+            Console.WriteLine($"Your result is {res} of {numQuest}");
         }
 
         public void Dispose()

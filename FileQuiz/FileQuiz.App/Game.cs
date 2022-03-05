@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using FileQuiz.Logic;
 
 namespace FileQuiz.App
@@ -7,18 +6,16 @@ namespace FileQuiz.App
     public class Game
     {
         private readonly IFileQuizService _service;
-        private StreamWriter _textWriter;
-        private FileStream _fileStream;
-        private StreamReader _textReader;
-        private string file = "test.txt";
 
         public Game(IFileQuizService service)
         {
             _service = service;
         }
 
-        public void Auth()
+        public bool Auth()
         {
+            bool isLogin = false;
+
             Console.WriteLine("1) Register" + "\n" + "2) Login");
             var game = int.Parse(Console.ReadLine() + "\n");
             Console.WriteLine();
@@ -32,7 +29,7 @@ namespace FileQuiz.App
                         var resultLoginWithRegister = _service.Login();
                         if (resultLoginWithRegister)
                         {
-                            Quiz();
+                            isLogin = true;
                         }
                     }
                     break;
@@ -40,30 +37,15 @@ namespace FileQuiz.App
                     var resultLogin = _service.Login();
                     if (resultLogin)
                     {
-                        Quiz();
+                        isLogin = true;
                     }
                     break;
-                default: throw new ArgumentException();
-            }
-        }
-
-        private void Quiz()
-        {
-            Console.WriteLine("1) Start" + "\n" + "2) Exit");
-            var choose = int.Parse(Console.ReadLine() + "\n");
-            Console.WriteLine();
-
-            var quiz = new Quiz();
-
-            switch (choose)
-            {
-                case 1:
-                    quiz.StartQuiz();
+                default:
+                    Auth();
                     break;
-                case 2:
-                    break;
-                default: throw new ArgumentException();
             }
+
+            return isLogin;
         }
     }
 }
