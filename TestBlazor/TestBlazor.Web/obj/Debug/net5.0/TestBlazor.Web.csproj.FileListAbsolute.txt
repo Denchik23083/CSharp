@@ -19,7 +19,6 @@ C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\bin\Debug\net5.0\Tes
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\bin\Debug\net5.0\TestBlazor.Web.runtimeconfig.json
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\bin\Debug\net5.0\TestBlazor.Web.runtimeconfig.dev.json
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\bin\Debug\net5.0\TestBlazor.Web.dll
-C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\bin\Debug\net5.0\ref\TestBlazor.Web.dll
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\bin\Debug\net5.0\TestBlazor.Web.pdb
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\bin\Debug\net5.0\TestBlazor.Web.Views.dll
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\bin\Debug\net5.0\TestBlazor.Web.Views.pdb
@@ -163,3 +162,4 @@ C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\Raz
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\Razor\PageComponents\TestModel23\GameForm.razor.g.cs
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\RazorDeclaration\PageComponents\TestModel23\MultipleSelector.razor.g.cs
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\Razor\PageComponents\TestModel23\MultipleSelector.razor.g.cs
+C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\refint\TestBlazor.Web.dll

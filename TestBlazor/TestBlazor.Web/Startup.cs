@@ -73,6 +73,18 @@ namespace TestBlazor.Web
                 endpoints.MapBlazorHub();
                 endpoints.MapFallbackToPage("/_Host");
             });
+
+            EnsureDbDbCreated(app);
+        }
+
+        private void EnsureDbDbCreated(IApplicationBuilder app)
+        {
+            var scopeFactory = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>();
+
+            using var scope = scopeFactory.CreateScope();
+            var context = scope.ServiceProvider.GetService<BlazorContext>();
+
+            context!.Database.EnsureCreated();
         }
     }
 }

@@ -28,7 +28,9 @@ using MvcEntity.Web.Models;
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"67c686753b43e753cb33289f8cadbe6cd4eaa361", @"/Views/Phone/Index.cshtml")]
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6be335e4ae1803069e0c89f1ab73936dca00a564", @"/Views/_ViewImports.cshtml")]
+    #nullable restore
     public class Views_Phone_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<MvcEntity.Db.Entities.Phone>>
+    #nullable disable
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("nav-link text-dark"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_1 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-area", "", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -77,7 +79,7 @@ using MvcEntity.Web.Models;
             WriteLiteral("\r\n");
             DefineSection("MainLink", async() => {
                 WriteLiteral("\r\n    <li class=\"nav-item\">\r\n        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "67c686753b43e753cb33289f8cadbe6cd4eaa3616605", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "67c686753b43e753cb33289f8cadbe6cd4eaa3616651", async() => {
                     WriteLiteral("Main");
                 }
                 );
@@ -103,7 +105,7 @@ using MvcEntity.Web.Models;
             WriteLiteral("\r\n");
             DefineSection("OrderLink", async() => {
                 WriteLiteral("\r\n    <li class=\"nav-item\">\r\n        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "67c686753b43e753cb33289f8cadbe6cd4eaa3618541", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "67c686753b43e753cb33289f8cadbe6cd4eaa3618587", async() => {
                     WriteLiteral("Order");
                 }
                 );
@@ -161,7 +163,7 @@ using MvcEntity.Web.Models;
 <!DOCTYPE html>
 <html>
 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "67c686753b43e753cb33289f8cadbe6cd4eaa36111027", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "67c686753b43e753cb33289f8cadbe6cd4eaa36111073", async() => {
                 WriteLiteral("\r\n    <title>Магазин телефонов</title>\r\n");
             }
             );
@@ -175,7 +177,7 @@ using MvcEntity.Web.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "67c686753b43e753cb33289f8cadbe6cd4eaa36112034", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "67c686753b43e753cb33289f8cadbe6cd4eaa36112080", async() => {
                 WriteLiteral("\r\n    <h3>Телефоны</h3>\r\n    <div class=\"con\">\r\n");
 #nullable restore
 #line 58 "C:\Users\User\source\repos\CSharp\MvcEntity.Web\MvcEntity.Web\Views\Phone\Index.cshtml"
@@ -210,7 +212,7 @@ using MvcEntity.Web.Models;
 #line hidden
 #nullable disable
                 WriteLiteral("&#8372;</span><br><br>\r\n\r\n                <button class=\"filterbutton\">\r\n                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "67c686753b43e753cb33289f8cadbe6cd4eaa36113777", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "67c686753b43e753cb33289f8cadbe6cd4eaa36113823", async() => {
                     WriteLiteral("Купить");
                 }
                 );
@@ -266,16 +268,26 @@ using MvcEntity.Web.Models;
             WriteLiteral("\r\n</html>");
         }
         #pragma warning restore 1998
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; } = default!;
+        #nullable disable
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.IUrlHelper Url { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.IUrlHelper Url { get; private set; } = default!;
+        #nullable disable
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.IViewComponentHelper Component { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.IViewComponentHelper Component { get; private set; } = default!;
+        #nullable disable
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.Rendering.IJsonHelper Json { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.Rendering.IJsonHelper Json { get; private set; } = default!;
+        #nullable disable
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper<IEnumerable<MvcEntity.Db.Entities.Phone>> Html { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper<IEnumerable<MvcEntity.Db.Entities.Phone>> Html { get; private set; } = default!;
+        #nullable disable
     }
 }
 #pragma warning restore 1591

@@ -1,6 +1,5 @@
 C:\Users\User\source\repos\CSharp\TestBlazor\Blazor.WebDb\bin\Debug\net5.0\Blazor.WebDb.deps.json
 C:\Users\User\source\repos\CSharp\TestBlazor\Blazor.WebDb\bin\Debug\net5.0\Blazor.WebDb.dll
-C:\Users\User\source\repos\CSharp\TestBlazor\Blazor.WebDb\bin\Debug\net5.0\ref\Blazor.WebDb.dll
 C:\Users\User\source\repos\CSharp\TestBlazor\Blazor.WebDb\bin\Debug\net5.0\Blazor.WebDb.pdb
 C:\Users\User\source\repos\CSharp\TestBlazor\Blazor.WebDb\obj\Debug\net5.0\Blazor.WebDb.csproj.AssemblyReference.cache
 C:\Users\User\source\repos\CSharp\TestBlazor\Blazor.WebDb\obj\Debug\net5.0\Blazor.WebDb.GeneratedMSBuildEditorConfig.editorconfig
@@ -13,3 +12,4 @@ C:\Users\User\source\repos\CSharp\TestBlazor\Blazor.WebDb\obj\Debug\net5.0\Blazo
 C:\Users\User\source\repos\CSharp\TestBlazor\Blazor.WebDb\bin\Debug\net5.0\Blazor.Db.dll
 C:\Users\User\source\repos\CSharp\TestBlazor\Blazor.WebDb\bin\Debug\net5.0\Blazor.Db.pdb
 C:\Users\User\source\repos\CSharp\TestBlazor\Blazor.WebDb\obj\Debug\net5.0\Blazor.WebDb.csproj.CopyComplete
+C:\Users\User\source\repos\CSharp\TestBlazor\Blazor.WebDb\obj\Debug\net5.0\refint\Blazor.WebDb.dll

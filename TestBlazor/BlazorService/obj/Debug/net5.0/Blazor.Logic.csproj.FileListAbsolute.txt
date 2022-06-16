@@ -1,6 +1,5 @@
 C:\Users\User\source\repos\CSharp\TestBlazor\BlazorService\bin\Debug\net5.0\Blazor.Logic.deps.json
 C:\Users\User\source\repos\CSharp\TestBlazor\BlazorService\bin\Debug\net5.0\Blazor.Logic.dll
-C:\Users\User\source\repos\CSharp\TestBlazor\BlazorService\bin\Debug\net5.0\ref\Blazor.Logic.dll
 C:\Users\User\source\repos\CSharp\TestBlazor\BlazorService\bin\Debug\net5.0\Blazor.Logic.pdb
 C:\Users\User\source\repos\CSharp\TestBlazor\BlazorService\bin\Debug\net5.0\Blazor.Db.dll
 C:\Users\User\source\repos\CSharp\TestBlazor\BlazorService\bin\Debug\net5.0\Blazor.Db.pdb
@@ -15,3 +14,4 @@ C:\Users\User\source\repos\CSharp\TestBlazor\BlazorService\obj\Debug\net5.0\ref\
 C:\Users\User\source\repos\CSharp\TestBlazor\BlazorService\obj\Debug\net5.0\Blazor.Logic.pdb
 C:\Users\User\source\repos\CSharp\TestBlazor\BlazorService\bin\Debug\net5.0\Blazor.WebDb.dll
 C:\Users\User\source\repos\CSharp\TestBlazor\BlazorService\bin\Debug\net5.0\Blazor.WebDb.pdb
+C:\Users\User\source\repos\CSharp\TestBlazor\BlazorService\obj\Debug\net5.0\refint\Blazor.Logic.dll

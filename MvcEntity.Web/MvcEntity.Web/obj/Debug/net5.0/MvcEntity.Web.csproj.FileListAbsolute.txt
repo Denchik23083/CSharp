@@ -89,7 +89,6 @@ C:\Users\User\source\repos\CSharp\MvcEntity.Web\MvcEntity.Web\bin\Debug\net5.0\M
 C:\Users\User\source\repos\CSharp\MvcEntity.Web\MvcEntity.Web\bin\Debug\net5.0\MvcEntity.Web.runtimeconfig.json
 C:\Users\User\source\repos\CSharp\MvcEntity.Web\MvcEntity.Web\bin\Debug\net5.0\MvcEntity.Web.runtimeconfig.dev.json
 C:\Users\User\source\repos\CSharp\MvcEntity.Web\MvcEntity.Web\bin\Debug\net5.0\MvcEntity.Web.dll
-C:\Users\User\source\repos\CSharp\MvcEntity.Web\MvcEntity.Web\bin\Debug\net5.0\ref\MvcEntity.Web.dll
 C:\Users\User\source\repos\CSharp\MvcEntity.Web\MvcEntity.Web\bin\Debug\net5.0\MvcEntity.Web.pdb
 C:\Users\User\source\repos\CSharp\MvcEntity.Web\MvcEntity.Web\bin\Debug\net5.0\MvcEntity.Web.Views.dll
 C:\Users\User\source\repos\CSharp\MvcEntity.Web\MvcEntity.Web\bin\Debug\net5.0\MvcEntity.Web.Views.pdb
@@ -131,7 +130,6 @@ C:\Users\User\source\repos\CSharp\MvcEntity.Web\MvcEntity.Web\bin\Debug\net5.0\M
 C:\Users\User\source\repos\CSharp\MvcEntity.Web\MvcEntity.Web\bin\Debug\net5.0\MvcEntity.Db.pdb
 C:\Users\User\source\repos\CSharp\MvcEntity.Web\MvcEntity.Web\bin\Debug\net5.0\MvcEntity.Logic.pdb
 C:\Users\User\source\repos\CSharp\MvcEntity.Web\MvcEntity.Web\bin\Debug\net5.0\MvcEntity.WebDb.pdb
-C:\Users\User\source\repos\CSharp\MvcEntity.Web\MvcEntity.Web\obj\Debug\net5.0\MvcEntity.Web.csprojAssemblyReference.cache
 C:\Users\User\source\repos\CSharp\MvcEntity.Web\MvcEntity.Web\obj\Debug\net5.0\MvcEntity.Web.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\User\source\repos\CSharp\MvcEntity.Web\MvcEntity.Web\obj\Debug\net5.0\MvcEntity.Web.AssemblyInfoInputs.cache
 C:\Users\User\source\repos\CSharp\MvcEntity.Web\MvcEntity.Web\obj\Debug\net5.0\MvcEntity.Web.AssemblyInfo.cs
@@ -140,7 +138,6 @@ C:\Users\User\source\repos\CSharp\MvcEntity.Web\MvcEntity.Web\obj\Debug\net5.0\M
 C:\Users\User\source\repos\CSharp\MvcEntity.Web\MvcEntity.Web\obj\Debug\net5.0\MvcEntity.Web.RazorAssemblyInfo.cache
 C:\Users\User\source\repos\CSharp\MvcEntity.Web\MvcEntity.Web\obj\Debug\net5.0\MvcEntity.Web.RazorAssemblyInfo.cs
 C:\Users\User\source\repos\CSharp\MvcEntity.Web\MvcEntity.Web\obj\Debug\net5.0\staticwebassets\MvcEntity.Web.StaticWebAssets.Manifest.cache
-C:\Users\User\source\repos\CSharp\MvcEntity.Web\MvcEntity.Web\obj\Debug\net5.0\staticwebassets\MvcEntity.Web.StaticWebAssets.xml
 C:\Users\User\source\repos\CSharp\MvcEntity.Web\MvcEntity.Web\obj\Debug\net5.0\scopedcss\bundle\MvcEntity.Web.styles.css
 C:\Users\User\source\repos\CSharp\MvcEntity.Web\MvcEntity.Web\obj\Debug\net5.0\MvcEntity.Web.TagHelpers.input.cache
 C:\Users\User\source\repos\CSharp\MvcEntity.Web\MvcEntity.Web\obj\Debug\net5.0\MvcEntity.Web.TagHelpers.output.cache
@@ -168,3 +165,6 @@ C:\Users\User\source\repos\CSharp\MvcEntity.Web\MvcEntity.Web\obj\Debug\net5.0\M
 C:\Users\User\source\repos\CSharp\MvcEntity.Web\MvcEntity.Web\obj\Debug\net5.0\ref\MvcEntity.Web.dll
 C:\Users\User\source\repos\CSharp\MvcEntity.Web\MvcEntity.Web\obj\Debug\net5.0\MvcEntity.Web.pdb
 C:\Users\User\source\repos\CSharp\MvcEntity.Web\MvcEntity.Web\obj\Debug\net5.0\MvcEntity.Web.genruntimeconfig.cache
+C:\Users\User\source\repos\CSharp\MvcEntity.Web\MvcEntity.Web\bin\Debug\net5.0\MvcEntity.Web.StaticWebAssets.xml
+C:\Users\User\source\repos\CSharp\MvcEntity.Web\MvcEntity.Web\obj\Debug\net5.0\MvcEntity.Web.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\CSharp\MvcEntity.Web\MvcEntity.Web\obj\Debug\net5.0\refint\MvcEntity.Web.dll
