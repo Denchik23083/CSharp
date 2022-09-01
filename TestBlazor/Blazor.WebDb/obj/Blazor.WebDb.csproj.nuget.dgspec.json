@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\source\\repos\\CSharp\\TestBlazor\\Blazor.WebDb\\Blazor.WebDb.csproj": {}
+    "C:\\Users\\Lukian228\\source\\repos\\CSharp\\TestBlazor\\Blazor.WebDb\\Blazor.WebDb.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\source\\repos\\CSharp\\TestBlazor\\Blazor.Db\\Blazor.Db.csproj": {
+    "C:\\Users\\Lukian228\\source\\repos\\CSharp\\TestBlazor\\Blazor.Db\\Blazor.Db.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\source\\repos\\CSharp\\TestBlazor\\Blazor.Db\\Blazor.Db.csproj",
+        "projectUniqueName": "C:\\Users\\Lukian228\\source\\repos\\CSharp\\TestBlazor\\Blazor.Db\\Blazor.Db.csproj",
         "projectName": "Blazor.Db",
-        "projectPath": "C:\\Users\\User\\source\\repos\\CSharp\\TestBlazor\\Blazor.Db\\Blazor.Db.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\source\\repos\\CSharp\\TestBlazor\\Blazor.Db\\obj\\",
+        "projectPath": "C:\\Users\\Lukian228\\source\\repos\\CSharp\\TestBlazor\\Blazor.Db\\Blazor.Db.csproj",
+        "packagesPath": "C:\\Users\\Lukian228\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Lukian228\\source\\repos\\CSharp\\TestBlazor\\Blazor.Db\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Lukian228\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -42,17 +42,17 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[5.0.13, )"
+              "version": "[5.0.17, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[5.0.13, )"
+              "version": "[5.0.17, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[5.0.13, )"
+              "version": "[5.0.17, )"
             }
           },
           "imports": [
@@ -61,7 +61,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -70,21 +71,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\User\\source\\repos\\CSharp\\TestBlazor\\Blazor.WebDb\\Blazor.WebDb.csproj": {
+    "C:\\Users\\Lukian228\\source\\repos\\CSharp\\TestBlazor\\Blazor.WebDb\\Blazor.WebDb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\source\\repos\\CSharp\\TestBlazor\\Blazor.WebDb\\Blazor.WebDb.csproj",
+        "projectUniqueName": "C:\\Users\\Lukian228\\source\\repos\\CSharp\\TestBlazor\\Blazor.WebDb\\Blazor.WebDb.csproj",
         "projectName": "Blazor.WebDb",
-        "projectPath": "C:\\Users\\User\\source\\repos\\CSharp\\TestBlazor\\Blazor.WebDb\\Blazor.WebDb.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\source\\repos\\CSharp\\TestBlazor\\Blazor.WebDb\\obj\\",
+        "projectPath": "C:\\Users\\Lukian228\\source\\repos\\CSharp\\TestBlazor\\Blazor.WebDb\\Blazor.WebDb.csproj",
+        "packagesPath": "C:\\Users\\Lukian228\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Lukian228\\source\\repos\\CSharp\\TestBlazor\\Blazor.WebDb\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Lukian228\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -98,8 +99,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\User\\source\\repos\\CSharp\\TestBlazor\\Blazor.Db\\Blazor.Db.csproj": {
-                "projectPath": "C:\\Users\\User\\source\\repos\\CSharp\\TestBlazor\\Blazor.Db\\Blazor.Db.csproj"
+              "C:\\Users\\Lukian228\\source\\repos\\CSharp\\TestBlazor\\Blazor.Db\\Blazor.Db.csproj": {
+                "projectPath": "C:\\Users\\Lukian228\\source\\repos\\CSharp\\TestBlazor\\Blazor.Db\\Blazor.Db.csproj"
               }
             }
           }
@@ -113,13 +114,20 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -128,7 +136,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

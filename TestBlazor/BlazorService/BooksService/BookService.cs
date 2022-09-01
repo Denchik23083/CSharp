@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Blazor.Db.Entities.Books;
 using Blazor.WebDb.BooksRepository;
 
@@ -13,29 +14,29 @@ namespace Blazor.Logic.BooksService
             _repository = repository;
         }
         
-        public IEnumerable<Book> GetAll()
+        public async Task<IEnumerable<Book>> GetAllBooks()
         {
-            return _repository.GetAll();
+            return await _repository.GetAllBooks();
         }
 
-        public Book Get(int id)
+        public async Task<Book> GetBook(int id)
         {
-            return _repository.Get(id);
+            return await _repository.GetBook(id);
         }
 
-        public Book Add(Book book)
+        public async Task<bool> AddBook(Book book)
         {
-            return _repository.Add(book);
+            return await _repository.AddBook(book);
         }
 
-        public void Update(Book book, int id)
+        public async Task<bool> UpdateBook(Book book, int id)
         {
-            _repository.Update(book, id);
+            return await _repository.UpdateBook(book, id);
         }
 
-        public void Delete(int id)
+        public async Task<bool> RemoveBook(int id)
         {
-            _repository.Delete(id);
+            return await _repository.RemoveBook(id);
         }
     }
 }

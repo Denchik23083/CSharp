@@ -14,6 +14,7 @@ a, .btn-link {
     border-color: #1861ac;
 }
 
+
 .content {
     padding-top: 1.1rem;
 }
@@ -115,4 +116,22 @@ a, .btn-link {
 .list-group-item:hover {
     cursor: pointer;
     border: 1px dashed #000000;
+}
+
+.coloum-table-book:hover {
+    cursor: pointer;
+    color: aqua;
+}
+
+.back {
+    display: block;
+    padding: 10px 15px;
+    border-radius: 3px;
+    border: 0;
+    font-size: 16px;
+    line-height: 18px;
+    width: 150px;
+    height: 50px;
+    color: #e8eaed;
+    background-color: #8ab4f8;
 }

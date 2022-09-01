@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Blazor.Db;
 using Blazor.Db.Entities.Books;
+using Microsoft.EntityFrameworkCore;
 
 namespace Blazor.WebDb.BooksRepository
 {
@@ -15,33 +17,31 @@ namespace Blazor.WebDb.BooksRepository
             _context = context;
         }
 
-        public IEnumerable<Book> GetAll()
+        public async Task<IEnumerable<Book>> GetAllBooks()
         {
-            return _context.Books;
+            return await _context.Books.ToListAsync();
         }
 
-        public Book Get(int id)
+        public async Task<Book> GetBook(int id)
         {
-            var book = _context.Books.FirstOrDefault(b => b.Id == id);
-
-            return book;
+            return await _context.Books.FirstOrDefaultAsync(b => b.Id == id);
         }
 
-        public Book Add(Book book)
+        public async Task<bool> AddBook(Book book)
         {
-            _context.Books.Add(book);
-            _context.SaveChanges();
+            await _context.Books.AddAsync(book);
+            await _context.SaveChangesAsync();
 
-            return book;
+            return true;
         }
 
-        public void Update(Book book, int id)
+        public async Task<bool> UpdateBook(Book book, int id)
         {
-            var bookToUpdate = _context.Books.FirstOrDefault(b => b.Id == id);
+            var bookToUpdate = await _context.Books.FirstOrDefaultAsync(b => b.Id == id);
 
             if (bookToUpdate is null)
             {
-                throw new ArgumentNullException();
+                return false;
             }
 
             bookToUpdate.Title = book.Title;
@@ -49,20 +49,24 @@ namespace Blazor.WebDb.BooksRepository
             bookToUpdate.PagesCount = book.PagesCount;
             bookToUpdate.PublishDate = book.PublishDate;
 
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
+
+            return true;
         }
 
-        public void Delete(int id)
+        public async Task<bool> RemoveBook(int id)
         {
-            var bookToDelete = _context.Books.FirstOrDefault(b => b.Id == id);
+            var bookToDelete = await _context.Books.FirstOrDefaultAsync(b => b.Id == id);
 
             if (bookToDelete is null)
             {
-                throw new ArgumentNullException();
+                return false;
             }
 
             _context.Books.Remove(bookToDelete);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
+
+            return true;
         }
     }
 }

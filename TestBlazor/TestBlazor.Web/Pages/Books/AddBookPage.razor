@@ -1,5 +1,14 @@
 ﻿@page "/books/addBook"
 
-<h3>AddBook</h3>
+<h3>Add</h3>
 
-<AddBook />
+<div class="row">
+    <div class="col mb-2">
+        <button class="back" @onclick="BackToBooks">Back</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <AddEditBookComponent Add="true" Edit="false"/>
+    </div>
+</div>

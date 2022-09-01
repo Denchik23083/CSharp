@@ -1,18 +1,19 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Blazor.Db.Entities.Books;
 
 namespace Blazor.Logic.BooksService
 {
     public interface IBookService
     {
-        IEnumerable<Book> GetAll();
+        Task<IEnumerable<Book>> GetAllBooks();
 
-        Book Get(int id);
+        Task<Book> GetBook(int id);
 
-        Book Add(Book book);
+        Task<bool> AddBook(Book book);
 
-        void Update(Book book, int id);
+        Task<bool> UpdateBook(Book book, int id);
 
-        void Delete(int id);
+        Task<bool> RemoveBook(int id);
     }
 }
