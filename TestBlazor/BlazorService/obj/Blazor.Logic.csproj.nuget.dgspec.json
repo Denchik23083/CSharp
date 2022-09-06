@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lukian228\\source\\repos\\CSharp\\TestBlazor\\BlazorService\\Blazor.Logic.csproj": {}
+    "C:\\Users\\User\\source\\repos\\CSharp\\TestBlazor\\BlazorService\\Blazor.Logic.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lukian228\\source\\repos\\CSharp\\TestBlazor\\Blazor.Db\\Blazor.Db.csproj": {
+    "C:\\Users\\User\\source\\repos\\CSharp\\TestBlazor\\Blazor.Db\\Blazor.Db.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lukian228\\source\\repos\\CSharp\\TestBlazor\\Blazor.Db\\Blazor.Db.csproj",
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\CSharp\\TestBlazor\\Blazor.Db\\Blazor.Db.csproj",
         "projectName": "Blazor.Db",
-        "projectPath": "C:\\Users\\Lukian228\\source\\repos\\CSharp\\TestBlazor\\Blazor.Db\\Blazor.Db.csproj",
-        "packagesPath": "C:\\Users\\Lukian228\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lukian228\\source\\repos\\CSharp\\TestBlazor\\Blazor.Db\\obj\\",
+        "projectPath": "C:\\Users\\User\\source\\repos\\CSharp\\TestBlazor\\Blazor.Db\\Blazor.Db.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\source\\repos\\CSharp\\TestBlazor\\Blazor.Db\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Lukian228\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -61,8 +61,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -71,21 +70,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.303\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Lukian228\\source\\repos\\CSharp\\TestBlazor\\Blazor.WebDb\\Blazor.WebDb.csproj": {
+    "C:\\Users\\User\\source\\repos\\CSharp\\TestBlazor\\Blazor.WebDb\\Blazor.WebDb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lukian228\\source\\repos\\CSharp\\TestBlazor\\Blazor.WebDb\\Blazor.WebDb.csproj",
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\CSharp\\TestBlazor\\Blazor.WebDb\\Blazor.WebDb.csproj",
         "projectName": "Blazor.WebDb",
-        "projectPath": "C:\\Users\\Lukian228\\source\\repos\\CSharp\\TestBlazor\\Blazor.WebDb\\Blazor.WebDb.csproj",
-        "packagesPath": "C:\\Users\\Lukian228\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lukian228\\source\\repos\\CSharp\\TestBlazor\\Blazor.WebDb\\obj\\",
+        "projectPath": "C:\\Users\\User\\source\\repos\\CSharp\\TestBlazor\\Blazor.WebDb\\Blazor.WebDb.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\source\\repos\\CSharp\\TestBlazor\\Blazor.WebDb\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Lukian228\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -99,8 +98,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Lukian228\\source\\repos\\CSharp\\TestBlazor\\Blazor.Db\\Blazor.Db.csproj": {
-                "projectPath": "C:\\Users\\Lukian228\\source\\repos\\CSharp\\TestBlazor\\Blazor.Db\\Blazor.Db.csproj"
+              "C:\\Users\\User\\source\\repos\\CSharp\\TestBlazor\\Blazor.Db\\Blazor.Db.csproj": {
+                "projectPath": "C:\\Users\\User\\source\\repos\\CSharp\\TestBlazor\\Blazor.Db\\Blazor.Db.csproj"
               }
             }
           }
@@ -126,8 +125,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -136,21 +134,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.303\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Lukian228\\source\\repos\\CSharp\\TestBlazor\\BlazorService\\Blazor.Logic.csproj": {
+    "C:\\Users\\User\\source\\repos\\CSharp\\TestBlazor\\BlazorService\\Blazor.Logic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lukian228\\source\\repos\\CSharp\\TestBlazor\\BlazorService\\Blazor.Logic.csproj",
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\CSharp\\TestBlazor\\BlazorService\\Blazor.Logic.csproj",
         "projectName": "Blazor.Logic",
-        "projectPath": "C:\\Users\\Lukian228\\source\\repos\\CSharp\\TestBlazor\\BlazorService\\Blazor.Logic.csproj",
-        "packagesPath": "C:\\Users\\Lukian228\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lukian228\\source\\repos\\CSharp\\TestBlazor\\BlazorService\\obj\\",
+        "projectPath": "C:\\Users\\User\\source\\repos\\CSharp\\TestBlazor\\BlazorService\\Blazor.Logic.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\source\\repos\\CSharp\\TestBlazor\\BlazorService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Lukian228\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -164,11 +162,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Lukian228\\source\\repos\\CSharp\\TestBlazor\\Blazor.Db\\Blazor.Db.csproj": {
-                "projectPath": "C:\\Users\\Lukian228\\source\\repos\\CSharp\\TestBlazor\\Blazor.Db\\Blazor.Db.csproj"
+              "C:\\Users\\User\\source\\repos\\CSharp\\TestBlazor\\Blazor.Db\\Blazor.Db.csproj": {
+                "projectPath": "C:\\Users\\User\\source\\repos\\CSharp\\TestBlazor\\Blazor.Db\\Blazor.Db.csproj"
               },
-              "C:\\Users\\Lukian228\\source\\repos\\CSharp\\TestBlazor\\Blazor.WebDb\\Blazor.WebDb.csproj": {
-                "projectPath": "C:\\Users\\Lukian228\\source\\repos\\CSharp\\TestBlazor\\Blazor.WebDb\\Blazor.WebDb.csproj"
+              "C:\\Users\\User\\source\\repos\\CSharp\\TestBlazor\\Blazor.WebDb\\Blazor.WebDb.csproj": {
+                "projectPath": "C:\\Users\\User\\source\\repos\\CSharp\\TestBlazor\\Blazor.WebDb\\Blazor.WebDb.csproj"
               }
             }
           }
@@ -194,8 +192,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -204,7 +201,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.303\\RuntimeIdentifierGraph.json"
         }
       }
     }

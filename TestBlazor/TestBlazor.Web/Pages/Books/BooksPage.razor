@@ -4,7 +4,6 @@
     <table class="table table-striped">
         <thead>
         <tr>
-            <th>Id</th>
             <th>Title</th>
             <th>Author</th>
             <th>PagesCount</th>
@@ -13,27 +12,27 @@
         </tr>
         </thead>
         <tbody>
-        @if (Books is null)
+        @if (Books is not null)
         {
-            <tr>Loading...</tr>
-        }
-        else
-        {
-            @foreach (var item in Books)
+            foreach (var item in Books)
             {
                 <tr>
-                    <td>@item.Id</td>
                     <td @onclick="() => Id(item.Id)" class="coloum-table-book">@item.Title</td>
                     <td>@item.Author</td>
                     <td>@item.PagesCount</td>
                     <td>@item.PublishDate.ToString("dd.MM.yyyy")</td>
                     <td>
                         <button class="btn btn-warning text-white" @onclick="() => Edit(item.Id)">Edit</button> |
-                            <button class="btn btn-danger text-white" @onclick="() => Remove(item.Id)">Remove</button>
+                        <button class="btn btn-danger text-white" @onclick="() => Remove(item.Id)">Remove</button>
                     </td>
                 </tr>
             }
         }
+        else
+        {
+            <tr>Loading...</tr>
+        }
+        
         </tbody>
     </table>
     <div>
