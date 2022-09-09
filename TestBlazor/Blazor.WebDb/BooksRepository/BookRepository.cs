@@ -27,6 +27,11 @@ namespace Blazor.WebDb.BooksRepository
             return await _context.Books.FirstOrDefaultAsync(b => b.Id == id);
         }
 
+        public async Task<BookPrices> GetBookPrices(int bookId)
+        {
+            return await _context.BookPrices.FirstOrDefaultAsync(b => b.BookId == bookId);
+        }
+
         public async Task<bool> AddBook(Book book)
         {
             await _context.Books.AddAsync(book);

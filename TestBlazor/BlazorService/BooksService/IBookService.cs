@@ -10,6 +10,8 @@ namespace Blazor.Logic.BooksService
 
         Task<Book> GetBook(int id);
 
+        Task<BookPrices> GetBookPrices(int bookId);
+
         Task<bool> AddBook(Book book);
 
         Task<bool> UpdateBook(Book book, int id);

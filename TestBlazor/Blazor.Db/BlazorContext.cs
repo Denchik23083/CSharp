@@ -28,11 +28,27 @@ namespace Blazor.Db
                     PublishDate = new DateTime(1990, 09, 25)
                 });
 
+            modelBuilder.Entity<BookPrices>().ToTable("BookPrices").HasData(
+                new BookPrices
+                {
+                    Id = 1,
+                    Price = 300,
+                    BookId = 1
+                },
+                new BookPrices
+                {
+                    Id = 2,
+                    Price = 350,
+                    BookId = 2
+                });
+
             modelBuilder.ApplyConfigurationsFromAssembly(GetType().Assembly);
 
             base.OnModelCreating(modelBuilder);
         }
 
         public DbSet<Book> Books { get; set; }
+
+        public DbSet<BookPrices> BookPrices { get; set; }
     }
 }

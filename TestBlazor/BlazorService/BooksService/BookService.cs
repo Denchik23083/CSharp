@@ -24,6 +24,11 @@ namespace Blazor.Logic.BooksService
             return await _repository.GetBook(id);
         }
 
+        public async Task<BookPrices> GetBookPrices(int bookId)
+        {
+            return await _repository.GetBookPrices(bookId);
+        }
+
         public async Task<bool> AddBook(Book book)
         {
             return await _repository.AddBook(book);

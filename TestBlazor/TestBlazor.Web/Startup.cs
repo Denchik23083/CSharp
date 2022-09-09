@@ -25,8 +25,8 @@ namespace TestBlazor.Web
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IBookService, BookService>();
-            services.AddScoped<IBookRepository, BookRepository>();
+            services.AddTransient<IBookService, BookService>();
+            services.AddTransient<IBookRepository, BookRepository>();
             services.AddScoped<IGameService, GameService>();
             services.AddScoped<IGameRepository, GameRepository>();
             services.AddScoped<IGameImageService, GameImageService>();
@@ -48,7 +48,7 @@ namespace TestBlazor.Web
                 var connectionString = Configuration.GetConnectionString("Blazor");
 
                 options.UseSqlServer(connectionString);
-            });
+            }, ServiceLifetime.Transient);
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

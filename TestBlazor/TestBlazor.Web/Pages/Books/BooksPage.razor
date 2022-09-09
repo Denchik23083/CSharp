@@ -8,6 +8,7 @@
             <th>Author</th>
             <th>PagesCount</th>
             <th>PublishDate</th>
+            <th>Price</th>
             <th>Actions</th>
         </tr>
         </thead>
@@ -16,16 +17,7 @@
         {
             foreach (var item in Books)
             {
-                <tr>
-                    <td @onclick="() => Id(item.Id)" class="coloum-table-book">@item.Title</td>
-                    <td>@item.Author</td>
-                    <td>@item.PagesCount</td>
-                    <td>@item.PublishDate.ToString("dd.MM.yyyy")</td>
-                    <td>
-                        <button class="btn btn-warning text-white" @onclick="() => Edit(item.Id)">Edit</button> |
-                        <button class="btn btn-danger text-white" @onclick="() => Remove(item.Id)">Remove</button>
-                    </td>
-                </tr>
+                <IndividualBooksComponent Book="item"/>
             }
         }
         else

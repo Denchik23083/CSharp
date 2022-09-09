@@ -24,20 +24,6 @@ namespace TestBlazor.Web.Pages.Books
             Books = await BookService.GetAllBooks();
         }
 
-        public void Id(int id) => NavigationManager.NavigateTo($"/books/{id}");
-
         public void Add() => NavigationManager.NavigateTo("/books/addBook");
-
-        public void Edit(int id) => NavigationManager.NavigateTo($"/books/{id}/edit");
-
-        public async Task Remove(int id)
-        {
-            var result = await BookService.RemoveBook(id);
-
-            if (result)
-            {
-                NavigationManager.NavigateTo("/books", true);
-            }
-        }
     }
 }

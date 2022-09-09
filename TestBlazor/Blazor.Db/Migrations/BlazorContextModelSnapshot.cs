@@ -62,6 +62,57 @@ namespace Blazor.Db.Migrations
                             Title = "Гарри Поттер и Кубок Огня"
                         });
                 });
+
+            modelBuilder.Entity("Blazor.Db.Entities.Books.BookPrices", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("BookId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BookId")
+                        .IsUnique();
+
+                    b.ToTable("BookPrices");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            BookId = 1,
+                            Price = 300m
+                        },
+                        new
+                        {
+                            Id = 2,
+                            BookId = 2,
+                            Price = 350m
+                        });
+                });
+
+            modelBuilder.Entity("Blazor.Db.Entities.Books.BookPrices", b =>
+                {
+                    b.HasOne("Blazor.Db.Entities.Books.Book", "Book")
+                        .WithOne("BookPrices")
+                        .HasForeignKey("Blazor.Db.Entities.Books.BookPrices", "BookId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Book");
+                });
+
+            modelBuilder.Entity("Blazor.Db.Entities.Books.Book", b =>
+                {
+                    b.Navigation("BookPrices");
+                });
 #pragma warning restore 612, 618
         }
     }

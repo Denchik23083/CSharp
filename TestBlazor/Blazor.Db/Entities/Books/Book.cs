@@ -13,5 +13,7 @@ namespace Blazor.Db.Entities.Books
         public int PagesCount { get; set; }
 
         public DateTime PublishDate { get; set; }
+
+        public BookPrices BookPrices { get; set; }
     }
 }
