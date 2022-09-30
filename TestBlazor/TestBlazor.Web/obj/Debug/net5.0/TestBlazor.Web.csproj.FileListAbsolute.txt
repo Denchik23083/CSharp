@@ -1,7 +1,14 @@
-C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\bin\Debug\net5.0\TestBlazor.Web.exe
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\bin\Debug\net5.0\appsettings.json
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\bin\Debug\net5.0\TestBlazor.Web.StaticWebAssets.xml
+C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\bin\Debug\net5.0\TestBlazor.Web.exe
+C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\bin\Debug\net5.0\TestBlazor.Web.deps.json
+C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\bin\Debug\net5.0\TestBlazor.Web.runtimeconfig.json
+C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\bin\Debug\net5.0\TestBlazor.Web.runtimeconfig.dev.json
+C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\bin\Debug\net5.0\TestBlazor.Web.dll
+C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\bin\Debug\net5.0\TestBlazor.Web.pdb
+C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\bin\Debug\net5.0\TestBlazor.Web.Views.dll
+C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\bin\Debug\net5.0\TestBlazor.Web.Views.pdb
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\bin\Debug\net5.0\Humanizer.dll
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\bin\Debug\net5.0\Markdig.dll
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
@@ -53,6 +60,7 @@ C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\Tes
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\RazorDeclaration\App.razor.g.cs
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\RazorDeclaration\PageComponents\Books\AddEditBookComponent.razor.g.cs
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\RazorDeclaration\PageComponents\Books\BookDetailsComponent.razor.g.cs
+C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\RazorDeclaration\PageComponents\Books\IndividualBooksComponent.razor.g.cs
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\RazorDeclaration\PageComponents\TestModel1\Confirmation.razor.g.cs
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\RazorDeclaration\PageComponents\TestModel1\Counter.razor.g.cs
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\RazorDeclaration\PageComponents\TestModel1\GameListTable.razor.g.cs
@@ -99,6 +107,7 @@ C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\Tes
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\Razor\App.razor.g.cs
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\Razor\PageComponents\Books\AddEditBookComponent.razor.g.cs
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\Razor\PageComponents\Books\BookDetailsComponent.razor.g.cs
+C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\Razor\PageComponents\Books\IndividualBooksComponent.razor.g.cs
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\Razor\PageComponents\TestModel1\Confirmation.razor.g.cs
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\Razor\PageComponents\TestModel1\Counter.razor.g.cs
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\Razor\PageComponents\TestModel1\GameListTable.razor.g.cs
@@ -154,14 +163,5 @@ C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\Tes
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\TestBlazor.Web.dll
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\refint\TestBlazor.Web.dll
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\TestBlazor.Web.pdb
-C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\bin\Debug\net5.0\TestBlazor.Web.deps.json
-C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\bin\Debug\net5.0\TestBlazor.Web.runtimeconfig.json
-C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\bin\Debug\net5.0\TestBlazor.Web.runtimeconfig.dev.json
-C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\bin\Debug\net5.0\TestBlazor.Web.dll
-C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\bin\Debug\net5.0\TestBlazor.Web.pdb
-C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\bin\Debug\net5.0\TestBlazor.Web.Views.dll
-C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\bin\Debug\net5.0\TestBlazor.Web.Views.pdb
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\TestBlazor.Web.genruntimeconfig.cache
 C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\ref\TestBlazor.Web.dll
-C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\RazorDeclaration\PageComponents\Books\IndividualBooksComponent.razor.g.cs
-C:\Users\User\source\repos\CSharp\TestBlazor\TestBlazor.Web\obj\Debug\net5.0\Razor\PageComponents\Books\IndividualBooksComponent.razor.g.cs

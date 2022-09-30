@@ -2,11 +2,13 @@
     <td @onclick="() => Id(Book.Id)" class="coloum-table-book">@Book.Title</td>
     <td>@Book.Author</td>
     <td>@Book.PagesCount</td>
-    <td>@Book.PublishDate.ToString("dd.MM.yyyy")</td>
+    <td>@Book.PublishDate.ToString("dd.MM.yyyy hh:mm:ss")</td>
+    <td>
     @if (BookPrices is not null)
     {
-        <td>@BookPrices.Price</td>
+        @BookPrices.Price
     }
+    </td>
     <td>
         <button class="btn btn-warning text-white" @onclick="() => Edit(Book.Id)">Edit</button> |
         <button class="btn btn-danger text-white" @onclick="() => Remove(Book.Id)">Remove</button>

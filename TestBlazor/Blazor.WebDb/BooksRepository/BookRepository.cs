@@ -32,15 +32,16 @@ namespace Blazor.WebDb.BooksRepository
             return await _context.BookPrices.FirstOrDefaultAsync(b => b.BookId == bookId);
         }
 
-        public async Task<bool> AddBook(Book book)
+        public async Task<bool> AddBook(Book book, BookPrices bookPrices)
         {
             await _context.Books.AddAsync(book);
+            await _context.BookPrices.AddAsync(bookPrices);
             await _context.SaveChangesAsync();
 
             return true;
         }
 
-        public async Task<bool> UpdateBook(Book book, int id)
+        public async Task<bool> UpdateBook(Book book, BookPrices bookPrices, int id)
         {
             var bookToUpdate = await _context.Books.FirstOrDefaultAsync(b => b.Id == id);
 
@@ -53,6 +54,15 @@ namespace Blazor.WebDb.BooksRepository
             bookToUpdate.Author = book.Author;
             bookToUpdate.PagesCount = book.PagesCount;
             bookToUpdate.PublishDate = book.PublishDate;
+
+            var priceToUpdate = _context.BookPrices.FirstOrDefault(b => b.BookId == bookToUpdate.Id);
+
+            if (priceToUpdate is null)
+            {
+                return false;
+            }
+
+            priceToUpdate.Price = bookPrices.Price;
 
             await _context.SaveChangesAsync();
 
@@ -68,7 +78,16 @@ namespace Blazor.WebDb.BooksRepository
                 return false;
             }
 
+            var priceToDelete = await _context.BookPrices.FirstOrDefaultAsync(b => b.BookId == id);
+
+            if (priceToDelete is null)
+            {
+                return false;
+            }
+
             _context.Books.Remove(bookToDelete);
+            _context.BookPrices.Remove(priceToDelete);
+
             await _context.SaveChangesAsync();
 
             return true;

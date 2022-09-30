@@ -13,9 +13,12 @@ namespace TestBlazor.Web.PageComponents.Books
 
         public Book Book { get; set; }
 
+        public BookPrices BookPrices { get; set; }
+
         protected override async Task OnInitializedAsync()
         {
             Book = await BookService.GetBook(BookId);
+            BookPrices = await BookService.GetBookPrices(BookId);
         }
     }
 }

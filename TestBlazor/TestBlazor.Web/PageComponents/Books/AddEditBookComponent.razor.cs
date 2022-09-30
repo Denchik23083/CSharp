@@ -18,13 +18,15 @@ namespace TestBlazor.Web.PageComponents.Books
 
         [Inject] public NavigationManager NavigationManager { get; set; }
 
-        public Book FormBook = new();
+        public Book Book = new();
+
+        public BookPrices BookPrices = new();
 
         public async Task Submit()
         {
             if (Add)
             {
-                var result = await BookService.AddBook(FormBook);
+                var result = await BookService.AddBook(Book, BookPrices);
 
                 if (result)
                 {
@@ -33,7 +35,7 @@ namespace TestBlazor.Web.PageComponents.Books
             }
             if (Edit)
             {
-                var result = await BookService.UpdateBook(FormBook, EditId);
+                var result = await BookService.UpdateBook(Book, BookPrices, EditId);
 
                 if (result)
                 {

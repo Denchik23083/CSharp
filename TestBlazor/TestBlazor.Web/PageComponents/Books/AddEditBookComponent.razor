@@ -6,16 +6,18 @@
             <th>Author</th>
             <th>PagesCount</th>
             <th>PublishDate</th>
+            <th>Price</th>
         </tr>
-        </thead>
+        </thead>    
     </table>
 </div>
-<EditForm Model="@FormBook" OnSubmit="@Submit">
-    <InputText id="title" @bind-Value="FormBook.Title" />
-    <InputText id="author" @bind-Value="FormBook.Author" />
-    <InputNumber id="pagesCount" @bind-Value="FormBook.PagesCount" />
-    <InputDate id="publishDate" @bind-Value="FormBook.PublishDate" />
-        
+<EditForm Model="@Book" OnSubmit="Submit">
+    <InputText id="title" @bind-Value="Book.Title"/>
+    <InputText id="author" @bind-Value="Book.Author"/>
+    <InputNumber id="pagesCount" @bind-Value="Book.PagesCount"/>
+    <input type="datetime-local" step="2" @bind="Book.PublishDate"/>
+    <InputNumber id="price" @bind-Value="BookPrices.Price" />
+
     <button class="btn btn-primary" type="submit">Submit</button>
-        
+
 </EditForm>
