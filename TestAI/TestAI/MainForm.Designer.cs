@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.ListCommands = new System.Windows.Forms.ListBox();
+            this.TmrSpeaking = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // ListCommands
@@ -43,6 +45,12 @@
             this.ListCommands.Name = "ListCommands";
             this.ListCommands.Size = new System.Drawing.Size(800, 450);
             this.ListCommands.TabIndex = 0;
+            // 
+            // TmrSpeaking
+            // 
+            this.TmrSpeaking.Enabled = true;
+            this.TmrSpeaking.Interval = 1000;
+            this.TmrSpeaking.Tick += new System.EventHandler(this.TmrSpeaking_Tick);
             // 
             // MainForm
             // 
@@ -61,6 +69,7 @@
         #endregion
 
         private System.Windows.Forms.ListBox ListCommands;
+        private System.Windows.Forms.Timer TmrSpeaking;
     }
 }
 
