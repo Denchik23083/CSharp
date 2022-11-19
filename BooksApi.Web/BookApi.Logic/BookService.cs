@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Threading.Tasks;
 using BookApi.Db;
 using BookApi.Db.Entities;
 using BookApi.WebDb;
@@ -19,50 +18,43 @@ namespace BookApi.Logic
             _context = context;
         }
 
-        public IEnumerable<Book> GetAll()
+        public async Task<IEnumerable<Book>> GetAll()
         {
-            return _repository.GetAll();
+            return await _repository.GetAll();
         }
 
-        public Book Get(int id)
+        public async Task<Book> Get(int id)
         {
-            return _repository.Get(id);
+            return await _repository.Get(id);
         }
 
-        public Book Create(Book book)
+        public async Task Create(Book book)
         {
-            return _repository.Create(book);
+            await _repository.Create(book);
         }
 
-        public void Update(Book book)
+        public async Task Update(Book book, int id)
         {
-            var bookToUpdate = _context.Books.FirstOrDefault(b => b.Id == book.Id);
+            var bookToUpdate = await _repository.Get(id);
 
             if (bookToUpdate is null)
             {
                 throw new ArgumentNullException();
             }
 
-            bookToUpdate.Title = book.Title;
-            bookToUpdate.Author = book.Author;
-            bookToUpdate.PagesCount = book.PagesCount;
-            bookToUpdate.PublishDate = book.PublishDate;
-
-            _context.SaveChanges();
-
-            _repository.Update(bookToUpdate);
+            await _repository.Update(bookToUpdate, book);
         }
 
-        public void Delete(int id)
+        public async Task Delete(int id)
         {
-            var bookToDelete = _context.Books.FirstOrDefault(b => b.Id == id);
+            var bookToDelete = await _repository.Get(id);
 
             if (bookToDelete is null)
             {
                 throw new ArgumentNullException();
             }
 
-            _repository.Delete(bookToDelete);
+            await _repository.Delete(bookToDelete);
         }
     }
 }

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using BookApi.Db;
 using BookApi.Db.Entities;
@@ -18,34 +15,37 @@ namespace BookApi.WebDb
             _context = context;
         }
 
-        public IEnumerable<Book> GetAll()
+        public async Task<IEnumerable<Book>> GetAll()
         {
-            return _context.Books;
+            return await _context.Books.ToListAsync();
         }
 
-        public Book Get(int id)
+        public async Task<Book> Get(int id)
         {
-            return _context.Books.FirstOrDefault(b => b.Id == id);
+            return await _context.Books.FirstOrDefaultAsync(b => b.Id == id);
         }
 
-        public Book Create(Book book)
+        public async Task Create(Book book)
         {
-            _context.Books.Add(book);
-            _context.SaveChanges();
-
-            return book;
+            await _context.Books.AddAsync(book);
+            await _context.SaveChangesAsync();
         }
 
-        public void Update(Book book)
+        public async Task Update(Book bookToUpdate, Book book)
         {
-            
+            bookToUpdate.Title = book.Title;
+            bookToUpdate.Author = book.Author;
+            bookToUpdate.PagesCount = book.PagesCount;
+            bookToUpdate.PublishDate = book.PublishDate;
+
+            await _context.SaveChangesAsync();
         }
 
-        public void Delete(Book book)
+        public async Task Delete(Book bookToDelete)
         {
-            _context.Books.Remove(book);
+            _context.Books.Remove(bookToDelete);
 
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
     }
 }

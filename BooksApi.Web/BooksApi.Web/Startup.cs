@@ -1,19 +1,13 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using BookApi.Db;
 using BookApi.Logic;
 using BookApi.WebDb;
+using BooksApi.Web.Utilities;
 using Microsoft.EntityFrameworkCore;
 
 namespace BooksApi.Web
@@ -30,11 +24,12 @@ namespace BooksApi.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllers();
 
             services.AddScoped<IBookService, BookService>();
             services.AddScoped<IBookRepository, BookRepository>();
+
+            services.AddAutoMapper(typeof(MappingProfile).Assembly);
 
             services.AddSwaggerGen(c =>
             {
@@ -43,7 +38,7 @@ namespace BooksApi.Web
 
             services.AddDbContext<BookContext>(options =>
             {
-                var connectionString = Configuration.GetConnectionString("BookApi");
+                var connectionString = Configuration.GetConnectionString("Library");
 
                 options.UseSqlServer(connectionString);
             });
@@ -81,6 +76,19 @@ namespace BooksApi.Web
             {
                 endpoints.MapControllers();
             });
+
+            EnsureDbCreated(app);
+        }
+
+        private void EnsureDbCreated(IApplicationBuilder app)
+        {
+            var scopeFactory = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>();
+            
+            using var scope = scopeFactory.CreateScope();
+
+            var context = scope.ServiceProvider.GetService<BookContext>();
+
+            context!.Database.EnsureCreated();
         }
     }
 }

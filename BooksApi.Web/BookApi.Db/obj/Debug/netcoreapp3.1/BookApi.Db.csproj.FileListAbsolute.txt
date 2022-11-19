@@ -21,3 +21,13 @@ C:\Users\User\source\repos\BooksApi\BookApi.Db\obj\Debug\netcoreapp3.1\BookApi.D
 C:\Users\User\source\repos\BooksApi\BookApi.Db\obj\Debug\netcoreapp3.1\BookApi.Db.dll
 C:\Users\User\source\repos\BooksApi\BookApi.Db\obj\Debug\netcoreapp3.1\BookApi.Db.pdb
 C:\Users\User\source\repos\BooksApi\BookApi.Db\obj\Debug\netcoreapp3.1\BookApi.Db.genruntimeconfig.cache
+C:\Users\User\source\repos\CSharp\BooksApi.Web\BookApi.Db\bin\Debug\netcoreapp3.1\BookApi.Db.deps.json
+C:\Users\User\source\repos\CSharp\BooksApi.Web\BookApi.Db\bin\Debug\netcoreapp3.1\BookApi.Db.dll
+C:\Users\User\source\repos\CSharp\BooksApi.Web\BookApi.Db\bin\Debug\netcoreapp3.1\BookApi.Db.pdb
+C:\Users\User\source\repos\CSharp\BooksApi.Web\BookApi.Db\obj\Debug\netcoreapp3.1\BookApi.Db.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\CSharp\BooksApi.Web\BookApi.Db\obj\Debug\netcoreapp3.1\BookApi.Db.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\CSharp\BooksApi.Web\BookApi.Db\obj\Debug\netcoreapp3.1\BookApi.Db.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\CSharp\BooksApi.Web\BookApi.Db\obj\Debug\netcoreapp3.1\BookApi.Db.AssemblyInfo.cs
+C:\Users\User\source\repos\CSharp\BooksApi.Web\BookApi.Db\obj\Debug\netcoreapp3.1\BookApi.Db.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\CSharp\BooksApi.Web\BookApi.Db\obj\Debug\netcoreapp3.1\BookApi.Db.dll
+C:\Users\User\source\repos\CSharp\BooksApi.Web\BookApi.Db\obj\Debug\netcoreapp3.1\BookApi.Db.pdb

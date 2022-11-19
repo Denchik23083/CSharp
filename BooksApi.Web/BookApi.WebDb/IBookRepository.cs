@@ -1,19 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using BookApi.Db.Entities;
 
 namespace BookApi.WebDb
 {
     public interface IBookRepository
     {
-        IEnumerable<Book> GetAll();
+        Task<IEnumerable<Book>> GetAll();
 
-        Book Get(int id);
+        Task<Book> Get(int id);
 
-        Book Create(Book book);
+        Task Create(Book book);
 
-        void Update(Book book);
+        Task Update(Book bookToUpdate, Book book);
 
-        void Delete(Book book);
+        Task Delete(Book bookToDelete);
     }
 }

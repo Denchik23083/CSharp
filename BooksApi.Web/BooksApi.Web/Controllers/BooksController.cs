@@ -1,12 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using System;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using BookApi.Db.Entities;
 using BookApi.Logic;
-using BookApi.WebDb;
 using BooksApi.Web.Models;
 
 namespace BooksApi.Web.Controllers
@@ -16,91 +14,80 @@ namespace BooksApi.Web.Controllers
     public class BooksController : ControllerBase
     {
         private readonly IBookService _service;
+        private readonly IMapper _mapper;
 
-        public BooksController(IBookService service)
+        public BooksController(IBookService service, IMapper mapper)
         {
             _service = service;
+            _mapper = mapper;
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            return Ok(_service.GetAll());
+            var books = await _service.GetAll();
+
+            if (!books.Any())
+            {
+                return NoContent();
+            }
+
+            var mapperBooks = _mapper.Map<IEnumerable<BookModel>>(books);
+
+            return Ok(mapperBooks);
         }
 
         [HttpGet("id")]
-        public IActionResult Get(int id)
+        public async Task<IActionResult> Get(int id)
         {
-            return Ok(_service.Get(id));
+            var book = await _service.Get(id);
+
+            if (book is null)
+            {
+                return NoContent();
+            }
+
+            var mapperBook = _mapper.Map<BookModel>(book);
+
+            return Ok(mapperBook);
         }
 
         [HttpPost]
-        public IActionResult CreateBook(BookModel model)
+        public async Task<IActionResult> Create(BookModel model)
         {
             if (!ModelState.IsValid)
             {
-                return BadRequest();
+                return BadRequest(ModelState);
             }
 
-            var created = _service.Create(Map(model));
+            var createdBook = _mapper.Map<Book>(model);
 
+            await _service.Create(createdBook);
 
-            return Ok(Map(created));
+            return NoContent();
         }
 
         [HttpPut("id")]
-        public IActionResult UpdateBook(int id, BookModel model)
+        public async Task<IActionResult> UpdateBook(int id, BookModel model)
         {
-            try
+            if (!ModelState.IsValid)
             {
-                model.Id = id;
-                _service.Update(Map(model));
+                return BadRequest(ModelState);
             }
-            catch (ArgumentException)
-            {
-                return NotFound($"Book with id {id} not found");
-            }
+
+            var updatedBook = _mapper.Map<Book>(model);
+
+            await _service.Update(updatedBook, id);
 
             return NoContent();
         }
 
         [HttpDelete("id")]
-        public IActionResult DeleteBook(int id)
+        public async Task<IActionResult> DeleteBook(int id)
         {
-            try
-            {
-                _service.Delete(id);
-            }
-            catch (ArgumentException)
-            {
-                return NotFound($"Book with id {id} not found");
-            }
+            await _service.Delete(id);
 
             return NoContent();
-        }
-
-        public static BookModel Map(Book model)
-        {
-            return new BookModel
-            {
-                Id = model.Id,
-                Title = model.Title,
-                Author = model.Author,
-                PagesCount = model.PagesCount,
-                PublishDate = model.PublishDate,
-            };
-        }
-
-        public static Book Map(BookModel model)
-        {
-            return new Book
-            {
-                Id = model.Id,
-                Title = model.Title,
-                Author = model.Author,
-                PagesCount = model.PagesCount,
-                PublishDate = model.PublishDate,
-            };
         }
     }
 }

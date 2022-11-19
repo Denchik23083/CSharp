@@ -1,20 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using BookApi.Db.Entities;
-using BookApi.WebDb;
 
 namespace BookApi.Logic
 {
     public interface IBookService
     {
-        IEnumerable<Book> GetAll();
+        Task<IEnumerable<Book>> GetAll();
 
-        Book Get(int id);
+        Task<Book> Get(int id);
 
-        Book Create(Book book);
+        Task Create(Book book);
 
-        void Update(Book book);
+        Task Update(Book book, int id);
 
-        void Delete(int id);
+        Task Delete(int id);
     }
 }
