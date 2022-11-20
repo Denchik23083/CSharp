@@ -43,6 +43,13 @@ namespace BooksApi.Web
                 options.UseSqlServer(connectionString);
             });
 
+            services.AddDbContext<TestsBookContext>(options =>
+            {
+                var connectionString = Configuration.GetConnectionString("TestsLibrary");
+
+                options.UseSqlServer(connectionString);
+            });
+
             services.AddCors(options =>
             {
                 options.AddPolicy("devCors", builder =>
@@ -78,15 +85,27 @@ namespace BooksApi.Web
             });
 
             EnsureDbCreated(app);
+            EnsureTestsDbCreated(app);
         }
 
-        private void EnsureDbCreated(IApplicationBuilder app)
+        public void EnsureDbCreated(IApplicationBuilder app)
         {
             var scopeFactory = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>();
             
             using var scope = scopeFactory.CreateScope();
 
             var context = scope.ServiceProvider.GetService<BookContext>();
+
+            context!.Database.EnsureCreated();
+        }
+
+        public void EnsureTestsDbCreated(IApplicationBuilder app)
+        {
+            var scopeFactory = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>();
+
+            using var scope = scopeFactory.CreateScope();
+
+            var context = scope.ServiceProvider.GetService<TestsBookContext>();
 
             context!.Database.EnsureCreated();
         }

@@ -10,12 +10,10 @@ namespace BookApi.Logic
     public class BookService : IBookService
     {
         private readonly IBookRepository _repository;
-        private readonly BookContext _context;
 
         public BookService(IBookRepository repository, BookContext context)
         {
             _repository = repository;
-            _context = context;
         }
 
         public async Task<IEnumerable<Book>> GetAll()

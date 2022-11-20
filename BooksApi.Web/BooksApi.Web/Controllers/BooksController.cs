@@ -23,7 +23,7 @@ namespace BooksApi.Web.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAllBooks()
         {
             var books = await _service.GetAll();
 
@@ -38,7 +38,7 @@ namespace BooksApi.Web.Controllers
         }
 
         [HttpGet("id")]
-        public async Task<IActionResult> Get(int id)
+        public async Task<IActionResult> GetBook(int id)
         {
             var book = await _service.Get(id);
 
@@ -53,7 +53,7 @@ namespace BooksApi.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(BookModel model)
+        public async Task<IActionResult> CreateBook(BookModel model)
         {
             if (!ModelState.IsValid)
             {

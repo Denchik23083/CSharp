@@ -7,10 +7,10 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace BookApi.Db.Migrations
+namespace BookApi.Db.Migrations.TestsBook
 {
-    [DbContext(typeof(BookContext))]
-    [Migration("20221119105214_init")]
+    [DbContext(typeof(TestsBookContext))]
+    [Migration("20221120150213_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
