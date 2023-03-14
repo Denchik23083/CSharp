@@ -9,6 +9,8 @@ namespace BookApi.Db
 
         public DbSet<Book> Books { get; set; }
 
+        public DbSet<Category> Categories { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(GetType().Assembly);

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.Json.Serialization;
 
 namespace BookApi.Db.Entities
 {
@@ -13,5 +14,10 @@ namespace BookApi.Db.Entities
         public int PagesCount { get; set; }
 
         public DateTime PublishDate { get; set; }
+
+        public int CategoryId { get; set; }
+
+        [JsonIgnore]
+        public Category Category { get; set; }
     }
 }

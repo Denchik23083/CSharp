@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30907.101
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32519.379
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BooksApi.Web", "BooksApi.Web\BooksApi.Web.csproj", "{A282B618-0E3F-44AA-8AB7-775E01115535}"
 EndProject
@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookApi.WebDb", "BookApi.We
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookApi.Db", "BookApi.Db\BookApi.Db.csproj", "{ED0BDC52-2432-4A16-B545-45F90E246B6A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookApi.Tests", "BookApi.Tests\BookApi.Tests.csproj", "{258F823A-C7A5-4604-B3B5-E77B154D414C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookApi.Tests", "BookApi.Tests\BookApi.Tests.csproj", "{258F823A-C7A5-4604-B3B5-E77B154D414C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookApi.Client", "BookApi.Client\BookApi.Client.csproj", "{EADC313A-E825-4181-9A2C-95B245EF9908}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{258F823A-C7A5-4604-B3B5-E77B154D414C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{258F823A-C7A5-4604-B3B5-E77B154D414C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{258F823A-C7A5-4604-B3B5-E77B154D414C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EADC313A-E825-4181-9A2C-95B245EF9908}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EADC313A-E825-4181-9A2C-95B245EF9908}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EADC313A-E825-4181-9A2C-95B245EF9908}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EADC313A-E825-4181-9A2C-95B245EF9908}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

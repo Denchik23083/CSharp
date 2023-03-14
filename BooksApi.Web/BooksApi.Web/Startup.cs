@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -9,6 +10,7 @@ using BookApi.Logic;
 using BookApi.WebDb;
 using BooksApi.Web.Utilities;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 
 namespace BooksApi.Web
 {
@@ -28,6 +30,9 @@ namespace BooksApi.Web
 
             services.AddScoped<IBookService, BookService>();
             services.AddScoped<IBookRepository, BookRepository>();
+
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
 
             services.AddAutoMapper(typeof(MappingProfile).Assembly);
 

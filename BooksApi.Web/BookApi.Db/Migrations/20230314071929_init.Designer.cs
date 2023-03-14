@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookApi.Db.Migrations
 {
     [DbContext(typeof(BookContext))]
-    [Migration("20221120150206_init")]
+    [Migration("20230314071929_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -31,6 +31,9 @@ namespace BookApi.Db.Migrations
                     b.Property<string>("Author")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
                     b.Property<int>("PagesCount")
                         .HasColumnType("int");
 
@@ -42,6 +45,8 @@ namespace BookApi.Db.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CategoryId");
+
                     b.ToTable("Books");
 
                     b.HasData(
@@ -49,6 +54,7 @@ namespace BookApi.Db.Migrations
                         {
                             Id = 1,
                             Author = "Джоан Роулинг",
+                            CategoryId = 1,
                             PagesCount = 500,
                             PublishDate = new DateTime(1997, 6, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Гарри Поттер и философский камень"
@@ -57,6 +63,7 @@ namespace BookApi.Db.Migrations
                         {
                             Id = 2,
                             Author = "Джоан Роулинг",
+                            CategoryId = 2,
                             PagesCount = 450,
                             PublishDate = new DateTime(1998, 7, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Гарри Поттер и Тайная комната"
@@ -65,6 +72,7 @@ namespace BookApi.Db.Migrations
                         {
                             Id = 3,
                             Author = "Джоан Роулинг",
+                            CategoryId = 1,
                             PagesCount = 600,
                             PublishDate = new DateTime(1999, 7, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Гарри Поттер и узник Азкабана"
@@ -73,10 +81,55 @@ namespace BookApi.Db.Migrations
                         {
                             Id = 4,
                             Author = "Джоан Роулинг",
+                            CategoryId = 2,
                             PagesCount = 700,
                             PublishDate = new DateTime(2000, 7, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Гарри Поттер и Кубок огня"
                         });
+                });
+
+            modelBuilder.Entity("BookApi.Db.Entities.Category", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "First Category"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "Second Category"
+                        });
+                });
+
+            modelBuilder.Entity("BookApi.Db.Entities.Book", b =>
+                {
+                    b.HasOne("BookApi.Db.Entities.Category", "Category")
+                        .WithMany("Books")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("BookApi.Db.Entities.Category", b =>
+                {
+                    b.Navigation("Books");
                 });
 #pragma warning restore 612, 618
         }

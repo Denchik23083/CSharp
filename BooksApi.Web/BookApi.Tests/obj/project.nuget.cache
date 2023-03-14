@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "VZUsJvLE3Mj3efR2voONt94qhUYeUFI8hT00Op79/2Nx5JrpHGa7xFnZdajUpT0j3xyGIbuUIRHRQtcQ5+xUSw==",
+  "dgSpecHash": "AzKn8IK7WxjycvxrVVtHMKEyEGJqhw3ZQwiEzTHu27g6NH5f0J4GUEHPSEU6zDVUfHOXgsJkPitVsS6+6FScGQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\User\\source\\repos\\CSharp\\BooksApi.Web\\BookApi.Tests\\BookApi.Tests.csproj",
   "expectedPackageFiles": [

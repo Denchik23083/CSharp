@@ -11,12 +11,12 @@ namespace BooksApi.Web.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BooksController : ControllerBase
+    public class BookController : ControllerBase
     {
         private readonly IBookService _service;
         private readonly IMapper _mapper;
 
-        public BooksController(IBookService service, IMapper mapper)
+        public BookController(IBookService service, IMapper mapper)
         {
             _service = service;
             _mapper = mapper;
@@ -32,7 +32,7 @@ namespace BooksApi.Web.Controllers
                 return NoContent();
             }
 
-            var mapperBooks = _mapper.Map<IEnumerable<BookModel>>(books);
+            var mapperBooks = _mapper.Map<IEnumerable<BookReadModel>>(books);
 
             return Ok(mapperBooks);
         }
@@ -47,13 +47,13 @@ namespace BooksApi.Web.Controllers
                 return NoContent();
             }
 
-            var mapperBook = _mapper.Map<BookModel>(book);
+            var mapperBook = _mapper.Map<BookReadModel>(book);
 
             return Ok(mapperBook);
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateBook(BookModel model)
+        public async Task<IActionResult> CreateBook(BookWriteModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -68,7 +68,7 @@ namespace BooksApi.Web.Controllers
         }
 
         [HttpPut("id")]
-        public async Task<IActionResult> UpdateBook(int id, BookModel model)
+        public async Task<IActionResult> UpdateBook(int id, BookWriteModel model)
         {
             if (!ModelState.IsValid)
             {

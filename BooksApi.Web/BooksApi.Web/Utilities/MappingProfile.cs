@@ -8,8 +8,11 @@ namespace BooksApi.Web.Utilities
     {
         public MappingProfile()
         {
-            CreateMap<BookModel, Book>();
-            CreateMap<Book, BookModel>();
+            CreateMap<BookWriteModel, Book>();
+            CreateMap<Book, BookReadModel>();
+
+            CreateMap<CategoryWriteModel, Category>();
+            CreateMap<Category, CategoryReadModel>();
         }
     }
 }

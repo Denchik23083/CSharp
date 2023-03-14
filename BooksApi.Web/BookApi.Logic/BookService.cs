@@ -11,7 +11,7 @@ namespace BookApi.Logic
     {
         private readonly IBookRepository _repository;
 
-        public BookService(IBookRepository repository, BookContext context)
+        public BookService(IBookRepository repository)
         {
             _repository = repository;
         }

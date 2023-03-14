@@ -1,8 +1,9 @@
 ﻿using System;
+using BookApi.Db.Entities;
 
 namespace BooksApi.Web.Models
 {
-    public class BookModel
+    public class BookReadModel
     {
         public int Id { get; set; }
 
@@ -13,5 +14,9 @@ namespace BooksApi.Web.Models
         public int PagesCount { get; set; }
 
         public DateTime PublishDate { get; set; }
+
+        public int CategoryId { get; set; }
+
+        public Category Category { get; set; }
     }
 }
