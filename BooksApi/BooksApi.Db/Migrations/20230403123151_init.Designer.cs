@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BooksApi.Db.Migrations
 {
     [DbContext(typeof(BooksContext))]
-    [Migration("20230401132632_nullable_cagerory")]
-    partial class nullable_cagerory
+    [Migration("20230403123151_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

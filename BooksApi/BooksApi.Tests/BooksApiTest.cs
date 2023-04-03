@@ -1,143 +1,37 @@
-using BooksApi.Db.Entities;
+using BooksApi.Db;
+using BooksApi.Logic.BooksService;
+using BooksApi.WebDb.BooksRepository;
+using Microsoft.EntityFrameworkCore;
+using Moq;
 using Xunit;
 
 namespace BooksApi.Tests
 {
     public class BooksApiTest
     {
-        #region TestsDb
+        private readonly Mock<IBooksRepository> _books;
 
-        /*[Fact]
-        public void Get_All_Books()
+        public BooksApiTest()
         {
-            var context = new TestsBookContext();
-            var expectedBooks = 4;
-
-            var books = context.Books;
-            Assert.NotNull(books);
-
-            Assert.Equal(expectedBooks, books.Count());
+            _books = new Mock<IBooksRepository>();
         }
 
         [Fact]
-        public void Get_Book()
+        public async Task GetAll()
         {
-            var context = new TestsBookContext();
-            var expectedId = 2;
+            var context = new BooksContext();
 
-            var book = context.Books.FirstOrDefault(b => b.Id == expectedId);
+            var expectedBooks = await context.Books.ToListAsync();
+            
+            _books
+                .Setup(_ => _.GetAll())
+                .ReturnsAsync(expectedBooks);
 
-            Assert.NotNull(book);
-            Assert.Equal(expectedId, book.Id);
+            var service = new BooksService(_books.Object);
+
+            var books = await service.GetAll();
+
+            Assert.Equal(expectedBooks.Count, books.Count());
         }
-
-        [Fact]
-        public void Create()
-        {
-            var context = new TestsBookContext();
-
-            var book = new Book
-            {
-                Title = "Гарри Поттер и печера страха",
-                Author = "Дж. Роуль",
-                PagesCount = 600,
-                PublishDate = new DateTime(1979, 01, 11)
-            };
-
-            context.Books.Add(book);
-            context.SaveChanges();
-
-            var created = context.Books.FirstOrDefault(
-                b => b.Title.Equals(book.Title) &&
-                     b.Author.Equals(book.Author) &&
-                     b.PagesCount == book.PagesCount &&
-                     b.PublishDate == book.PublishDate);
-
-            Assert.NotNull(created);
-
-            context.Books.Remove(created);
-            context.SaveChanges();
-
-            var removed = context.Books.FirstOrDefault(
-                b => b.Title.Equals(created.Title) &&
-                     b.Author.Equals(created.Author) &&
-                     b.PagesCount == created.PagesCount &&
-                     b.PublishDate == created.PublishDate);
-
-            Assert.Null(removed);
-        }
-
-        [Fact]
-        public void Update()
-        {
-            var context = new TestsBookContext();
-
-            var book = new Book
-            {
-                Title = "Гарри Поттер и пытка",
-                Author = "Дж. Роуль",
-                PagesCount = 1000,
-                PublishDate = new DateTime(1979, 01, 11)
-            };
-
-            var expectedId = 2;
-            var bookToUpdate = context.Books.FirstOrDefault(b => b.Id == expectedId);
-
-            Assert.NotNull(bookToUpdate);
-            Assert.Equal(expectedId, bookToUpdate.Id);
-
-            bookToUpdate.Title = book.Title;
-            bookToUpdate.Author = book.Author;
-            bookToUpdate.PagesCount = book.PagesCount;
-            bookToUpdate.PublishDate = book.PublishDate;
-
-            context.SaveChanges();
-
-            var updated = context.Books.FirstOrDefault(
-                b => b.Title.Equals(book.Title) &&
-                     b.Author.Equals(book.Author) &&
-                     b.PagesCount == book.PagesCount &&
-                     b.PublishDate == book.PublishDate);
-
-            Assert.NotNull(updated);
-        }
-
-        [Fact]
-        public void Remove()
-        {
-            var context = new TestsBookContext();
-
-            var book = new Book
-            {
-                Title = "Гарри Поттер и печера страха",
-                Author = "Дж. Роуль",
-                PagesCount = 600,
-                PublishDate = new DateTime(1979, 01, 11)
-            };
-
-            context.Books.Add(book);
-            context.SaveChanges();
-
-            var created = context.Books.FirstOrDefault(
-                b => b.Title.Equals(book.Title) &&
-                     b.Author.Equals(book.Author) &&
-                     b.PagesCount == book.PagesCount &&
-                     b.PublishDate == book.PublishDate);
-
-            Assert.NotNull(created);
-
-            context.Books.Remove(created);
-            context.SaveChanges();
-
-            var removed = context.Books.FirstOrDefault(
-                b => b.Title.Equals(created.Title) &&
-                     b.Author.Equals(created.Author) &&
-                     b.PagesCount == created.PagesCount &&
-                     b.PublishDate == created.PublishDate);
-
-            Assert.Null(removed);
-        }*/
-
-        #endregion
     }
 }
