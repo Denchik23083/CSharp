@@ -18,6 +18,13 @@ namespace BooksApi.WebDb.BooksRepository
             return await _context.Books.ToListAsync();
         }
 
+        public async Task<IEnumerable<Book>> GetAllBooksCategories()
+        {
+            return await _context.Books
+                .Where(_ => _.CategoryId == null)
+                .ToListAsync();
+        }
+
         public async Task<Book> Get(int id)
         {
             return (await _context.Books.FirstOrDefaultAsync(b => b.Id == id))!;

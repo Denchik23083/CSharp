@@ -14,7 +14,7 @@ namespace BooksApi.Db.Entities
 
         public DateTime PublishDate { get; set; }
 
-        public int CategoryId { get; set; }
+        public int? CategoryId { get; set; }
 
         [JsonIgnore] 
         public Category? Category { get; set; }
