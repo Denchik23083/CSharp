@@ -55,7 +55,7 @@ namespace BooksApi.Web.Controllers
         }
 
         [HttpPut("id")]
-        public async Task<IActionResult> UpdateBook(int id, BooksWriteModel model)
+        public async Task<IActionResult> UpdateBook(BooksWriteModel model, int id)
         {
             if (!ModelState.IsValid)
             {

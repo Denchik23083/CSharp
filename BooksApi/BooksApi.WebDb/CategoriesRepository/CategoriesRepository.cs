@@ -43,7 +43,6 @@ namespace BooksApi.WebDb.CategoriesRepository
         public async Task Update(Category categoryToUpdate, Category category)
         {
             categoryToUpdate.Description = category.Description;
-            categoryToUpdate.Books = category.Books;
 
             await _context.SaveChangesAsync();
         }

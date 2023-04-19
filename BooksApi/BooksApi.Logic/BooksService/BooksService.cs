@@ -17,11 +17,6 @@ namespace BooksApi.Logic.BooksService
             return await _repository.GetAll();
         }
 
-        public async Task<IEnumerable<Book>> GetAllBooksCategories()
-        {
-            return await _repository.GetAllBooksCategories();
-        }
-
         public async Task<Book> Get(int id)
         {
             var book = await _repository.Get(id);

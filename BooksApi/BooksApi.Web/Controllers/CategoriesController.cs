@@ -55,7 +55,7 @@ namespace BooksApi.Web.Controllers
         }
 
         [HttpPut("id")]
-        public async Task<IActionResult> UpdateCategory(int id, CategoriesWriteModel model)
+        public async Task<IActionResult> UpdateCategory(CategoriesWriteModel model, int id)
         {
             if (!ModelState.IsValid)
             {

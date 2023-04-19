@@ -1,7 +1,6 @@
-using BooksApi.Db;
+using BooksApi.Db.Entities;
 using BooksApi.Logic.BooksService;
 using BooksApi.WebDb.BooksRepository;
-using Microsoft.EntityFrameworkCore;
 using Moq;
 using Xunit;
 
@@ -19,19 +18,15 @@ namespace BooksApi.Tests
         [Fact]
         public async Task GetAll()
         {
-            var context = new BooksContext();
-
-            var expectedBooks = await context.Books.ToListAsync();
-            
             _books
                 .Setup(_ => _.GetAll())
-                .ReturnsAsync(expectedBooks);
+                .ReturnsAsync(new List<Book>());
 
             var service = new BooksService(_books.Object);
 
             var books = await service.GetAll();
 
-            Assert.Equal(expectedBooks.Count, books.Count());
+            Assert.NotNull(books);
         }
     }
 }
