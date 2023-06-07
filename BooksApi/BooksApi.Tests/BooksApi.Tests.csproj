@@ -9,8 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="6.0.16" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
-    <PackageReference Include="Moq" Version="4.18.4" />
     <PackageReference Include="xunit" Version="2.4.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -23,9 +23,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BooksApi.Db\BooksApi.Db.csproj" />
-    <ProjectReference Include="..\BooksApi.Logic\BooksApi.Logic.csproj" />
     <ProjectReference Include="..\BooksApi.Web\BooksApi.Web.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.Extensions.Configuration.Json">
+      <HintPath>..\..\..\..\..\..\..\Program Files\dotnet\packs\Microsoft.AspNetCore.App.Ref\6.0.16\ref\net6.0\Microsoft.Extensions.Configuration.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
