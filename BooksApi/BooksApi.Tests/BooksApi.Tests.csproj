@@ -23,13 +23,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BooksApi.Logic\BooksApi.Logic.csproj" />
     <ProjectReference Include="..\BooksApi.Web\BooksApi.Web.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="Microsoft.Extensions.Configuration.Json">
-      <HintPath>..\..\..\..\..\..\..\Program Files\dotnet\packs\Microsoft.AspNetCore.App.Ref\6.0.16\ref\net6.0\Microsoft.Extensions.Configuration.Json.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
 </Project>
