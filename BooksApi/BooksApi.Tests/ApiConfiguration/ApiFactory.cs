@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace BooksApi.Tests
+namespace BooksApi.Tests.ApiConfiguration
 {
-    public class ApiTestBase : WebApplicationFactory<Program>
+    public class ApiFactory : WebApplicationFactory<Program>
     {
         protected override IHost CreateHost(IHostBuilder builder)
         {

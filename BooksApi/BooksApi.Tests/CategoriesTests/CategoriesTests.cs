@@ -3,25 +3,18 @@ using System.Net.Http.Json;
 using System.Net;
 using System.Text.Json;
 using Xunit;
+using BooksApi.Tests.ApiConfiguration;
 
-namespace BooksApi.Tests
+namespace BooksApi.Tests.CategoriesTests
 {
     public class CategoriesTests : ApiTestBase
     {
-        private readonly HttpClient _httpClient;
-
-        public CategoriesTests()
-        {
-            var app = new ApiTestBase();
-            _httpClient = app.CreateClient();
-        }
-
         [Fact]
         public async Task Get_All_Categories()
         {
-            var expectedCount = 2;
+            const int expectedCount = 2;
 
-            var body = await GetData("api/Categories");
+            var body = await HttpClient.GetStringAsync("api/Categories");
 
             var categories = JsonSerializer.Deserialize<IEnumerable<Category>>(body, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
@@ -37,9 +30,9 @@ namespace BooksApi.Tests
         [Fact]
         public async Task Get_Category()
         {
-            var expectedId = 1;
+            const int expectedId = 1;
 
-            var body = await GetData($"api/Categories/id?id={expectedId}");
+            var body = await HttpClient.GetStringAsync($"api/Categories/id?id={expectedId}");
 
             var category = JsonSerializer.Deserialize<Category>(body, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
@@ -62,7 +55,7 @@ namespace BooksApi.Tests
 
             var content = JsonContent.Create(newCategory);
 
-            var response = await _httpClient.PostAsync("api/Categories", content);
+            var response = await HttpClient.PostAsync("api/Categories", content);
 
             Assert.Equal(HttpStatusCode.NoContent, response.StatusCode);
             Assert.True(response.IsSuccessStatusCode);
@@ -71,7 +64,7 @@ namespace BooksApi.Tests
         [Fact]
         public async Task Update_Category()
         {
-            var expectedId = 3;
+            const int expectedId = 4;
 
             var updatedCategory = new Category
             {
@@ -80,7 +73,7 @@ namespace BooksApi.Tests
 
             var content = JsonContent.Create(updatedCategory);
 
-            var response = await _httpClient.PutAsync($"api/Categories/id?id={expectedId}", content);
+            var response = await HttpClient.PutAsync($"api/Categories/id?id={expectedId}", content);
 
             Assert.Equal(HttpStatusCode.NoContent, response.StatusCode);
             Assert.True(response.IsSuccessStatusCode);
@@ -89,26 +82,12 @@ namespace BooksApi.Tests
         [Fact]
         public async Task Delete_Category()
         {
-            var expectedId = 3;
+            const int expectedId = 4;
 
-            var response = await _httpClient.DeleteAsync($"api/Categories/id?id={expectedId}");
+            var response = await HttpClient.DeleteAsync($"api/Categories/id?id={expectedId}");
 
             Assert.Equal(HttpStatusCode.NoContent, response.StatusCode);
             Assert.True(response.IsSuccessStatusCode);
-        }
-
-        private async Task<string> GetData(string requestUrl)
-        {
-            var response = await _httpClient.GetAsync(requestUrl);
-
-            var body = await response.Content.ReadAsStringAsync();
-
-            if (!response.IsSuccessStatusCode)
-            {
-                throw new ApplicationException(body);
-            }
-
-            return body;
         }
     }
 }

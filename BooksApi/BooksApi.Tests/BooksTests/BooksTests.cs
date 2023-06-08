@@ -3,25 +3,18 @@ using System.Net.Http.Json;
 using System.Net;
 using System.Text.Json;
 using Xunit;
+using BooksApi.Tests.ApiConfiguration;
 
-namespace BooksApi.Tests
+namespace BooksApi.Tests.BooksTests
 {
     public class BooksTests : ApiTestBase
     {
-        private readonly HttpClient _httpClient;
-
-        public BooksTests()
-        {
-            var app = new ApiTestBase();
-            _httpClient = app.CreateClient();
-        }
-
         [Fact]
         public async Task Get_All_Books()
         {
-            var expectedCount = 4;
+            const int expectedCount = 4;
 
-            var body = await GetData("api/Books");
+            var body = await HttpClient.GetStringAsync("api/Books");
 
             var books = JsonSerializer.Deserialize<IEnumerable<Book>>(body, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
@@ -29,7 +22,7 @@ namespace BooksApi.Tests
             {
                 throw new ArgumentNullException(nameof(books));
             }
-            
+
             Assert.NotNull(books);
             Assert.Equal(expectedCount, books.Count());
         }
@@ -37,9 +30,9 @@ namespace BooksApi.Tests
         [Fact]
         public async Task Get_Book()
         {
-            var expectedId = 1;
+            const int expectedId = 1;
 
-            var body = await GetData($"api/Books/id?id={expectedId}");
+            var body = await HttpClient.GetStringAsync($"api/Books/id?id={expectedId}");
 
             var book = JsonSerializer.Deserialize<Book>(body, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
@@ -66,7 +59,7 @@ namespace BooksApi.Tests
 
             var content = JsonContent.Create(newBook);
 
-            var response = await _httpClient.PostAsync("api/Books", content);
+            var response = await HttpClient.PostAsync("api/Books", content);
 
             Assert.Equal(HttpStatusCode.NoContent, response.StatusCode);
             Assert.True(response.IsSuccessStatusCode);
@@ -75,7 +68,7 @@ namespace BooksApi.Tests
         [Fact]
         public async Task Update_Book()
         {
-            var expectedId = 7;
+            const int expectedId = 8;
 
             var updatedBook = new Book
             {
@@ -88,7 +81,7 @@ namespace BooksApi.Tests
 
             var content = JsonContent.Create(updatedBook);
 
-            var response = await _httpClient.PutAsync($"api/Books/id?id={expectedId}", content);
+            var response = await HttpClient.PutAsync($"api/Books/id?id={expectedId}", content);
 
             Assert.Equal(HttpStatusCode.NoContent, response.StatusCode);
             Assert.True(response.IsSuccessStatusCode);
@@ -97,26 +90,12 @@ namespace BooksApi.Tests
         [Fact]
         public async Task Delete_Book()
         {
-            var expectedId = 7;
-            
-            var response = await _httpClient.DeleteAsync($"api/Books/id?id={expectedId}");
+            const int expectedId = 8;
+
+            var response = await HttpClient.DeleteAsync($"api/Books/id?id={expectedId}");
 
             Assert.Equal(HttpStatusCode.NoContent, response.StatusCode);
             Assert.True(response.IsSuccessStatusCode);
-        }
-
-        private async Task<string> GetData(string requestUrl)
-        {
-            var response = await _httpClient.GetAsync(requestUrl);
-
-            var body = await response.Content.ReadAsStringAsync();
-
-            if (!response.IsSuccessStatusCode)
-            {
-                throw new ApplicationException(body);
-            }
-
-            return body;
         }
     }
 }
