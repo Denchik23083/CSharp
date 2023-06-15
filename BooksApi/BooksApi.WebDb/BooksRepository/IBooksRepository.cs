@@ -10,7 +10,7 @@ namespace BooksApi.WebDb.BooksRepository
 
         Task Create(Book book);
 
-        Task Update(Book bookToUpdate, Book book);
+        Task Update(Book bookToUpdate);
 
         Task Delete(Book bookToDelete);
     }

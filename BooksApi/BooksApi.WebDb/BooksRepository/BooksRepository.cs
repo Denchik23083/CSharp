@@ -29,14 +29,8 @@ namespace BooksApi.WebDb.BooksRepository
             await _context.SaveChangesAsync();
         }
 
-        public async Task Update(Book bookToUpdate, Book book)
+        public async Task Update(Book bookToUpdate)
         {
-            bookToUpdate.Title = book.Title;
-            bookToUpdate.Author = book.Author;
-            bookToUpdate.PagesCount = book.PagesCount;
-            bookToUpdate.PublishDate = book.PublishDate;
-            bookToUpdate.CategoryId = book.CategoryId;
-
             await _context.SaveChangesAsync();
         }
 

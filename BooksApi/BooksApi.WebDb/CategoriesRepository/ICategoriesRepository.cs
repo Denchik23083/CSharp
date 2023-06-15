@@ -10,7 +10,7 @@ namespace BooksApi.WebDb.CategoriesRepository
 
         Task Create(Category category);
 
-        Task Update(Category categoryToUpdate, Category category);
+        Task Update(Category categoryToUpdate);
 
         Task Delete(Category categoryToDelete);
     }

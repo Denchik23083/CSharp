@@ -32,11 +32,18 @@ namespace BooksApi.Web.Controllers
         [HttpGet("id")]
         public async Task<IActionResult> GetCategory(int id)
         {
-            var category = await _service.Get(id);
+            try
+            {
+                var category = await _service.Get(id);
 
-            var mapperCategory = _mapper.Map<CategoriesReadModel>(category);
+                var mapperCategory = _mapper.Map<CategoriesReadModel>(category);
 
-            return Ok(mapperCategory);
+                return Ok(mapperCategory);
+            }
+            catch (ArgumentException)
+            {
+                return NotFound($"Category with id {id} not found");
+            }
         }
 
         [HttpPost]
@@ -62,19 +69,33 @@ namespace BooksApi.Web.Controllers
                 return BadRequest(ModelState);
             }
 
-            var updatedCategory = _mapper.Map<Category>(model);
+            try
+            {
+                var updatedCategory = _mapper.Map<Category>(model);
 
-            await _service.Update(updatedCategory, id);
+                await _service.Update(updatedCategory, id);
 
-            return NoContent();
+                return NoContent();
+            }
+            catch (ArgumentException)
+            {
+                return NotFound($"Category with id {id} not found");
+            }
         }
 
         [HttpDelete("id")]
         public async Task<IActionResult> DeleteCategory(int id)
         {
-            await _service.Delete(id);
+            try
+            {
+                await _service.Delete(id);
 
-            return NoContent();
+                return NoContent();
+            }
+            catch (ArgumentException)
+            {
+                return NotFound($"Category with id {id} not found");
+            }
         }
     }
 }

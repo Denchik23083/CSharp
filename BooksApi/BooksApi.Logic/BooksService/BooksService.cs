@@ -23,7 +23,7 @@ namespace BooksApi.Logic.BooksService
 
             if (book is null)
             {
-                throw new ArgumentNullException();
+                throw new ArgumentException("Not found");
             }
 
             return book;
@@ -40,10 +40,16 @@ namespace BooksApi.Logic.BooksService
 
             if (bookToUpdate is null)
             {
-                throw new ArgumentNullException();
+                throw new ArgumentException("Not found");
             }
 
-            await _repository.Update(bookToUpdate, book);
+            bookToUpdate.Title = book.Title;
+            bookToUpdate.Author = book.Author;
+            bookToUpdate.PagesCount = book.PagesCount;
+            bookToUpdate.PublishDate = book.PublishDate;
+            bookToUpdate.CategoryId = book.CategoryId;
+
+            await _repository.Update(bookToUpdate);
         }
 
         public async Task Delete(int id)
@@ -52,7 +58,7 @@ namespace BooksApi.Logic.BooksService
 
             if (bookToDelete is null)
             {
-                throw new ArgumentNullException();
+                throw new ArgumentException("Not found");
             }
 
             await _repository.Delete(bookToDelete);

@@ -32,11 +32,18 @@ namespace BooksApi.Web.Controllers
         [HttpGet("id")]
         public async Task<IActionResult> GetBook(int id)
         {
-            var book = await _service.Get(id);
+            try
+            {
+                var book = await _service.Get(id);
 
-            var mapperBook = _mapper.Map<BooksReadModel>(book);
+                var mapperBook = _mapper.Map<BooksReadModel>(book);
 
-            return Ok(mapperBook);
+                return Ok(mapperBook);
+            }
+            catch (ArgumentException)
+            {
+                return NotFound($"Book with id {id} not found");
+            }
         }
 
         [HttpPost]
@@ -62,19 +69,33 @@ namespace BooksApi.Web.Controllers
                 return BadRequest(ModelState);
             }
 
-            var updatedBook = _mapper.Map<Book>(model);
+            try
+            {
+                var updatedBook = _mapper.Map<Book>(model);
 
-            await _service.Update(updatedBook, id);
+                await _service.Update(updatedBook, id);
 
-            return NoContent();
+                return NoContent();
+            }
+            catch (ArgumentException)
+            {
+                return NotFound($"Book with id {id} not found");
+            }
         }
 
         [HttpDelete("id")]
         public async Task<IActionResult> DeleteBook(int id)
         {
-            await _service.Delete(id);
+            try
+            {
+                await _service.Delete(id);
 
-            return NoContent();
+                return NoContent();
+            }
+            catch (ArgumentException)
+            {
+                return NotFound($"Book with id {id} not found");
+            }
         }
     }
 }

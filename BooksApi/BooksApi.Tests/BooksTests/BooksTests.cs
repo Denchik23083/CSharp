@@ -20,7 +20,7 @@ namespace BooksApi.Tests.BooksTests
 
             if (books is null)
             {
-                throw new ArgumentNullException(nameof(books));
+                throw new ArgumentException("Not found");
             }
 
             Assert.NotNull(books);
@@ -38,7 +38,7 @@ namespace BooksApi.Tests.BooksTests
 
             if (book is null)
             {
-                throw new ArgumentNullException(nameof(book));
+                throw new ArgumentException("Not found");
             }
 
             Assert.NotNull(book);

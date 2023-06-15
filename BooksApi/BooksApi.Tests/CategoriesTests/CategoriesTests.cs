@@ -20,7 +20,7 @@ namespace BooksApi.Tests.CategoriesTests
 
             if (categories is null)
             {
-                throw new ArgumentNullException(nameof(categories));
+                throw new ArgumentException("Not found");
             }
 
             Assert.NotNull(categories);
@@ -38,7 +38,7 @@ namespace BooksApi.Tests.CategoriesTests
 
             if (category is null)
             {
-                throw new ArgumentNullException(nameof(category));
+                throw new ArgumentException("Not found");
             }
 
             Assert.NotNull(category);

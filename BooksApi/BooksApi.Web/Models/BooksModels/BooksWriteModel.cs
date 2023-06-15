@@ -1,6 +1,4 @@
-﻿using BooksApi.Db.Entities;
-
-namespace BooksApi.Web.Models.BooksModels
+﻿namespace BooksApi.Web.Models.BooksModels
 {
     public class BooksWriteModel
     {

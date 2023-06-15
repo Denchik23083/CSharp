@@ -28,7 +28,7 @@ namespace BooksApi.WebDb.CategoriesRepository
 
             if (category is null)
             {
-                throw new ArgumentNullException();
+                throw new ArgumentException("Not found");
             }
 
             return category;
@@ -40,10 +40,8 @@ namespace BooksApi.WebDb.CategoriesRepository
             await _context.SaveChangesAsync();
         }
 
-        public async Task Update(Category categoryToUpdate, Category category)
+        public async Task Update(Category categoryToUpdate)
         {
-            categoryToUpdate.Description = category.Description;
-
             await _context.SaveChangesAsync();
         }
 
