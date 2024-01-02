@@ -1,9 +1,0 @@
-C:\Users\User\source\repos\AuthSample.Auth\AuthSampleCore\bin\Debug\netcoreapp3.1\AuthSample.Core.deps.json
-C:\Users\User\source\repos\AuthSample.Auth\AuthSampleCore\bin\Debug\netcoreapp3.1\AuthSample.Core.dll
-C:\Users\User\source\repos\AuthSample.Auth\AuthSampleCore\bin\Debug\netcoreapp3.1\AuthSample.Core.pdb
-C:\Users\User\source\repos\AuthSample.Auth\AuthSampleCore\obj\Debug\netcoreapp3.1\AuthSample.Core.AssemblyInfoInputs.cache
-C:\Users\User\source\repos\AuthSample.Auth\AuthSampleCore\obj\Debug\netcoreapp3.1\AuthSample.Core.AssemblyInfo.cs
-C:\Users\User\source\repos\AuthSample.Auth\AuthSampleCore\obj\Debug\netcoreapp3.1\AuthSample.Core.csproj.CoreCompileInputs.cache
-C:\Users\User\source\repos\AuthSample.Auth\AuthSampleCore\obj\Debug\netcoreapp3.1\AuthSample.Core.dll
-C:\Users\User\source\repos\AuthSample.Auth\AuthSampleCore\obj\Debug\netcoreapp3.1\AuthSample.Core.pdb
-C:\Users\User\source\repos\AuthSample.Auth\AuthSampleCore\obj\Debug\netcoreapp3.1\AuthSample.Core.csprojAssemblyReference.cache

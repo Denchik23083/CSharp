@@ -1,9 +1,0 @@
-C:\Users\User\source\repos\AuthSample.Auth\AuthSample.WebDb\bin\Debug\netcoreapp3.1\AuthSample.WebDb.deps.json
-C:\Users\User\source\repos\AuthSample.Auth\AuthSample.WebDb\bin\Debug\netcoreapp3.1\AuthSample.WebDb.dll
-C:\Users\User\source\repos\AuthSample.Auth\AuthSample.WebDb\bin\Debug\netcoreapp3.1\AuthSample.WebDb.pdb
-C:\Users\User\source\repos\AuthSample.Auth\AuthSample.WebDb\obj\Debug\netcoreapp3.1\AuthSample.WebDb.csprojAssemblyReference.cache
-C:\Users\User\source\repos\AuthSample.Auth\AuthSample.WebDb\obj\Debug\netcoreapp3.1\AuthSample.WebDb.AssemblyInfoInputs.cache
-C:\Users\User\source\repos\AuthSample.Auth\AuthSample.WebDb\obj\Debug\netcoreapp3.1\AuthSample.WebDb.AssemblyInfo.cs
-C:\Users\User\source\repos\AuthSample.Auth\AuthSample.WebDb\obj\Debug\netcoreapp3.1\AuthSample.WebDb.csproj.CoreCompileInputs.cache
-C:\Users\User\source\repos\AuthSample.Auth\AuthSample.WebDb\obj\Debug\netcoreapp3.1\AuthSample.WebDb.dll
-C:\Users\User\source\repos\AuthSample.Auth\AuthSample.WebDb\obj\Debug\netcoreapp3.1\AuthSample.WebDb.pdb
