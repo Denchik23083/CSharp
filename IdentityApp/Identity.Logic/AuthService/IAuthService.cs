@@ -1,7 +1,7 @@
-﻿using Identity.Db.Entities;
+﻿using IdentityApp.Db.Entities;
 using Microsoft.AspNetCore.Identity;
 
-namespace Identity.Logic
+namespace IdentityApp.Logic.AuthService
 {
     public interface IAuthService
     {

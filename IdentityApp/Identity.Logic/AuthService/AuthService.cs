@@ -1,8 +1,8 @@
-﻿using Identity.Db.Entities;
-using Identity.WebDb;
+﻿using IdentityApp.Db.Entities;
+using IdentityApp.WebDb.AuthRepository;
 using Microsoft.AspNetCore.Identity;
 
-namespace Identity.Logic
+namespace IdentityApp.Logic.AuthService
 {
     public class AuthService : IAuthService
     {

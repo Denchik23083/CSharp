@@ -1,7 +1,7 @@
-﻿using Identity.Db.Entities;
+﻿using IdentityApp.Db.Entities;
 using Microsoft.AspNetCore.Identity;
 
-namespace Identity.WebDb
+namespace IdentityApp.WebDb.AuthRepository
 {
     public interface IAuthRepository
     {

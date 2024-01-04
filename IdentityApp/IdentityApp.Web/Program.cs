@@ -1,19 +1,23 @@
-using Identity.Db;
-using Identity.Db.Entities;
-using Identity.Logic;
-using Identity.WebDb;
+using IdentityApp.Logic.UserService;
+using IdentityApp.WebDb.UserRepository;
 using IdentityApp.Web.Utilities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using IdentityApp.WebDb.AuthRepository;
+using IdentityApp.Db;
+using IdentityApp.Db.Entities;
+using IdentityApp.Logic.AuthService;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
 
-builder.Services.AddDbContext<ApplicationContext>(options =>
+builder.Services.AddDbContext<IdentityAppContext>(options =>
 {
     var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
     
@@ -21,7 +25,7 @@ builder.Services.AddDbContext<ApplicationContext>(options =>
 });
 
 builder.Services.AddIdentity<User, IdentityRole>()
-    .AddEntityFrameworkStores<ApplicationContext>();
+    .AddEntityFrameworkStores<IdentityAppContext>();
 
 builder.Services.AddControllersWithViews();
 

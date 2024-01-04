@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Identity.Db.Entities;
+using IdentityApp.Db.Entities;
 using IdentityApp.Web.Models;
 
 namespace IdentityApp.Web.Utilities

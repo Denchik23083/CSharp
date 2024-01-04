@@ -1,5 +1,5 @@
-﻿using Identity.Db.Entities;
-using Identity.Logic;
+﻿using IdentityApp.Db.Entities;
+using IdentityApp.Logic.AuthService;
 using IdentityApp.Web.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -11,8 +11,7 @@ namespace IdentityApp.Web.Controllers
         private readonly IAuthService _service;
         private readonly SignInManager<User> _signInManager;
 
-        public AccountController(IAuthService service, 
-            SignInManager<User> signInManager)
+        public AccountController(IAuthService service, SignInManager<User> signInManager)
         {
             _service = service;
             _signInManager = signInManager;
@@ -36,6 +35,7 @@ namespace IdentityApp.Web.Controllers
                 if (result.Succeeded)
                 {
                     await _signInManager.SignInAsync(user, false);
+
                     return RedirectToAction("Index", "Home");
                 }
                 else

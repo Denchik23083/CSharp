@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Identity.Db\Identity.Db.csproj" />
-    <ProjectReference Include="..\Identity.WebDb\Identity.WebDb.csproj" />
+    <ProjectReference Include="..\Identity.Db\IdentityApp.Db.csproj" />
+    <ProjectReference Include="..\Identity.WebDb\IdentityApp.WebDb.csproj" />
   </ItemGroup>
 
 </Project>
