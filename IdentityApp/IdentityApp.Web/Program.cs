@@ -3,15 +3,11 @@ using IdentityApp.WebDb.UserRepository;
 using IdentityApp.Web.Utilities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using IdentityApp.WebDb.AuthRepository;
 using IdentityApp.Db;
 using IdentityApp.Db.Entities;
-using IdentityApp.Logic.AuthService;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddScoped<IAuthService, AuthService>();
-builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 

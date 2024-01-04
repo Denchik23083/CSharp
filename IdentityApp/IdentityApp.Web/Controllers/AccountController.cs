@@ -1,5 +1,5 @@
 ﻿using IdentityApp.Db.Entities;
-using IdentityApp.Logic.AuthService;
+using IdentityApp.Logic.UserService;
 using IdentityApp.Web.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -8,10 +8,10 @@ namespace IdentityApp.Web.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly IAuthService _service;
+        private readonly IUserService _service;
         private readonly SignInManager<User> _signInManager;
 
-        public AccountController(IAuthService service, SignInManager<User> signInManager)
+        public AccountController(IUserService service, SignInManager<User> signInManager)
         {
             _service = service;
             _signInManager = signInManager;
@@ -30,7 +30,7 @@ namespace IdentityApp.Web.Controllers
             {
                 var user = new User { Email = model.Email, UserName = model.UserName, Year = model.Year };
 
-                var result = await _service.CreateAsync(user, model.Password);
+                var result = await _service.CreateUserAsync(user, model.Password);
 
                 if (result.Succeeded)
                 {
