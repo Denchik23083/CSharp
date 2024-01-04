@@ -1,9 +1,9 @@
 ﻿using Identity.Db.Entities;
 using Microsoft.AspNetCore.Identity;
 
-namespace Identity.Logic
+namespace Identity.WebDb
 {
-    public interface IUserService
+    public interface IAuthRepository
     {
         Task<IdentityResult> CreateAsync(User user, string? password);
     }

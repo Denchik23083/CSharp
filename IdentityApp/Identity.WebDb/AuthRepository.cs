@@ -3,11 +3,11 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Identity.WebDb
 {
-    public class UserRepository : IUserRepository
+    public class AuthRepository : IAuthRepository
     {
         private readonly UserManager<User> _userManager;
 
-        public UserRepository(UserManager<User> userManager)
+        public AuthRepository(UserManager<User> userManager)
         {
             _userManager = userManager;
         }

@@ -4,11 +4,11 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Identity.Logic
 {
-    public class UserService : IUserService
+    public class AuthService : IAuthService
     {
-        private readonly IUserRepository _repository;
+        private readonly IAuthRepository _repository;
 
-        public UserService(IUserRepository repository)
+        public AuthService(IAuthRepository repository)
         {
             _repository = repository;
         }
