@@ -1,4 +1,6 @@
-﻿using IdentityApp.Core.Exceptions;
+﻿using AutoMapper;
+using IdentityApp.Core;
+using IdentityApp.Core.Exceptions;
 using IdentityApp.Db.Entities;
 using IdentityApp.Logic.UserService;
 using IdentityApp.Web.Models;
@@ -114,6 +116,53 @@ namespace IdentityApp.Web.Controllers
             {
                 return NotFound(e.Message);
             }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> ChangePassword(string id)
+        {
+            try
+            {
+                var user = await _service.GetUserAsync(id);
+
+                return View(new ChangePasswordViewModel { Id = user.Id, UserName = user.UserName });
+            }
+            catch (UserNotFoundException e)
+            {
+                return NotFound(e.Message);
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ChangePassword(ChangePasswordViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    var password = new Password { Id = model.Id, OldPassword = model.OldPassword, NewPassword = model.NewPassword };
+
+                    var result = await _service.ChangePasswordAsync(password);
+
+                    if (result.Succeeded)
+                    {
+                        return RedirectToAction("Index");
+                    }
+                    else
+                    {
+                        foreach (var error in result.Errors)
+                        {
+                            ModelState.AddModelError(string.Empty, error.Description);
+                        }
+                    }
+                }
+                catch (UserNotFoundException e)
+                {
+                    return NotFound(e.Message);
+                }
+            }
+
+            return View(model);
         }
     }
 }

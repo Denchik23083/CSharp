@@ -1,4 +1,5 @@
-﻿using IdentityApp.Core.Exceptions;
+﻿using IdentityApp.Core;
+using IdentityApp.Core.Exceptions;
 using IdentityApp.Db.Entities;
 using IdentityApp.WebDb.UserRepository;
 using Microsoft.AspNetCore.Identity;
@@ -62,6 +63,18 @@ namespace IdentityApp.Logic.UserService
             }
 
             return await _repository.DeleteUserAsync(userToDelete);
+        }
+
+        public async Task<IdentityResult> ChangePasswordAsync(Password password)
+        {
+            var userToUpdate = await _repository.GetUserAsync(password.Id!);
+
+            if (userToUpdate is null)
+            {
+                throw new UserNotFoundException("User not found");
+            }
+
+            return await _repository.ChangePasswordAsync(userToUpdate, password);
         }
     }
 }

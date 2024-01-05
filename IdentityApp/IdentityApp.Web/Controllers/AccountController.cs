@@ -77,7 +77,7 @@ namespace IdentityApp.Web.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Неправильный логин и (или) пароль");
+                    ModelState.AddModelError("", "Incorrect login and (or) password");
                 }
             }
 

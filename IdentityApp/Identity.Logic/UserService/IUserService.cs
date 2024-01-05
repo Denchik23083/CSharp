@@ -1,4 +1,5 @@
-﻿using IdentityApp.Db.Entities;
+﻿using IdentityApp.Core;
+using IdentityApp.Db.Entities;
 using Microsoft.AspNetCore.Identity;
 
 namespace IdentityApp.Logic.UserService
@@ -14,5 +15,7 @@ namespace IdentityApp.Logic.UserService
         Task<IdentityResult> UpdateUserAsync(User user);
 
         Task<IdentityResult> DeleteUserAsync(string id);
+
+        Task<IdentityResult> ChangePasswordAsync(Password password);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using IdentityApp.Db.Entities;
 using Microsoft.AspNetCore.Identity;
+using IdentityApp.Core;
 
 namespace IdentityApp.WebDb.UserRepository
 {
@@ -14,5 +15,7 @@ namespace IdentityApp.WebDb.UserRepository
         Task<IdentityResult> UpdateUserAsync(User userToUpdate);
 
         Task<IdentityResult> DeleteUserAsync(User userToDelete);
+        
+        Task<IdentityResult> ChangePasswordAsync(User userToUpdate, Password password);
     }
 }

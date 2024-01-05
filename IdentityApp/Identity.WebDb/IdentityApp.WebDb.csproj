@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Identity.Db\IdentityApp.Db.csproj" />
+    <ProjectReference Include="..\IdentityApp.Core\IdentityApp.Core.csproj" />
   </ItemGroup>
 
 </Project>
