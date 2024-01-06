@@ -1,5 +1,5 @@
-﻿using IdentityApp.Core;
-using IdentityApp.Core.Exceptions;
+﻿using IdentityApp.Core.Exceptions;
+using IdentityApp.Core.Utilities;
 using IdentityApp.Db.Entities;
 using IdentityApp.WebDb.UserRepository;
 using Microsoft.AspNetCore.Identity;

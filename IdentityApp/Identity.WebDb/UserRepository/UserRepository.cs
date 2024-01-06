@@ -1,4 +1,4 @@
-﻿using IdentityApp.Core;
+﻿using IdentityApp.Core.Utilities;
 using IdentityApp.Db.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -17,6 +17,11 @@ namespace IdentityApp.WebDb.UserRepository
         public async Task<IEnumerable<User>> GetUsersAsync()
         {
             return await _userManager.Users.ToListAsync();
+        }
+
+        public async Task<IEnumerable<string>> GetUserRolesAsync(User user)
+        {
+            return await _userManager.GetRolesAsync(user);
         }
 
         public async Task<User> GetUserAsync(string id)
@@ -42,6 +47,16 @@ namespace IdentityApp.WebDb.UserRepository
         public async Task<IdentityResult> ChangePasswordAsync(User userToUpdate, Password password)
         {
             return await _userManager.ChangePasswordAsync(userToUpdate, password.OldPassword, password.NewPassword);
+        }
+
+        public async Task AddToRolesAsync(User user, IEnumerable<string> addedRoles)
+        {
+            await _userManager.AddToRolesAsync(user, addedRoles);
+        }
+
+        public async Task RemoveFromRolesAsync(User user, IEnumerable<string> removedRoles)
+        {
+            await _userManager.RemoveFromRolesAsync(user, removedRoles);
         }
     }
 }

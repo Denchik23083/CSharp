@@ -1,5 +1,7 @@
 using IdentityApp.Logic.UserService;
 using IdentityApp.WebDb.UserRepository;
+using IdentityApp.Logic.RoleService;
+using IdentityApp.WebDb.RoleRepository;
 using IdentityApp.Web.Utilities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +12,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IRoleService, RoleService>();
+builder.Services.AddScoped<IRoleRepository, RoleRepository>();
 
 builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
 
@@ -20,8 +24,12 @@ builder.Services.AddDbContext<IdentityAppContext>(options =>
     options.UseSqlServer(connectionString);
 });
 
-builder.Services.AddIdentity<User, IdentityRole>()
-    .AddEntityFrameworkStores<IdentityAppContext>();
+builder.Services.AddIdentity<User, IdentityRole>(options =>
+{
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireUppercase = false;
+})
+.AddEntityFrameworkStores<IdentityAppContext>();
 
 builder.Services.AddControllersWithViews();
 

@@ -1,4 +1,4 @@
-﻿using IdentityApp.Core;
+﻿using IdentityApp.Core.Utilities;
 using IdentityApp.Db.Entities;
 using Microsoft.AspNetCore.Identity;
 

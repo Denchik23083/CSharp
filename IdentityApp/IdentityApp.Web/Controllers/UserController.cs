@@ -1,6 +1,5 @@
-﻿using AutoMapper;
-using IdentityApp.Core;
-using IdentityApp.Core.Exceptions;
+﻿using IdentityApp.Core.Exceptions;
+using IdentityApp.Core.Utilities;
 using IdentityApp.Db.Entities;
 using IdentityApp.Logic.UserService;
 using IdentityApp.Web.Models;

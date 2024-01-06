@@ -1,4 +1,4 @@
-﻿namespace IdentityApp.Core
+﻿namespace IdentityApp.Core.Utilities
 {
     public class Password
     {
