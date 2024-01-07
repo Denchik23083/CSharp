@@ -1,0 +1,21 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@model IEnumerable<IdentityRole>
+@{
+    ViewBag.Title = "List Roles";
+}
+
+<table class="table">
+    @foreach (var role in Model)
+    {
+        <tr>
+            <td>@role.Name</td>
+            <td>
+                <form asp-action="Delete" asp-route-id="@role.Id" method="post">
+                    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                </form>
+            </td>
+        </tr>
+    }
+</table>
+<a class="btn btn-sm btn-primary" asp-action="Create">Add Role</a>
+<a class="btn btn-sm btn-primary" asp-action="UserList">User List</a>
