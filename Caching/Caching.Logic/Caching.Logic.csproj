@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Caching.WebDb\Caching.WebDb.csproj" />
+  </ItemGroup>
+
 </Project>

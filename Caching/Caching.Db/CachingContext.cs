@@ -11,5 +11,12 @@ namespace Caching.Db
         {
             Database.EnsureCreated();
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfigurationsFromAssembly(GetType().Assembly);
+            
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

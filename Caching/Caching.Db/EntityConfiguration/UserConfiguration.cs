@@ -16,9 +16,9 @@ namespace Caching.Db.EntityConfiguration
 
             builder.HasData(new List<User>
             {
-                new User { Name = "Tom", Email = "tom@gmail.com", Age = 35 },
-                new User { Name = "Alice", Email = "alice@yahoo.com", Age = 29 },
-                new User { Name = "Sam", Email = "sam@online.com", Age = 37 }
+                new User { Id = 1, Name = "Tom", Email = "tom@gmail.com", Age = 35 },
+                new User { Id = 2, Name = "Alice", Email = "alice@yahoo.com", Age = 29 },
+                new User { Id = 3, Name = "Sam", Email = "sam@online.com", Age = 37 }
             });
         }
     }
