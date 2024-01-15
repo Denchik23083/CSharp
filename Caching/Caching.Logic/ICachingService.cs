@@ -4,10 +4,14 @@ namespace Caching.Logic
 {
     public interface ICachingService
     {
-        public Task<IEnumerable<User>> GetUsers();
+        public Task<IEnumerable<User>> GetUsersAsync();
 
-        public Task<User> GetUser(int id);
+        public Task<User> GetUserAsync(int id);
 
-        public Task Create(User user);
+        public Task CreateAsync(User user);
+
+        public Task UpdateAsync(User user, int id);
+
+        public Task DeleteAsync(int id);
     }
 }

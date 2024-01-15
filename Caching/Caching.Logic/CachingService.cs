@@ -15,19 +15,19 @@ namespace Caching.Logic
             _memoryCache = memoryCache;
         }
 
-        public async Task<IEnumerable<User>> GetUsers()
+        public async Task<IEnumerable<User>> GetUsersAsync()
         {
-            return await _repository.GetUsers();
+            return await _repository.GetUsersAsync();
         }
 
-        public async Task<User> GetUser(int id)
+        public async Task<User> GetUserAsync(int id)
         {
             if (_memoryCache.TryGetValue(id, out User cacheUser))
             {
                 return cacheUser;
             }
 
-            var user = await _repository.GetUser(id);
+            var user = await _repository.GetUserAsync(id);
 
             if (user is null)
             {
@@ -40,19 +40,54 @@ namespace Caching.Logic
             return user;
         }
 
-        public async Task Create(User user)
+        public async Task CreateAsync(User user)
         {
-            var userToAdd = await _repository.Create(user);
+            var userToCreate = await _repository.CreateAsync(user);
 
-            if (userToAdd is null)
+            if (userToCreate is null)
             {
                 throw new ArgumentNullException("User not found");
             }
 
-            _memoryCache.Set(userToAdd.Id, userToAdd, new MemoryCacheEntryOptions
+            _memoryCache.Set(userToCreate.Id, userToCreate, new MemoryCacheEntryOptions
             {
                 AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(10)
             });
+        }
+
+        public async Task UpdateAsync(User user, int id)
+        {
+            var userToUpdate = await _repository.GetUserAsync(id);
+
+            if (userToUpdate is null)
+            {
+                throw new ArgumentNullException("User not found");
+            }
+
+            userToUpdate.Name = user.Name;
+            userToUpdate.Email = user.Email;
+            userToUpdate.Age = user.Age;
+
+            await _repository.UpdateAsync(userToUpdate);
+
+            _memoryCache.Set(userToUpdate.Id, userToUpdate, new MemoryCacheEntryOptions
+            {
+                AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(10)
+            });
+        }
+
+        public async Task DeleteAsync(int id)
+        {
+            var userToDelete = await _repository.GetUserAsync(id);
+
+            if (userToDelete is null)
+            {
+                throw new ArgumentNullException("User not found");
+            }
+
+            await _repository.DeleteAsync(userToDelete);
+
+            _memoryCache.Remove(userToDelete.Id);
         }
     }
 }

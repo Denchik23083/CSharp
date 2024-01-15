@@ -14,7 +14,7 @@ namespace Caching.Web.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var users = await _service.GetUsers();
+            var users = await _service.GetUsersAsync();
             
             return View(users);
         }
@@ -23,7 +23,7 @@ namespace Caching.Web.Controllers
         {
             try
             {
-                var user = await _service.GetUser(id);
+                var user = await _service.GetUserAsync(id);
 
                 return Content($"User: {user.Name}");
             }
