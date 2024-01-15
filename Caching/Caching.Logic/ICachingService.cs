@@ -7,5 +7,7 @@ namespace Caching.Logic
         public Task<IEnumerable<User>> GetUsers();
 
         public Task<User> GetUser(int id);
+
+        public Task Create(User user);
     }
 }

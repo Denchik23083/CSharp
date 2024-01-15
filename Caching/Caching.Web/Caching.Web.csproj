@@ -14,9 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Caching.Db\Caching.Db.csproj" />
     <ProjectReference Include="..\Caching.Logic\Caching.Logic.csproj" />
-    <ProjectReference Include="..\Caching.WebDb\Caching.WebDb.csproj" />
   </ItemGroup>
 
 </Project>

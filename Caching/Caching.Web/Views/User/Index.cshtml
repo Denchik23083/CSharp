@@ -1,0 +1,24 @@
+﻿@using Caching.Db.Entities;
+@model IEnumerable<User>
+
+<table class="table">
+    <tbody>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>Actions</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Email</td>
+                <td>@item.Age</td>
+                <td>
+                    <a class="btn btn-primary" asp-action="Get" asp-route-id="@item.Id">Details</a>
+                </td>
+            </tr>            
+        }
+    </tbody>
+</table>

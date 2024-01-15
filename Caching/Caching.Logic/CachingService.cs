@@ -39,5 +39,20 @@ namespace Caching.Logic
 
             return user;
         }
+
+        public async Task Create(User user)
+        {
+            var userToAdd = await _repository.Create(user);
+
+            if (userToAdd is null)
+            {
+                throw new ArgumentNullException("User not found");
+            }
+
+            _memoryCache.Set(userToAdd.Id, userToAdd, new MemoryCacheEntryOptions
+            {
+                AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(10)
+            });
+        }
     }
 }

@@ -22,5 +22,14 @@ namespace Caching.WebDb
         {
             return await _context.Users.FirstOrDefaultAsync(_ => _.Id == id);
         }
+
+        public async Task<User?> Create(User user)
+        {
+            await _context.Users.AddAsync(user);
+
+            await _context.SaveChangesAsync();
+
+            return user;
+        }
     }
 }
