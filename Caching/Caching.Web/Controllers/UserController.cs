@@ -70,7 +70,7 @@ namespace Caching.Web.Controllers
             {
                 var mappedUser = _mapper.Map<User>(model);
 
-                await _service.CreateAsync(mappedUser);
+                await _service.CreateUserAsync(mappedUser);
 
                 return RedirectToAction(nameof(Index));
             }
@@ -104,7 +104,7 @@ namespace Caching.Web.Controllers
             {
                 var mappedUser = _mapper.Map<User>(model);
 
-                await _service.UpdateAsync(mappedUser);
+                await _service.UpdateUserAsync(mappedUser);
 
                 return RedirectToAction(nameof(Index));
             }
@@ -119,7 +119,7 @@ namespace Caching.Web.Controllers
         {
             try
             {
-                await _service.DeleteAsync(id);
+                await _service.DeleteUserAsync(id);
 
                 return RedirectToAction(nameof(Index));
             }

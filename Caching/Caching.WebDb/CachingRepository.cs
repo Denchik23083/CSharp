@@ -23,7 +23,7 @@ namespace Caching.WebDb
             return await _context.Users.FirstOrDefaultAsync(_ => _.Id == id);
         }
 
-        public async Task<User?> CreateAsync(User user)
+        public async Task<User?> CreateUserAsync(User user)
         {
             await _context.Users.AddAsync(user);
 
@@ -32,12 +32,12 @@ namespace Caching.WebDb
             return user;
         }
 
-        public async Task UpdateAsync(User user)
+        public async Task UpdateUserAsync(User user)
         {
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteAsync(User user)
+        public async Task DeleteUserAsync(User user)
         {
             _context.Users.Remove(user);
 

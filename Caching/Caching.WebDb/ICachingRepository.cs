@@ -8,10 +8,10 @@ namespace Caching.WebDb
 
         public Task<User?> GetUserAsync(int id);
 
-        public Task<User?> CreateAsync(User user);
+        public Task<User?> CreateUserAsync(User user);
 
-        public Task UpdateAsync(User user);
+        public Task UpdateUserAsync(User user);
 
-        public Task DeleteAsync(User user);
+        public Task DeleteUserAsync(User user);
     }
 }

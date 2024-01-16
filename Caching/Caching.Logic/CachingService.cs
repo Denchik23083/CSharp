@@ -46,9 +46,9 @@ namespace Caching.Logic
             return user;
         }
 
-        public async Task CreateAsync(User user)
+        public async Task CreateUserAsync(User user)
         {
-            var userToCreate = await _repository.CreateAsync(user);
+            var userToCreate = await _repository.CreateUserAsync(user);
 
             if (userToCreate is null)
             {
@@ -58,7 +58,7 @@ namespace Caching.Logic
             _memoryCache.Set(userToCreate.Id, userToCreate, new MemoryCacheEntryOptions().SetAbsoluteExpiration(TimeSpan.FromMinutes(10)));
         }
 
-        public async Task UpdateAsync(User user)
+        public async Task UpdateUserAsync(User user)
         {
             var userToUpdate = await _repository.GetUserAsync(user.Id);
 
@@ -71,12 +71,12 @@ namespace Caching.Logic
             userToUpdate.Email = user.Email;
             userToUpdate.Age = user.Age;
 
-            await _repository.UpdateAsync(userToUpdate);
+            await _repository.UpdateUserAsync(userToUpdate);
 
             _memoryCache.Set(userToUpdate.Id, userToUpdate, new MemoryCacheEntryOptions().SetAbsoluteExpiration(TimeSpan.FromMinutes(10)));
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task DeleteUserAsync(int id)
         {
             var userToDelete = await _repository.GetUserAsync(id);
 
@@ -85,7 +85,7 @@ namespace Caching.Logic
                 throw new ArgumentNullException("User not found");
             }
 
-            await _repository.DeleteAsync(userToDelete);
+            await _repository.DeleteUserAsync(userToDelete);
 
             _memoryCache.Remove(userToDelete.Id);
         }
