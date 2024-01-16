@@ -17,7 +17,14 @@ namespace Caching.Logic
 
         public async Task<IEnumerable<User>> GetUsersAsync()
         {
-            return await _repository.GetUsersAsync();
+            var users = await _repository.GetUsersAsync();
+
+            if (users is null)
+            {
+                throw new ArgumentNullException("Users not found");
+            }
+
+            return users;
         }
 
         public async Task<User> GetUserAsync(int id)
@@ -34,8 +41,7 @@ namespace Caching.Logic
                 throw new ArgumentNullException("User not found");
             }
 
-            _memoryCache.Set(user.Id, user,
-                new MemoryCacheEntryOptions().SetAbsoluteExpiration(TimeSpan.FromMinutes(10)));
+            _memoryCache.Set(user.Id, user, new MemoryCacheEntryOptions().SetAbsoluteExpiration(TimeSpan.FromMinutes(10)));
 
             return user;
         }
@@ -49,15 +55,12 @@ namespace Caching.Logic
                 throw new ArgumentNullException("User not found");
             }
 
-            _memoryCache.Set(userToCreate.Id, userToCreate, new MemoryCacheEntryOptions
-            {
-                AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(10)
-            });
+            _memoryCache.Set(userToCreate.Id, userToCreate, new MemoryCacheEntryOptions().SetAbsoluteExpiration(TimeSpan.FromMinutes(10)));
         }
 
-        public async Task UpdateAsync(User user, int id)
+        public async Task UpdateAsync(User user)
         {
-            var userToUpdate = await _repository.GetUserAsync(id);
+            var userToUpdate = await _repository.GetUserAsync(user.Id);
 
             if (userToUpdate is null)
             {
@@ -70,10 +73,7 @@ namespace Caching.Logic
 
             await _repository.UpdateAsync(userToUpdate);
 
-            _memoryCache.Set(userToUpdate.Id, userToUpdate, new MemoryCacheEntryOptions
-            {
-                AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(10)
-            });
+            _memoryCache.Set(userToUpdate.Id, userToUpdate, new MemoryCacheEntryOptions().SetAbsoluteExpiration(TimeSpan.FromMinutes(10)));
         }
 
         public async Task DeleteAsync(int id)

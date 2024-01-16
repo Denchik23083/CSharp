@@ -10,7 +10,7 @@ namespace Caching.Logic
 
         public Task CreateAsync(User user);
 
-        public Task UpdateAsync(User user, int id);
+        public Task UpdateAsync(User user);
 
         public Task DeleteAsync(int id);
     }

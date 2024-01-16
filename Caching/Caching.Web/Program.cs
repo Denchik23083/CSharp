@@ -1,5 +1,6 @@
 using Caching.Db;
 using Caching.Logic;
+using Caching.Web.Utilities;
 using Caching.WebDb;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +14,8 @@ builder.Services.AddDbContext<CachingContext>(options =>
     var connectionString = builder.Configuration.GetConnectionString("Caching");
     options.UseSqlServer(connectionString);
 });
+
+builder.Services.AddAutoMapper(typeof(MapperProfile).Assembly);
 
 builder.Services.AddMemoryCache();
 

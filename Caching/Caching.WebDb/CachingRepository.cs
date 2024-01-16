@@ -13,7 +13,7 @@ namespace Caching.WebDb
             _context = context;
         }
 
-        public async Task<IEnumerable<User>> GetUsersAsync()
+        public async Task<IEnumerable<User>?> GetUsersAsync()
         {
             return await _context.Users.ToListAsync();
         }

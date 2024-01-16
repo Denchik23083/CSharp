@@ -4,7 +4,7 @@ namespace Caching.WebDb
 {
     public interface ICachingRepository
     {        
-        public Task<IEnumerable<User>> GetUsersAsync();
+        public Task<IEnumerable<User>?> GetUsersAsync();
 
         public Task<User?> GetUserAsync(int id);
 
