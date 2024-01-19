@@ -1,0 +1,20 @@
+﻿@using FileUploadApp.Db.Entities;
+
+@model IEnumerable<FileUpload>
+@{
+    ViewData["Title"] = "Добавление файла";
+}
+
+<h3>Выберите файл для загрузки</h3><br/>
+
+<form asp-action="AddFile" asp-controller="File" method="post" enctype="multipart/form-data">
+    <input type="file" name="uploadedFile" /><br /><br />
+    <input type="submit" value="Загрузить" /><br />
+</form><br/>
+
+<h3>Все файлы</h3><br/>
+
+@foreach (var file in Model)
+{
+    <p><img src="@Url.Content(file.Path)"></p>
+}

@@ -4,6 +4,8 @@ namespace FileUploadApp.WebDb
 {
     public interface IFileUploadRepository
     {
-        Task AddFile(FileUpload uploadedFile);
+        Task<IEnumerable<FileUpload>> GetFiles();
+
+        Task AddFile(FileUpload file);
     }
 }

@@ -1,9 +1,12 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using FileUploadApp.Db.Entities;
+using Microsoft.AspNetCore.Http;
 
 namespace FileUploadApp.Logic
 {
     public interface IFileUploadService
     {
-        Task AddFile(IFormFile uploadedFile);
+        Task<IEnumerable<FileUpload>> GetFiles();
+
+        Task AddFile(IFormFile? uploadedFile, string webRootPath);
     }
 }
