@@ -1,5 +1,3 @@
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
 using SignalR.Web.Data;
 using Microsoft.AspNetCore.ResponseCompression;
 using SignalR.Web.Hubs;

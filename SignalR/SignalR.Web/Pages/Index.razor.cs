@@ -1,50 +1,48 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.SignalR.Client;
-using System;
 
 namespace SignalR.Web.Pages
 {
     public partial class Index : IAsyncDisposable
     {
-        private HubConnection? hubConnection;
-        private List<string> messages = new();
-        private string? userInput;
-        private string? messageInput;
+        [Inject] public NavigationManager NavigationManager { get; set; } = null!;
 
-        [Inject] private NavigationManager Navigation { get; set; }
+        private HubConnection? _hubConnection;
+        private readonly List<string> _messages = new();
+        private string? _userInput;
+        private string? _messageInput;
+
+        public bool IsConnected => _hubConnection?.State == HubConnectionState.Connected;
 
         protected override async Task OnInitializedAsync()
         {
-            hubConnection = new HubConnectionBuilder()
-                .WithUrl(Navigation.ToAbsoluteUri("/chathub"))
+            _hubConnection = new HubConnectionBuilder()
+                .WithUrl(NavigationManager.ToAbsoluteUri("/chathub"))
                 .Build();
 
-            hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
+            _hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
             {
                 var encodedMsg = $"{user}: {message}";
-                messages.Add(encodedMsg);
+                _messages.Add(encodedMsg);
                 InvokeAsync(StateHasChanged);
             });
 
-            await hubConnection.StartAsync();
+            await _hubConnection.StartAsync();
         }
 
         private async Task Send()
         {
-            if (hubConnection is not null)
+            if (_hubConnection is not null)
             {
-                await hubConnection.SendAsync("SendMessage", userInput, messageInput);
+                await _hubConnection.SendAsync("SendMessage", _userInput, _messageInput);
             }
         }
 
-        public bool IsConnected =>
-            hubConnection?.State == HubConnectionState.Connected;
-
         public async ValueTask DisposeAsync()
         {
-            if (hubConnection is not null)
+            if (_hubConnection is not null)
             {
-                await hubConnection.DisposeAsync();
+                await _hubConnection.DisposeAsync();
             }
         }
     }
