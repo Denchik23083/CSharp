@@ -1,4 +1,4 @@
-namespace SignalR.Web.Data
+namespace SignalR.Auth
 {
     public class WeatherForecast
     {
