@@ -6,4 +6,11 @@
 
 Welcome to your new app.
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+Messages:
+
+<ul>
+    @foreach(var message in _messages)
+    {
+        <li>@message</li>
+    }
+</ul>

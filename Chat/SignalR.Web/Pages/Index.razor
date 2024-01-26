@@ -1,0 +1,26 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<div>
+    <label>
+        User:
+        <input @bind="_userInput" />
+    </label>
+</div>
+<br />
+<div>
+    <label>
+        Message:
+        <input @bind="_messageInput" size="50" />
+    </label>
+</div>
+<br />
+<button @onclick="Send" disabled="@(!IsConnected)">Send</button>
+<br />
+<br />
+
+@foreach (var message in _messages)
+{
+    @message
+}
