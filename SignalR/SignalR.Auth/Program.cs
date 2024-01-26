@@ -20,6 +20,7 @@ builder.Services.AddCors(options =>
     });
 });
 
+builder.Services.AddAuthorization();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer();
 
@@ -35,7 +36,7 @@ app.UseCors("devCors");
 
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
+//app.UseAuthorization();
 app.UseAuthentication();
 
 app.MapHub<NotificationsHub>("notifications");

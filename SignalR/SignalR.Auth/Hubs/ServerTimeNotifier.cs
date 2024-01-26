@@ -26,7 +26,6 @@ namespace SignalR.Auth.Hubs
                 _logger.LogInformation("Executing {Sevice} {Time}", nameof(ServerTimeNotifier), dateTime);
 
                 await _context.Clients
-                    //.User("f45fe475-8466-484f-af69-a2658a8ee915")
                     .All
                     .ReceiveNotification($"Server time = {dateTime}");
             }
