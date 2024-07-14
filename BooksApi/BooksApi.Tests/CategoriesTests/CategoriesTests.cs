@@ -1,30 +1,53 @@
 ﻿using BooksApi.Db.Entities;
-using System.Net.Http.Json;
-using System.Net;
-using System.Text.Json;
+using BooksApi.Logic.BooksService;
+using BooksApi.Logic.CategoriesService;
+using BooksApi.WebDb.BooksRepository;
+using BooksApi.WebDb.CategoriesRepository;
+using Moq;
+using System.Runtime.CompilerServices;
 using Xunit;
-using BooksApi.Tests.ApiConfiguration;
 
 namespace BooksApi.Tests.CategoriesTests
 {
-    public class CategoriesTests : ApiTestBase
+    public class CategoriesTests
     {
+        private readonly Mock<ICategoriesRepository> _repository;
+
+        public CategoriesTests()
+        {
+            _repository = new Mock<ICategoriesRepository>();
+        }
+
         [Fact]
         public async Task Get_All_Categories()
         {
-            const int expectedCount = 2;
-
-            var body = await HttpClient.GetStringAsync("api/Categories");
-
-            var categories = JsonSerializer.Deserialize<IEnumerable<Category>>(body, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-
-            if (categories is null)
+            var categories = new List<Category>
             {
-                throw new ArgumentException("Not found");
-            }
+                new()
+                {
+                    Id = 1,
+                    Description = "First Category"
+                },
+                new()
+                {
+                    Id = 2,
+                    Description = "Second Category"
+                }
+            };
 
-            Assert.NotNull(categories);
-            Assert.Equal(expectedCount, categories.Count());
+            _repository.Setup(_ => _.GetAll())
+                .ReturnsAsync(categories);
+
+            ICategoriesService service = new CategoriesService(_repository.Object);
+
+            var result = await service.GetAll();
+
+            _repository.Verify(_ => _.GetAll(),
+                Times.Once);
+
+            Assert.NotNull(result);
+            Assert.Equal(categories.Count, result.Count());
+
         }
 
         [Fact]
@@ -32,17 +55,24 @@ namespace BooksApi.Tests.CategoriesTests
         {
             const int expectedId = 1;
 
-            var body = await HttpClient.GetStringAsync($"api/Categories/id?id={expectedId}");
-
-            var category = JsonSerializer.Deserialize<Category>(body, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-
-            if (category is null)
+            var category = new Category
             {
-                throw new ArgumentException("Not found");
-            }
+                Id = expectedId,
+                Description = "First Category"
+            };
 
-            Assert.NotNull(category);
-            Assert.Equal(expectedId, category.Id);
+            _repository.Setup(_ => _.Get(expectedId))
+                .ReturnsAsync(category);
+
+            ICategoriesService service = new CategoriesService(_repository.Object);
+
+            var result = await service.Get(expectedId);
+
+            _repository.Verify(_ => _.Get(expectedId),
+                Times.Once);
+
+            Assert.NotNull(result);
+            Assert.Equal(category.Id, result.Id);
         }
 
         [Fact]
@@ -53,41 +83,73 @@ namespace BooksApi.Tests.CategoriesTests
                 Description = "newDescription",
             };
 
-            var content = JsonContent.Create(newCategory);
+            _repository.Setup(_ => _.Create(newCategory));
 
-            var response = await HttpClient.PostAsync("api/Categories", content);
+            ICategoriesService service = new CategoriesService(_repository.Object);
 
-            Assert.Equal(HttpStatusCode.NoContent, response.StatusCode);
-            Assert.True(response.IsSuccessStatusCode);
+            await service.Create(newCategory);
+
+            _repository.Verify(_ => _.Create(newCategory),
+                Times.Once);
         }
 
         [Fact]
         public async Task Update_Category()
         {
-            const int expectedId = 4;
+            const int expectedId = 1;
+
+            var category = new Category
+            {
+                Id = expectedId,
+                Description = "First Category"
+            };
 
             var updatedCategory = new Category
             {
                 Description = "updatedDescription"
             };
 
-            var content = JsonContent.Create(updatedCategory);
+            _repository.Setup(_ => _.Get(expectedId))
+                .ReturnsAsync(category);
 
-            var response = await HttpClient.PutAsync($"api/Categories/id?id={expectedId}", content);
+            _repository.Setup(_ => _.Update(category));
 
-            Assert.Equal(HttpStatusCode.NoContent, response.StatusCode);
-            Assert.True(response.IsSuccessStatusCode);
+            ICategoriesService service = new CategoriesService(_repository.Object);
+
+            await service.Update(updatedCategory, expectedId);
+
+            _repository.Verify(_ => _.Get(expectedId),
+                Times.Once);
+
+            _repository.Verify(_ => _.Update(category),
+                Times.Once);
         }
 
         [Fact]
         public async Task Delete_Category()
         {
-            const int expectedId = 4;
+            const int expectedId = 1;
 
-            var response = await HttpClient.DeleteAsync($"api/Categories/id?id={expectedId}");
+            var category = new Category
+            {
+                Id = expectedId,
+                Description = "First Category"
+            };
 
-            Assert.Equal(HttpStatusCode.NoContent, response.StatusCode);
-            Assert.True(response.IsSuccessStatusCode);
+            _repository.Setup(_ => _.Get(expectedId))
+                .ReturnsAsync(category);
+
+            _repository.Setup(_ => _.Delete(category));
+
+            ICategoriesService service = new CategoriesService(_repository.Object);
+
+            await service.Delete(expectedId);
+
+            _repository.Verify(_ => _.Get(expectedId),
+                Times.Once);
+
+            _repository.Verify(_ => _.Delete(category),
+                Times.Once);
         }
     }
 }

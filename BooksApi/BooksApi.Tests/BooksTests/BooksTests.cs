@@ -1,30 +1,75 @@
 using BooksApi.Db.Entities;
-using System.Net.Http.Json;
-using System.Net;
-using System.Text.Json;
+using BooksApi.Logic.BooksService;
+using BooksApi.WebDb.BooksRepository;
+using Moq;
 using Xunit;
-using BooksApi.Tests.ApiConfiguration;
 
 namespace BooksApi.Tests.BooksTests
 {
-    public class BooksTests : ApiTestBase
+    public class BooksTests
     {
+        private readonly Mock<IBooksRepository> _repository;
+
+        public BooksTests()
+        {
+            _repository = new Mock<IBooksRepository>();
+        }
+
         [Fact]
         public async Task Get_All_Books()
         {
-            const int expectedCount = 4;
-
-            var body = await HttpClient.GetStringAsync("api/Books");
-
-            var books = JsonSerializer.Deserialize<IEnumerable<Book>>(body, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-
-            if (books is null)
+            var books = new List<Book>
             {
-                throw new ArgumentException("Not found");
-            }
+                new()
+                {
+                    Id = 1,
+                    Title = "Гарри Поттер и философский камень",
+                    Author = "Джоан Роулинг",
+                    PagesCount = 500,
+                    PublishDate = new DateTime(1997, 06, 26),
+                    CategoryId = 1
+                },
+                new()
+                {
+                    Id = 2,
+                    Title = "Гарри Поттер и Тайная комната",
+                    Author = "Джоан Роулинг",
+                    PagesCount = 450,
+                    PublishDate = new DateTime(1998, 07, 02),
+                    CategoryId = 2
+                },
+                new()
+                {
+                    Id = 3,
+                    Title = "Гарри Поттер и узник Азкабана",
+                    Author = "Джоан Роулинг",
+                    PagesCount = 600,
+                    PublishDate = new DateTime(1999, 07, 08),
+                    CategoryId = 1
+                },
+                new()
+                {
+                    Id = 4,
+                    Title = "Гарри Поттер и Кубок огня",
+                    Author = "Джоан Роулинг",
+                    PagesCount = 700,
+                    PublishDate = new DateTime(2000, 07, 08),
+                    CategoryId = 2
+                }
+            };
 
-            Assert.NotNull(books);
-            Assert.Equal(expectedCount, books.Count());
+            _repository.Setup(_ => _.GetAll())
+                .ReturnsAsync(books);
+
+            IBooksService service = new BooksService(_repository.Object);
+
+            var result = await service.GetAll();
+
+            _repository.Verify(_ => _.GetAll(),
+                Times.Once);
+
+            Assert.NotNull(result);
+            Assert.Equal(books.Count, result.Count());
         }
 
         [Fact]
@@ -32,17 +77,28 @@ namespace BooksApi.Tests.BooksTests
         {
             const int expectedId = 1;
 
-            var body = await HttpClient.GetStringAsync($"api/Books/id?id={expectedId}");
-
-            var book = JsonSerializer.Deserialize<Book>(body, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-
-            if (book is null)
+            var book = new Book
             {
-                throw new ArgumentException("Not found");
-            }
+                Id = expectedId,
+                Title = "Гарри Поттер и философский камень",
+                Author = "Джоан Роулинг",
+                PagesCount = 500,
+                PublishDate = new DateTime(1997, 06, 26),
+                CategoryId = 1
+            };
 
-            Assert.NotNull(book);
-            Assert.Equal(expectedId, book.Id);
+            _repository.Setup(_ => _.Get(expectedId))
+                .ReturnsAsync(book);
+
+            IBooksService service = new BooksService(_repository.Object);
+
+            var result = await service.Get(expectedId);
+
+            _repository.Verify(_ => _.Get(expectedId),
+                Times.Once);
+
+            Assert.NotNull(result);
+            Assert.Equal(book.Id, result.Id);
         }
 
         [Fact]
@@ -57,18 +113,30 @@ namespace BooksApi.Tests.BooksTests
                 CategoryId = 1
             };
 
-            var content = JsonContent.Create(newBook);
+            _repository.Setup(_ => _.Create(newBook));
 
-            var response = await HttpClient.PostAsync("api/Books", content);
+            IBooksService service = new BooksService(_repository.Object);
 
-            Assert.Equal(HttpStatusCode.NoContent, response.StatusCode);
-            Assert.True(response.IsSuccessStatusCode);
+            await service.Create(newBook);
+
+            _repository.Verify(_ => _.Create(newBook),
+                Times.Once);
         }
 
         [Fact]
         public async Task Update_Book()
         {
-            const int expectedId = 8;
+            const int expectedId = 1;
+
+            var book = new Book
+            {
+                Id = expectedId,
+                Title = "Гарри Поттер и философский камень",
+                Author = "Джоан Роулинг",
+                PagesCount = 500,
+                PublishDate = new DateTime(1997, 06, 26),
+                CategoryId = 1
+            };
 
             var updatedBook = new Book
             {
@@ -79,23 +147,51 @@ namespace BooksApi.Tests.BooksTests
                 CategoryId = 1
             };
 
-            var content = JsonContent.Create(updatedBook);
+            _repository.Setup(_ => _.Get(expectedId))
+                .ReturnsAsync(book);
 
-            var response = await HttpClient.PutAsync($"api/Books/id?id={expectedId}", content);
+            _repository.Setup(_ => _.Update(book));
 
-            Assert.Equal(HttpStatusCode.NoContent, response.StatusCode);
-            Assert.True(response.IsSuccessStatusCode);
+            IBooksService service = new BooksService(_repository.Object);
+
+            await service.Update(updatedBook, expectedId);
+
+            _repository.Verify(_ => _.Get(expectedId),
+                Times.Once);
+
+            _repository.Verify(_ => _.Update(book),
+                Times.Once);
         }
 
         [Fact]
         public async Task Delete_Book()
         {
-            const int expectedId = 8;
+            const int expectedId = 1;
 
-            var response = await HttpClient.DeleteAsync($"api/Books/id?id={expectedId}");
+            var book = new Book
+            {
+                Id = expectedId,
+                Title = "Гарри Поттер и философский камень",
+                Author = "Джоан Роулинг",
+                PagesCount = 500,
+                PublishDate = new DateTime(1997, 06, 26),
+                CategoryId = 1
+            };
 
-            Assert.Equal(HttpStatusCode.NoContent, response.StatusCode);
-            Assert.True(response.IsSuccessStatusCode);
+            _repository.Setup(_ => _.Get(expectedId))
+                .ReturnsAsync(book);
+
+            _repository.Setup(_ => _.Delete(book));
+
+            IBooksService service = new BooksService(_repository.Object);
+
+            await service.Delete(expectedId);
+
+            _repository.Verify(_ => _.Get(expectedId),
+                Times.Once);
+
+            _repository.Verify(_ => _.Delete(book),
+                Times.Once);
         }
     }
 }
