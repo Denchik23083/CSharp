@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BooksApi.WebDb", "BooksApi.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BooksApi.Client", "BooksApi.Client\BooksApi.Client.csproj", "{8CEA5757-8536-45E2-8A01-7DD7C578E131}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooksApi.Tests", "BooksApi.Tests\BooksApi.Tests.csproj", "{F849B45A-FD99-42E7-AA6E-B2F0682ED616}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BooksApi.Tests", "BooksApi.Tests\BooksApi.Tests.csproj", "{F849B45A-FD99-42E7-AA6E-B2F0682ED616}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
