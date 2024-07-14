@@ -24,7 +24,7 @@ builder.Services.AddDbContext<BooksContext>(options =>
 {
     var connectionString = builder.Configuration.GetConnectionString("Library");
 
-    options.UseSqlServer(connectionString);
+    options.UseSqlServer(connectionString!);
 });
 
 builder.Services.AddCors(options =>
